@@ -1,0 +1,19 @@
+@mixin auto($height:auto,$width:auto){
+    height: $height;
+    width: $width;
+}
+@mixin flex($direction:row,$content:center,$items:center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $items;
+}
+@mixin border-radius($radius:0.5rem){
+    border-radius: $radius;
+}
+@mixin box-shadow($bottom:0rem,$right:0rem,$smoke:0rem,$contour:0.3rem,$color:$color-secondary){
+    box-shadow: $right $bottom $smoke $contour $color;
+}
+@mixin font{
+    font-size:$font-size;
+}

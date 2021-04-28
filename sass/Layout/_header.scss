@@ -1,8 +1,6 @@
 header{
-    height: auto;
-    width: auto;
-    border: 2px grey solid;
-    background: linear-gradient(rgb(253, 213, 213),rgb(180, 76, 76));
+    @include auto;
+    background: $color-tertiary;
     & h1{
         margin: 0;
         padding:1rem;

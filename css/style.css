@@ -3,11 +3,15 @@ body {
   margin: 0;
 }
 
+section {
+  height: auto;
+  width: auto;
+}
+
 header {
   height: auto;
   width: auto;
-  border: 2px grey solid;
-  background: linear-gradient(#fdd5d5, #b44c4c);
+  background: linear-gradient(#e9d9ba, #a37979);
 }
 header h1 {
   margin: 0;
@@ -21,11 +25,11 @@ header h1 {
 footer {
   height: auto;
   width: auto;
-  border: 2px grey solid;
-  background: linear-gradient(#fdd5d5, #b44c4c);
+  background: linear-gradient(#e9d9ba, #a37979);
 }
 footer ul {
   list-style: none;
+  margin: 0;
   padding: 0.7rem;
 }
 footer ul li {
@@ -37,10 +41,98 @@ footer ul li a {
   color: black;
 }
 
-section {
+.index-presentation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 300px;
+  width: auto;
+  background: url("C:/Users/David Yem/OneDrive/Documents/orinoco/Front-end/ours-presentation.png") no-repeat;
+  background-size: 100%;
+}
+
+.text {
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+section h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.cadre {
+  margin: 2rem 1rem;
+  height: 250px;
+  width: auto;
+  box-shadow: 0rem 0rem 0.5rem 0.3rem #b9b9b9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.cadre-produit {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+.cadre-produit__photo {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cadre-produit__photo img {
+  height: 100%;
+  width: 100%;
+}
+.cadre-produit__nom {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background: linear-gradient(#e9d9ba, #a37979);
+}
+.cadre-produit__prix {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background: linear-gradient(#e9d9ba, #a37979);
+}
+
+.presentation-produit {
   height: 400px;
   width: auto;
-  background: #f1d8a8;
+  border: 1px black solid;
+}
+
+.produit-photo {
+  height: 50%;
+  width: auto;
+  border: 1px black solid;
+}
+
+.produit-description {
+  height: 50%;
+  width: auto;
+  border: 1px black solid;
 }
 
 /*# sourceMappingURL=style.css.map */
