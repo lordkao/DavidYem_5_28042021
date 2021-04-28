@@ -14,6 +14,6 @@
 @mixin box-shadow($bottom:0rem,$right:0rem,$smoke:0rem,$contour:0.3rem,$color:$color-secondary){
     box-shadow: $right $bottom $smoke $contour $color;
 }
-@mixin font{
-    font-size:$font-size;
+@mixin font($font:1rem){
+    font-size:$font;
 }
