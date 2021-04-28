@@ -1,0 +1,12 @@
+.presentation-produit{
+    @include auto($height:400px);
+    border: 1px black solid;
+}
+.produit-photo{
+    @include auto($height:50%);
+    border: 1px black solid;
+}
+.produit-description{
+    @include auto($height:50%);
+    border: 1px black solid;
+}
