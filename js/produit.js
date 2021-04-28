@@ -21,7 +21,14 @@ function getProduit(url){
             description.innerHTML = `Description du produit:<br> ${response.description}`
             let prix = document.getElementById("prix")
             prix.innerHTML = `Prix:<br>${response.price} €`
-            
+
+            for(let color of response.colors){
+                let select = document.getElementById("select")
+                let couleur = document.createElement("option")
+                select.appendChild(couleur)
+                couleur.innerText = color 
+                couleur.value = color
+            }
 
         })
         .catch(function(err){
