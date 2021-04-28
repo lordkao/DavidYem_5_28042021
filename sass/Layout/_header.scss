@@ -1,0 +1,15 @@
+header{
+    height: auto;
+    width: auto;
+    border: 2px grey solid;
+    background: linear-gradient(rgb(253, 213, 213),rgb(180, 76, 76));
+    & h1{
+        margin: 0;
+        padding:1rem;
+        text-align: center;
+        text-shadow: 0.2rem 0.1rem 0.1rem grey;
+        font-size: 3rem;
+        color: black;
+    }
+}
+

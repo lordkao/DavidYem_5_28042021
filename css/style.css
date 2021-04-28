@@ -1,10 +1,46 @@
 body {
   font-size: 62.5%;
+  margin: 0;
 }
 
-h1 {
-  font-size: 2rem;
-  color: purple;
+header {
+  height: auto;
+  width: auto;
+  border: 2px grey solid;
+  background: linear-gradient(#fdd5d5, #b44c4c);
+}
+header h1 {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  text-shadow: 0.2rem 0.1rem 0.1rem grey;
+  font-size: 3rem;
+  color: black;
+}
+
+footer {
+  height: auto;
+  width: auto;
+  border: 2px grey solid;
+  background: linear-gradient(#fdd5d5, #b44c4c);
+}
+footer ul {
+  list-style: none;
+  padding: 0.7rem;
+}
+footer ul li {
+  padding: 0.1rem;
+  font-size: 0.7rem;
+}
+footer ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+section {
+  height: 400px;
+  width: auto;
+  background: #f1d8a8;
 }
 
 /*# sourceMappingURL=style.css.map */
