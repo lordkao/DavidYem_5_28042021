@@ -1,7 +1,4 @@
-body{
-    font-size: 62.5%;
-}
-h1{
-    font-size: 2rem;
-    color: purple;
-}
+@import "./Base/structure"; 
+@import "./Layout/header";
+@import "./Layout/footer";
+@import "./Pages/index";

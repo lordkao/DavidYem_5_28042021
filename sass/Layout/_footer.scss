@@ -1,0 +1,18 @@
+footer{
+    height: auto;
+    width: auto;
+    border: 2px grey solid;
+    background: linear-gradient(rgb(253, 213, 213),rgb(180, 76, 76));
+    & ul{
+        list-style: none;
+        padding: 0.7rem;
+        & li{
+            padding: 0.1rem;
+            font-size: 0.7rem;
+            & a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}
