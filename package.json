@@ -1,0 +1,19 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000D\u0000a\u0000v\u0000i\u0000d\u0000Y\u0000e\u0000m\u0000_\u00005\u0000_\u00002\u00008\u00000\u00004\u00002\u00000\u00002\u00001\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordkao/DavidYem_5_28042021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lordkao/DavidYem_5_28042021/issues"
+  },
+  "homepage": "https://github.com/lordkao/DavidYem_5_28042021#readme"
+}
