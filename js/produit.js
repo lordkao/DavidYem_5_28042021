@@ -30,6 +30,26 @@ function getProduit(url){
                 couleur.value = color
             }
 
+            let ajouter = document.getElementById("ajouter")
+            let quantite = document.getElementById("quantite")
+
+            ajouter.onclick = (e) =>{
+                e.preventDefault()
+                if(quantite.value != 0){
+
+                let panier = {
+                    nom : response.name,
+                    quantite : quantite.value,
+                    prix : response.price,
+                    description : response.description
+                }
+
+                localStorage.setItem(response.name,JSON.stringify(panier))
+                }
+                else{
+                    return 0
+                }
+            }
         })
         .catch(function(err){
             alert(err)

@@ -1,0 +1,40 @@
+.ton-panier{
+    @include auto;
+    border: 1px black solid;
+    background-color: #f8f8d5;
+    @include font;
+    text-align: center;
+    &>p{
+        text-decoration: underline;
+    }
+}
+.liste-panier{
+    @include auto;
+    @include font;
+    background-color: rgb(232, 241, 213);
+}
+
+.detail{
+    @include flex($direction:column);
+    width:100% ;
+    height: auto;
+    &__produit{
+        text-align: left;
+    padding: 1rem;
+    }
+    &::after{
+        content: "";
+        height: auto;
+        width: 80%;
+        border: 2px rgb(116, 104, 88) solid;
+    }
+}
+.accueil{
+   @include btn;
+}
+.retour{
+    @include btn;
+}
+.confirm{
+    @include btn;
+}
