@@ -15,10 +15,13 @@ function total(){
         div.classList.add("detail")
         let produit = document.createElement("p")
         produit.classList.add("detail__produit")
+        let imageProduit = document.createElement("img")
+        imageProduit.src = js.image
         let panier = document.getElementById("panier")
         div.appendChild(produit)
+        div.appendChild(imageProduit)
         panier.appendChild(div)
-        produit.innerHTML = "Nom: "+js.nom+"<br>description: "+js.description+"<br><br>Prix: "+js.prix+" €<br>Quantité: "+js.quantite
+        produit.innerHTML = "Nom: "+js.nom+"<br><br>description:<br><br> "+js.description+"<br><br>Prix: "+js.prix+" €<br>Quantité: "+js.quantite
      }
     localStorage.setItem("id",id)
 }

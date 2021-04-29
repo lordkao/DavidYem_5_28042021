@@ -35,19 +35,19 @@ function getProduit(url){
 
             ajouter.onclick = (e) =>{
                 e.preventDefault()
-                if(quantite.value != 0){
+                if(quantite.value != 0 || quantite.value >=0){
 
-                let panier = {
-                    nom : response.name,
-                    quantite : quantite.value,
-                    prix : response.price,
-                    description : response.description
-                }
-
-                localStorage.setItem(response.name,JSON.stringify(panier))
+                let commande = {
+                    nom: response.name,
+                    quantite: quantite.value,
+                    prix: response.price,
+                    image: response.imageUrl,
+                    description: response.description
+                    }
+                    localStorage.setItem(response.name,JSON.stringify(commande))
                 }
                 else{
-                    return 0
+                    alert("erreur")
                 }
             }
         })
