@@ -214,6 +214,7 @@ section h2 {
   font-size: 1rem;
   text-align: center;
   margin: 1rem;
+  border: 2px #f2f2f2 solid;
   border-radius: 1rem;
   box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
 }
@@ -303,6 +304,7 @@ section h2 {
 .confirm {
   padding: 0.7rem;
   font-size: 0.7rem;
+  margin: 1rem;
 }
 
 .boutons {
@@ -333,6 +335,38 @@ section h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 90%;
+  border: 2px #f2f2f2 solid;
+  box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+.form p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.form p label {
+  display: inline-block;
+  height: auto;
+  width: 12%;
+  text-align: right;
+  margin-right: 0.5rem;
+}
+.form p input {
+  height: auto;
+  width: 60%;
 }
 
 /*# sourceMappingURL=style.css.map */

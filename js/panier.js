@@ -1,3 +1,5 @@
+const TeddieUrl = "http://localhost:3000/api/teddies/"
+
 let listePanier = document.getElementById("panier")
 const id = localStorage.getItem("id")
 
@@ -5,6 +7,8 @@ let retour = document.getElementById("retour")
 retour.href = "./produit.html?id="+id
 
 function total(){
+
+        let myTotal = 0
 
     for(let i = 0; i < localStorage.length;i++){
         localStorage.removeItem("id")
@@ -38,12 +42,47 @@ function total(){
         panier.appendChild(div)
         produit.innerHTML = "Nom: "+js.nom+"<br><br>description:<br><br> "+js.description+"<br><br>Prix: "+js.prix
 
+        let finalTotal = myTotal += multi
+
         let totalPanier = document.getElementById("totalPanier")
-        totalPanier.innerText = js.prix
+        totalPanier.innerText = finalTotal+" €"
      }
     localStorage.setItem("id",id)
 }
         
-
-
 total()
+
+
+
+let firstName = document.getElementById("firstName")
+
+firstName.oninput=(e)=>{
+    
+    if(/^[0-9]$/.test(firstName.value)){
+        alert("Veuillez rentrer une saisie correcte")
+    }
+    else if(firstName.value != null){
+        console.log("firstName : ok")
+    }
+    else{
+        alert(err)
+    }
+}
+
+let lastName = document.getElementById("lastName")
+let adress = document.getElementById("adress")
+let city = document.getElementById("city")
+let email = document.getElementById("email")
+
+
+let confirm = document.getElementById("confirm")
+let submit = document.getElementById("submit")
+
+
+submit.onclick=(e)=>{
+    const donnees = {}
+}
+
+
+
+//firstName, lastName, address, city et email
