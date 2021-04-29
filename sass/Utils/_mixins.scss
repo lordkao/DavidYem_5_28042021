@@ -17,3 +17,8 @@
 @mixin font($font:1rem){
     font-size:$font;
 }
+@mixin btn{
+    padding: 0.7rem;
+    border-radius:0.3rem ;
+    font-size: 0.7rem;
+}
