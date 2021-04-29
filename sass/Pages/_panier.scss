@@ -33,9 +33,24 @@
     }
     &__produit{
         text-align: left;
-        padding: 1rem;
-        margin: 0 1rem 1rem 1rem;
+        padding: 1rem 1rem 0 1rem;
+        margin: 0 1rem 0rem 1rem;
         background-color: white;
+    }
+    &__prix-total-article{
+        @include auto($width:100%);
+        @include flex($content:center);
+        margin-top: 0.5rem;
+        &--total-article{
+            @include auto($height:20px,$width:35%);
+            @include flex;
+            border: 1px $color-secondary solid;
+        }
+        &--prix-total{
+            @include auto($height:20px,$width:35%);
+            @include flex;
+            border: 1px $color-secondary solid;
+        }
     }
     &::after{
         content: "";
@@ -58,4 +73,16 @@
     @include flex($content:space-around);
     padding: 0.5rem;
     margin-bottom: 1rem;
+}
+.total-panier{
+    @include auto($height:50px,$width:50%);
+    @include flex($direction:column);
+    border: 1px black solid;
+    align-self: center;
+    & div{
+        margin-bottom: 1rem;
+    }
+}
+#panier-section{
+    @include flex($direction:column);
 }
