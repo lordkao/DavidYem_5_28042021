@@ -1,31 +1,47 @@
 .ton-panier{
     @include auto;
-    border: 1px black solid;
-    background-color: #f8f8d5;
     @include font;
     text-align: center;
-    &>p{
+    margin: 1rem ;
+    @include border-radius($radius:1rem);
+    @include box-shadow($smoke:1rem);
+    & > p{
+        margin: 0;
+        padding: 1rem;
         text-decoration: underline;
     }
 }
 .liste-panier{
     @include auto;
-    @include font;
-    background-color: rgb(232, 241, 213);
+    @include font($font:0.7rem);
+    margin-bottom: 1rem;
 }
 
 .detail{
     @include flex($direction:column);
-    width:100% ;
+    width:auto ;
     height: auto;
+    position: relative;
+    & img{
+        position: absolute;
+        display:inline-block;
+        top: 15px;
+        right: 14px;
+        border: 1px #f2f2f2 solid;
+        @include auto($height:50px,$width:50px);
+        @include small-shadow;
+    }
     &__produit{
         text-align: left;
-    padding: 1rem;
+        padding: 1rem;
+        margin: 0 1rem 1rem 1rem;
+        background-color: white;
     }
     &::after{
         content: "";
         height: auto;
-        width: 80%;
+        width: 60%;
+        margin-bottom:1.5rem ;
         border: 2px rgb(116, 104, 88) solid;
     }
 }
@@ -37,4 +53,9 @@
 }
 .confirm{
     @include btn;
+}
+.boutons{
+    @include flex($content:space-around);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
