@@ -67,20 +67,19 @@
 .retour{
     @include btn;
 }
-.confirm{
-    @include btn;
-    margin: 1rem;
-}
+
 .boutons{
     @include flex($content:space-around);
     padding: 0.5rem;
     margin-bottom: 1rem;
 }
 .total-panier{
-    @include auto($height:50px,$width:50%);
+    @include auto($height:80px,$width:70%);
     @include flex($direction:column);
+    @include font($font:0.8rem);
     border: 1px black solid;
     align-self: center;
+    margin: 1rem 0;
     & div{
         margin-bottom: 1rem;
     }

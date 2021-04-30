@@ -13,28 +13,27 @@
         <h1>Oriteddie</h1>
     </header>
     <section id="panier-section">
-    <div class="ton-panier"><p>Voici votre panier:</p>
-        <div id="panier" class="liste-panier"></div>
-    </div>
-    <div class="total-panier">
-        <p>Montant total de la commande :</p>
-        <div id="totalPanier" >prix total</div>
-    </div> 
-    <form id="form" action="./confirmation.html" method="post" class="form">
-        <h2 class="form__titre-formulaire">Veuillez renseigner vos coordonnées afin valider votre commande:</h2>
-        <p><label for="firstName">Prenom:</label><input type="text" id="firstName" name="firstName" required></p>
-        <p><label for="lastName">Nom:</label><input type="text" id="lastName" name="lastName" required></p>
-        <p><label for="city">Ville:</label><input type="text" id="city" name="city" required></p>
-        <p><label for="adress">Adresse:</label><input type="text" id="adress" name="adress" required></p>
-        <p><label for="email">Email:</label><input type="email" id="email" name="email" required></p>
-        <button id="submit" class="confirm" type="submit" for="form" >Confirmation de commande</button>
-    </form>
-    <div class="boutons">
-    <a id="retour"><button class="retour" >Retour</button></a>
-    <a href="./index.html"><button class="accueil">Accueil</button></a>
-    <a  href="./confirmation.html"><button id="confirm" class="confirm" type="button" >Confirmation de commande</button></a>
+        <div class="ton-panier"><p>Voici votre panier:</p>
+            <div id="panier" class="liste-panier"></div>
+        </div>
+        <div class="total-panier">
+            <p>Montant total de la commande :</p>
+            <div id="totalPanier" ></div>
+        </div> 
+        <form id="form" action="./confirmation.html" method="post" class="form">
+            <h2 class="form__titre-formulaire">Veuillez renseigner vos coordonnées afin valider votre commande:</h2>
+            <p><label for="firstName">Prenom:</label><input type="text" id="firstName" name="firstName" required></p>
+            <p><label for="lastName">Nom:</label><input type="text" id="lastName" name="lastName" required></p>
+            <p><label for="city">Ville:</label><input type="text" id="city" name="city" required></p>
+            <p><label for="adress">Adresse:</label><input type="text" id="adress" name="adress" required></p>
+            <p><label for="email">Email:</label><input type="email" id="email" name="email" required></p>
+            <button id="submit" class="confirm" type="submit" for="form" >Submit</button>
+        </form>
+        <div class="boutons">
+        <a id="retour"><button class="retour" >Retour</button></a>
+        <a href="./index.html"><button class="accueil">Accueil</button></a>
 
-    </div>
+        </div>
     </section>
     <footer>
         <ul>

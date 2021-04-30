@@ -47,7 +47,7 @@ function getProduit(url){
             }
 
             /*A chaque clique du bouton "Ajouter au panier",création d'un objet dans le localStorage ayant pour clé le nom du produit*/
-            ajouter.onclick = (e) =>{
+            ajouter.addEventListener("click",(e)=>{
                 e.preventDefault()
 
                 if(quantite.value != 0 && quantite.value >=0){
@@ -66,7 +66,7 @@ function getProduit(url){
                 else{
                     alert("veuillez renseigner une quantité valide")
                 }
-            }
+            })
         })
         .catch(function(err){
             alert(err)
