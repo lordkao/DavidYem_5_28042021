@@ -1,0 +1,14 @@
+.bloc-confirmation{
+    @include auto;
+    background: $color-secondary;
+    & div{
+        @include flex;
+        & p{
+        @include auto($width: 80%);
+        @include font;
+        padding: 8rem 0;
+        text-align: center;
+    }
+    }
+    
+}

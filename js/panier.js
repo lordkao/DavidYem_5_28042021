@@ -10,6 +10,7 @@ function total(){
 
         let myTotal = 0
 
+        
     for(let i = 0; i < localStorage.length;i++){
         localStorage.removeItem("id")
         let article = localStorage.key(i)
@@ -55,20 +56,6 @@ total()
 
 
 let firstName = document.getElementById("firstName")
-
-firstName.oninput=(e)=>{
-    
-    if(/^[0-9]$/.test(firstName.value)){
-        alert("Veuillez rentrer une saisie correcte")
-    }
-    else if(firstName.value != null){
-        console.log("firstName : ok")
-    }
-    else{
-        alert(err)
-    }
-}
-
 let lastName = document.getElementById("lastName")
 let adress = document.getElementById("adress")
 let city = document.getElementById("city")
@@ -79,9 +66,7 @@ let confirm = document.getElementById("confirm")
 let submit = document.getElementById("submit")
 
 
-submit.onclick=(e)=>{
-    const donnees = {}
-}
+
 
 
 

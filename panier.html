@@ -20,24 +20,25 @@
         <p>Montant total de la commande :</p>
         <div id="totalPanier" >prix total</div>
     </div> 
-    <form id="form" class="form">
+    <form id="form" action="./confirmation.html" method="post" class="form">
+        <h2 class="form__titre-formulaire">Veuillez renseigner vos coordonnées afin valider votre commande:</h2>
         <p><label for="firstName">Prenom:</label><input type="text" id="firstName" name="firstName" required></p>
         <p><label for="lastName">Nom:</label><input type="text" id="lastName" name="lastName" required></p>
         <p><label for="city">Ville:</label><input type="text" id="city" name="city" required></p>
         <p><label for="adress">Adresse:</label><input type="text" id="adress" name="adress" required></p>
         <p><label for="email">Email:</label><input type="email" id="email" name="email" required></p>
-        <button id="submit" class="confirm" type="submit" for="form" >Valider vos coordonnées</button>
+        <button id="submit" class="confirm" type="submit" for="form" >Confirmation de commande</button>
     </form>
     <div class="boutons">
     <a id="retour"><button class="retour" >Retour</button></a>
     <a href="./index.html"><button class="accueil">Accueil</button></a>
-    <a  href="./confirmation.html"><button id="confirm" class="confirm" type="button" disabled >Confirmation de commande</button></a>
+    <a  href="./confirmation.html"><button id="confirm" class="confirm" type="button" >Confirmation de commande</button></a>
 
     </div>
     </section>
     <footer>
         <ul>
-            <li><a href="">politique de confidentialité</a></li>
+            <li><a href="">Politique de confidentialité</a></li>
             <li><a href="">Devenir partenaire</a></li>
             <li><a href="">Contactez nous</a></li>
         </ul>
