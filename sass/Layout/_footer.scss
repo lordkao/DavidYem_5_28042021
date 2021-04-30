@@ -1,13 +1,13 @@
 footer{
-    @include auto;
+    @include auto($height:117px);
+    @include flex($content:flex-start);
     background: $color-tertiary;
     & ul{
         list-style: none;
         margin: 0;
-        padding: 0.7rem;
         & li{
-            padding: 0.1rem;
-            font-size: 0.7rem;
+            padding: 0.5rem;
+            font-size: 1rem;
             & a{
                 text-decoration: none;
                 color: black;

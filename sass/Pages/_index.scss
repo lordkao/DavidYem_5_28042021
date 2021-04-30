@@ -1,7 +1,7 @@
 .index-presentation{
     @include flex($items:flex-start);
     @include auto($height: 300px);
-    background:url("C:/Users/David Yem/OneDrive/Documents/orinoco/Front-end/ours-presentation.png") no-repeat;
+    background:url("../ours-presentation.png") no-repeat;
     background-size:100%;
 }
 .text{
@@ -46,5 +46,16 @@ section h2{
         @include flex;
         @include font;
         background: $background;
+    }
+}
+.index-panier{
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    @include auto($height:25px,$width:60px);
+    & button{
+        @include auto($height:100%,$width:100%);
+        background: $color-tertiary;
     }
 }

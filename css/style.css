@@ -14,6 +14,7 @@ header {
   background: linear-gradient(#e9d9ba, #a37979);
 }
 header h1 {
+  position: relative;
   margin: 0;
   padding: 1rem;
   text-align: center;
@@ -23,18 +24,21 @@ header h1 {
 }
 
 footer {
-  height: auto;
+  height: 117px;
   width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 footer ul {
   list-style: none;
   margin: 0;
-  padding: 0.7rem;
 }
 footer ul li {
-  padding: 0.1rem;
-  font-size: 0.7rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 footer ul li a {
   text-decoration: none;
@@ -48,7 +52,7 @@ footer ul li a {
   align-items: flex-start;
   height: 300px;
   width: auto;
-  background: url("C:/Users/David Yem/OneDrive/Documents/orinoco/Front-end/ours-presentation.png") no-repeat;
+  background: url("../ours-presentation.png") no-repeat;
   background-size: 100%;
 }
 
@@ -114,6 +118,20 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  background: linear-gradient(#e9d9ba, #a37979);
+}
+
+.index-panier {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  height: 25px;
+  width: 60px;
+}
+.index-panier button {
+  height: 100%;
+  width: 100%;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 
@@ -313,12 +331,6 @@ section h2 {
   font-size: 0.7rem;
 }
 
-.confirm {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-  margin: 1rem;
-}
-
 .boutons {
   display: flex;
   flex-direction: row;
@@ -329,14 +341,16 @@ section h2 {
 }
 
 .total-panier {
-  height: 50px;
-  width: 50%;
+  height: 80px;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 0.8rem;
   border: 1px black solid;
   align-self: center;
+  margin: 1rem 0;
 }
 .total-panier div {
   margin-bottom: 1rem;
