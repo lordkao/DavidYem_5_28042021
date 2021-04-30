@@ -12,16 +12,21 @@ function getProduit(url){
             }
         })
         .then(function(response){
-            console.log(response)
+            console.log(response)/*affiche dans la console les informations contenues dans un objet*/
+
+            /*Récupération des informations concernant le produit selectionné */
             let photo = document.createElement("img")
             photo.classList.add("produit-photo__image")
             document.getElementById("photo").appendChild(photo)
             photo.src = response.imageUrl
+            let nom = document.getElementById("nom")
+            nom.innerText = response.name
             let description = document.getElementById("description")
             description.innerHTML = `Description du produit:<br> ${response.description}`
             let prix = document.getElementById("prix")
             prix.innerHTML = `Prix:<br>${response.price} €`
 
+            /*Création de l'élément de selection de couleur,boucle dans le array colors et ajoute la couleur de l'itération dans un nouvel élément <option> de <select>*/
             for(let color of response.colors){
                 let select = document.getElementById("select")
                 let couleur = document.createElement("option")
@@ -32,11 +37,20 @@ function getProduit(url){
 
             let ajouter = document.getElementById("ajouter")
             let quantite = document.getElementById("quantite")
+            let number = JSON.parse(localStorage.getItem(response.name))
+            console.log(number)
 
+            /*Si un objet du produit existe alors on récupère sa quantité enregistré*/
+            if(localStorage.getItem(response.name) != null){
+            quantite.value = number.quantite
+            console.log(quantite.value)
+            }
+
+            /*A chaque clique du bouton "Ajouter au panier",création d'un objet dans le localStorage ayant pour clé le nom du produit*/
             ajouter.onclick = (e) =>{
                 e.preventDefault()
-                if(quantite.value != 0 || quantite.value >=0){
 
+                if(quantite.value != 0 && quantite.value >=0){
                 let commande = {
                     nom: response.name,
                     quantite: quantite.value,
@@ -46,8 +60,11 @@ function getProduit(url){
                     }
                     localStorage.setItem(response.name,JSON.stringify(commande))
                 }
+                else if(quantite.value ==0){
+                    localStorage.removeItem(response.name)
+                }
                 else{
-                    alert("erreur")
+                    alert("veuillez renseigner une quantité valide")
                 }
             }
         })
