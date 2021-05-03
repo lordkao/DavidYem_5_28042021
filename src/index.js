@@ -1,5 +1,8 @@
 const TeddieUrl = "http://localhost:3000/api/teddies"
-
+let remove = document.getElementById("remove")
+remove.addEventListener("click",()=>{
+    localStorage.clear()
+})
 getIndex()
 
 function getIndex(){
