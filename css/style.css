@@ -135,6 +135,15 @@ section h2 {
   background: linear-gradient(#e9d9ba, #a37979);
 }
 
+.index-remove {
+  position: absolute;
+  top: 0;
+  right: 60px;
+  height: 25px;
+  width: auto;
+  background: linear-gradient(#e9d9ba, #a37979);
+}
+
 .presentation-produit {
   height: 500px;
   width: auto;

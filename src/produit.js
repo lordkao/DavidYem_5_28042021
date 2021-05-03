@@ -79,12 +79,13 @@ async function getProduit(url){
 }
 /*Appel de la fonction getProduit pour construire le contenu de la page avec les infos du produit selectionné sur la page index */
 class Produit{
-    constructor(nom,quantite,prix,image,description){
+    constructor(nom,quantite,prix,image,description,_id){
         this.nom = nom,
         this.quantite = quantite,
         this.prix = prix,
         this.image = image,
-        this.description = description   
+        this.description = description,
+        this._id = _id  
     }
     changeQuantity(value){
         return this.quantite = value
@@ -92,7 +93,7 @@ class Produit{
 }
 ajouter.addEventListener("click",(e)=>{
     e.preventDefault()
-    let eltTrouve = panier.find(elt => elt.nom === produit.name)/*Recherche dans le panier si l'élément existe */
+    let eltTrouve = panier.find(elt => elt._id === produit._id)/*Recherche dans le panier si l'élément existe */
     let index = panier.indexOf(eltTrouve)
     if(/^0/.test(quantite.value)){
         if(eltTrouve){
@@ -105,7 +106,7 @@ ajouter.addEventListener("click",(e)=>{
        
         if(eltTrouve){
            
-            /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)
+            /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description,produit._id)
             panier.splice(index,1,produitCommande)*/ 
             eltTrouve.quantite = quantite.value
             localStorage.setItem("panier",JSON.stringify(panier))
@@ -115,7 +116,7 @@ ajouter.addEventListener("click",(e)=>{
             console.log("Le tableau contient cet élément")
         }
         else{
-            let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)
+            let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description,produit._id)
             panier.push(produitCommande)
             localStorage.setItem("panier",JSON.stringify(panier))
             console.log(panier)
