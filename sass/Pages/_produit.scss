@@ -44,8 +44,8 @@
     }
     &__selection:nth-child(4){
         height: 30%;
-        width: auto;
-        @include flex($content:space-between);
+        width: 80%;
+        @include flex;
         order: 3;
     }
     &__retour:nth-child(5){
