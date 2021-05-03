@@ -330,23 +330,28 @@ section h2 {
   border: 2px #746858 solid;
 }
 
-.accueil {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-}
-
-.retour {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-}
-
 .boutons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  height: auto;
+  width: 80%;
   padding: 0.5rem;
   margin-bottom: 1rem;
+}
+.boutons__retour {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+}
+.boutons__accueil {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+}
+.boutons__confirmation {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+  margin-left: 2rem;
 }
 
 .total-panier {
