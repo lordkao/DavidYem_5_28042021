@@ -4,20 +4,10 @@ let panier = []
 getPanier("panier")
 
 let produit /*Ici produit aura pour valeur la réponse à la requête passée dans la fonction getProduit ligne 59. */
+
 let ajouter = document.getElementById("ajouter")
 let quantite = document.getElementById("quantite")
-class Produit{
-    constructor(nom,quantite,prix,image,description){
-        this.nom = nom,
-        this.quantite = quantite,
-        this.prix = prix,
-        this.image = image,
-        this.description = description   
-    }
-    changeQuantity(value){
-        this.quantite = value
-    }
-}
+
 
 console.log(id)
 
@@ -69,6 +59,8 @@ function getProduit(url){
         })
         .then(function(response){
             produit = response
+            nomProduit = response.name
+
             console.log(response)/*affiche dans la console les informations contenues dans un objet*/
             
             getInfosproduit(response)/*Récupération des informations concernant le produit selectionné */
@@ -125,19 +117,36 @@ function getProduit(url){
 /*Appel de la fonction getProduit pour construire le contenu de la page avec les infos du produit selectionné sur la page index */
 getProduit(TeddieUrl+id)
 
-
+class Produit{
+    constructor(nom,quantite,prix,image,description){
+        this.nom = nom,
+        this.quantite = quantite,
+        this.prix = prix,
+        this.image = image,
+        this.description = description   
+    }
+    changeQuantity(value){
+        return this.quantite = value
+    }
+}
 
 ajouter.addEventListener("click",(e)=>{
     e.preventDefault()
-
+    let eltTrouve = panier.find(elt => elt.nom === produit.name)/*Recherche dans le panier si l'élément existe */
+    let index = panier.indexOf(eltTrouve)
     if(/^0/.test(quantite.value)){
-        localStorage.removeItem("panier")
-        panier = []
+        if(eltTrouve){
+            panier.splice(index,1)
+            localStorage.setItem("panier",JSON.stringify(panier))
+        }
         alert("erreur de saisie")
     }
     else if(quantite.value != 0 && quantite.value >= 0){
-        let eltTrouve = panier.find(elt => elt.nom == produit.name)
+       
         if(eltTrouve){
+           
+            /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)
+            panier.splice(index,1,produitCommande)*/ 
             eltTrouve.quantite = quantite.value
             localStorage.setItem("panier",JSON.stringify(panier))
 
@@ -153,12 +162,34 @@ ajouter.addEventListener("click",(e)=>{
         }
     }
     else if(quantite.value <= 0 || quantite.value == 0){
-        localStorage.removeItem("panier")
-        panier = []
+        if(eltTrouve){
+            panier.splice(index,1)
+            localStorage.setItem("panier",JSON.stringify(panier))
+        }
+        console.log(panier)
+        
         alert("quantité inférieure ou égale à 0")
     }
     else{
         alert("veuillez renseigner une quantité valide")
     }
 })
+
+
 /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)*/
+
+/*let eltTrouve = panier.find(elt => elt.nom == produit.name)
+        if(eltTrouve){
+            eltTrouve.quantite = quantite.value
+            localStorage.setItem("panier",JSON.stringify(panier))
+
+            console.log(eltTrouve)
+            console.log(panier)
+            console.log("Le tableau contient cet élément")
+        }
+        else{
+            let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)
+            panier.push(produitCommande)
+            localStorage.setItem("panier",JSON.stringify(panier))
+            console.log(panier)
+        }*/
