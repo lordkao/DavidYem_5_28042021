@@ -294,6 +294,7 @@ section h2 {
   padding: 1rem 1rem 0 1rem;
   margin: 0 1rem 0rem 1rem;
   background-color: white;
+  line-height: 1.5;
 }
 .detail__prix-total-article {
   height: auto;
@@ -330,23 +331,28 @@ section h2 {
   border: 2px #746858 solid;
 }
 
-.accueil {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-}
-
-.retour {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-}
-
 .boutons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  height: auto;
+  width: 80%;
   padding: 0.5rem;
   margin-bottom: 1rem;
+}
+.boutons__retour {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+}
+.boutons__accueil {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+}
+.boutons__confirmation {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+  margin-left: 2rem;
 }
 
 .total-panier {
@@ -411,7 +417,6 @@ section h2 {
 .bloc-confirmation {
   height: auto;
   width: auto;
-  background: #b9b9b9;
 }
 .bloc-confirmation div {
   display: flex;
@@ -423,7 +428,8 @@ section h2 {
   height: auto;
   width: 80%;
   font-size: 1rem;
-  padding: 8rem 0;
+  line-height: 2;
+  padding: 5rem 0;
   text-align: center;
 }
 

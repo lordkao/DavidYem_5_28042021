@@ -37,6 +37,7 @@
         padding: 1rem 1rem 0 1rem;
         margin: 0 1rem 0rem 1rem;
         background-color: white;
+        line-height: 1.5;
     }
     &__prix-total-article{
         @include auto($width:100%);
@@ -61,17 +62,22 @@
         border: 2px rgb(116, 104, 88) solid;
     }
 }
-.accueil{
-   @include btn;
-}
-.retour{
-    @include btn;
-}
 
 .boutons{
     @include flex($content:space-around);
+    @include auto($width:80%);
     padding: 0.5rem;
     margin-bottom: 1rem;
+    &__retour{
+        @include btn;
+    }
+    &__accueil{
+        @include btn;
+    }
+    &__confirmation{
+        @include btn;
+        margin-left: 2rem;
+    }
 }
 .total-panier{
     @include auto($height:80px,$width:70%);
