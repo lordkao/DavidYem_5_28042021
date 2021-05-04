@@ -294,6 +294,7 @@ section h2 {
   padding: 1rem 1rem 0 1rem;
   margin: 0 1rem 0rem 1rem;
   background-color: white;
+  line-height: 1.5;
 }
 .detail__prix-total-article {
   height: auto;
@@ -416,7 +417,6 @@ section h2 {
 .bloc-confirmation {
   height: auto;
   width: auto;
-  background: #b9b9b9;
 }
 .bloc-confirmation div {
   display: flex;
@@ -428,7 +428,8 @@ section h2 {
   height: auto;
   width: 80%;
   font-size: 1rem;
-  padding: 8rem 0;
+  line-height: 2;
+  padding: 5rem 0;
   text-align: center;
 }
 

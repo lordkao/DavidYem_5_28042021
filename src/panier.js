@@ -2,8 +2,16 @@ const TeddieUrl = "http://localhost:3000/api/teddies/order"
 let listePanier = document.getElementById("panier")
 const id = localStorage.getItem("id")
 let retour = document.getElementById("retour")
-retour.href = "./produit.html?id="+id
-let myTotal = 0
+let btnRetour = document.querySelector("div #retour button.boutons__retour")
+console.log(btnRetour)
+if(localStorage.getItem("id") === null){
+    btnRetour.style.disabled = "true"
+    btnRetour.style.opacity = "0.4"
+}
+else{
+    retour.href = "./produit.html?id="+id
+}
+let finalTotal = 0
 let panier = document.getElementById("panier")
 let commande = JSON.parse(localStorage.getItem("panier"))
 let products = []
@@ -44,14 +52,15 @@ function total(){
             panier.appendChild(div)
             produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+article.prix
     
-            let finalTotal = myTotal += multi
-    
+            finalTotal += multi
+
             let totalPanier = document.getElementById("totalPanier")
             totalPanier.innerText = finalTotal+" €"
         }
+    localStorage.setItem("montant",JSON.stringify(finalTotal))
     }
 }
-total()
+total()/*Appel de la fonction total qui va venir matérialiser le panier*/
 console.log(products)
 /*Formulaire*/
 let firstName = document.getElementById("firstName")
@@ -84,10 +93,10 @@ function send(url,formulaire,id){
         alert(err)
     })
 }
-let contact
+let contact /*Déclaration de la variable contact vide*/
 form.addEventListener("submit",function(e){
     e.preventDefault()
-    /*Création du formulaire contact en enregistrant les informations du client*/
+    /*Création du formulaire en enregistrant les informations du client dans la variable contact*/
     contact = {
         firstName : firstName.value,
         lastName : lastName.value,
