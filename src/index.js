@@ -1,10 +1,8 @@
 const TeddieUrl = "http://localhost:3000/api/teddies"
-let remove = document.getElementById("remove")
-remove.addEventListener("click",()=>{
-    localStorage.clear()
-})
+
 getIndex()
 
+/*Création des cadres produits en fonctions des produits présent dans les données de l'API */
 function getIndex(){
     fetch(TeddieUrl)
         .then(function(res){
