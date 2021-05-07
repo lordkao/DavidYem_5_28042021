@@ -3,7 +3,7 @@ let listePanier = document.getElementById("panier")
 const id = localStorage.getItem("id")
 let retour = document.getElementById("retour")
 let btnRetour = document.querySelector("div #retour button.boutons__retour")
-console.log(btnRetour)
+/*Si aucun id n'est en mémoire sur le localStorage alors le bouton retour est désactivé.*/
 if(localStorage.getItem("id") === null){
     btnRetour.style.disabled = "true"
     btnRetour.style.opacity = "0.4"
@@ -11,6 +11,12 @@ if(localStorage.getItem("id") === null){
 else{
     retour.href = "./produit.html?id="+id
 }
+let remove = document.getElementById("remove")
+remove.addEventListener("click",()=>{
+    localStorage.removeItem("panier")
+})
+
+
 let finalTotal = 0
 let panier = document.getElementById("panier")
 let commande = JSON.parse(localStorage.getItem("panier"))
@@ -60,16 +66,8 @@ function total(){
     localStorage.setItem("montant",JSON.stringify(finalTotal))
     }
 }
-total()/*Appel de la fonction total qui va venir matérialiser le panier*/
+total()/*Appel de la fonction total qui va venir matérialiser le panier.*/
 console.log(products)
-/*Formulaire*/
-let firstName = document.getElementById("firstName")
-let lastName = document.getElementById("lastName")
-let address = document.getElementById("address")
-let city = document.getElementById("city")
-let email = document.getElementById("email")
-let form = document.getElementById("form")
-let confirmation = document.getElementById("confirmation")
 
 function send(url,formulaire,id){
     fetch(url,{
@@ -93,21 +91,101 @@ function send(url,formulaire,id){
         alert(err)
     })
 }
-let contact /*Déclaration de la variable contact vide*/
+
+/*Formulaire*/
+let firstName = document.getElementById("firstName")
+let lastName = document.getElementById("lastName")
+let address = document.getElementById("address")
+let city = document.getElementById("city")
+let email = document.getElementById("email")
+let form = document.getElementById("form")
+let confirmation = document.getElementById("confirmation")
+
+let contact /*Déclaration de la variable contact vide.*/
+let submitBtn = document.getElementById("submit")
+
+/*Création du bouton "Modifier".*/
+let modifier = document.createElement("button")
+modifier.classList.add("submit")
+modifier.style.display = "none"
+form.appendChild(modifier)
+modifier.innerText = "Modifier"
+
+/*Création du message de confirmation concernant les informations client. */
+let confirmSaveInfos = document.createElement("div")
+form.appendChild(confirmSaveInfos)
+confirmSaveInfos.innerText = "informations enregistrées"
+confirmSaveInfos.style.display = "none"
+
+
+/*Attente de la soumission du formulaire.*/
 form.addEventListener("submit",function(e){
     e.preventDefault()
-    /*Création du formulaire en enregistrant les informations du client dans la variable contact*/
-    contact = {
+    if(document.forms["form"]["firstName"].value === ""){
+        confirmSaveInfos.style.display = "none"
+        alert("Veuillez renseigner votre prénom.")
+        return 0
+    }
+    else if(document.forms["form"]["lastName"].value === ""){
+        confirmSaveInfos.style.display = "none"
+        alert("Veuillez renseigner votre nom.")
+        return 0
+    }
+    else if(document.forms["form"]["address"].value === ""){
+        confirmSaveInfos.style.display = "none"
+        alert("Veuillez renseigner votre adresse.")
+        return 0
+    }
+    else if(document.forms["form"]["city"].value === ""){
+        confirmSaveInfos.style.display = "none"
+        alert("Veuillez renseigner votre ville.")
+        return 0
+    }
+    else if(document.forms["form"]["email"].value === ""){
+        confirmSaveInfos.style.display = "none"
+        alert("Veuillez renseigner votre email.")
+        return 0
+    }
+    /*Création de l'objet Contact en enregistrant les informations du client dans la variable contact.*/
+    else{
+        contact = {
         firstName : firstName.value,
         lastName : lastName.value,
         address : address.value,
         city : city.value,
         email: email.value
-    }
-    console.log(contact)
+        }
+        firstName.setAttribute("disabled",true)
+        lastName.setAttribute("disabled",true)
+        address.setAttribute("disabled",true)
+        city.setAttribute("disabled",true)
+        email.setAttribute("disabled",true)
 
-    console.log("informations enregistrées")
+        confirmSaveInfos.style.display = "block"
+        submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
+        modifier.style.display = "block"
+
+        modifier.addEventListener("click",(e)=>{
+            e.preventDefault()
+            confirmSaveInfos.style.display = "none"
+            firstName.disabled = false
+            lastName.disabled = false
+            address.disabled = false
+            city.disabled = false
+            email.disabled = false
+            modifier.style.display = "none"
+            submitBtn.style.display = "block"
+           
+            })
+    }
+    console.log(contact)/*Affiche dans la console les informations enregistrées. */
+    console.log("informations enregistrées")/*Confirmation dans la console que les informations sont bien enregistrées. */
 })
+
+/*  Conditions pour verification avant envoi requête POST contenant l'objet contact et tableau products:
+    Si l'un des 2 objets ou même les 2 ne sont pas renseigner correctement,
+    alors une alert sera exécuter.
+*/
 confirmation.addEventListener("click",function(e){
     
     if(contact === undefined && products.length === 0){
@@ -123,8 +201,8 @@ confirmation.addEventListener("click",function(e){
         alert("Veillez à bien renseigner le formulaire et le valider,merci.")
     }
     else if(contact !== undefined && products.length !== 0){
-    send(TeddieUrl,contact,products)
+    send(TeddieUrl,contact,products)/*envoir de la requête POST vers l'API*/
     }
 })
+
 console.log(products)
-//firstName, lastName, address, city et email

@@ -1,3 +1,10 @@
+.panier-remove{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    @include auto($height:25px,$width:auto);
+    background: $color-tertiary;
+}
 .ton-panier{
     @include auto;
     @include font;
@@ -118,4 +125,9 @@
         text-decoration: none;
         font-size: 0.8rem;
     }
+}
+.submit{
+    @include btn;
+    margin: 1rem;
+    
 }

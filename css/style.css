@@ -247,6 +247,15 @@ section h2 {
   margin-left: 1rem;
 }
 
+.panier-remove {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  height: 25px;
+  width: auto;
+  background: linear-gradient(#e9d9ba, #a37979);
+}
+
 .ton-panier {
   height: auto;
   width: auto;
@@ -412,6 +421,12 @@ section h2 {
 .form__titre-formulaire {
   text-decoration: none;
   font-size: 0.8rem;
+}
+
+.submit {
+  padding: 0.7rem;
+  font-size: 0.7rem;
+  margin: 1rem;
 }
 
 .bloc-confirmation {
