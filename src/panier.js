@@ -182,7 +182,7 @@ form.addEventListener("submit",function(e){
     console.log("informations enregistrées")/*Confirmation dans la console que les informations sont bien enregistrées. */
 })
 
-/*  Conditions pour verification avant envoi de l'objet contact et tableau products:
+/*  Conditions pour verification avant envoi requête POST contenant l'objet contact et tableau products:
     Si l'un des 2 objets ou même les 2 ne sont pas renseigner correctement,
     alors une alert sera exécuter.
 */
@@ -201,7 +201,7 @@ confirmation.addEventListener("click",function(e){
         alert("Veillez à bien renseigner le formulaire et le valider,merci.")
     }
     else if(contact !== undefined && products.length !== 0){
-    send(TeddieUrl,contact,products)
+    send(TeddieUrl,contact,products)/*envoir de la requête POST vers l'API*/
     }
 })
 

@@ -97,30 +97,31 @@ ajouter.addEventListener("click",(e)=>{
     let index = panier.indexOf(eltTrouve)
     if(/^0/.test(quantite.value)){
         if(eltTrouve){
-            panier.splice(index,1)
+            panier.splice(index,1)/*Suppression de eltTrouve dans le tableau panier.*/
             localStorage.setItem("panier",JSON.stringify(panier))
         }
+        quantite.value = null
         alert("erreur de saisie")
     }
     else if(quantite.value != 0 && quantite.value >= 0){
        
         if(eltTrouve){
-           
             /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description,produit._id)
-            panier.splice(index,1,produitCommande)*/ 
+            panier.splice(index,1,produitCommande)*/
             eltTrouve.quantite = quantite.value
-            localStorage.setItem("panier",JSON.stringify(panier))
+            localStorage.setItem("panier",JSON.stringify(panier))/*Mise à jour du panier avec la nouvelle quantité renseignée.*/
 
             console.log(eltTrouve)
             console.log(panier)
             console.log("Le tableau contient cet élément")
         }
-        else{
+        else{/*Création d'un nouvel objet dans le panier.*/
             let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description,produit._id)
             panier.push(produitCommande)
             localStorage.setItem("panier",JSON.stringify(panier))
             console.log(panier)
         }
+        
     }
     else if(quantite.value <= 0 || quantite.value == 0){
         if(eltTrouve){
