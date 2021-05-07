@@ -30,8 +30,10 @@ function total(){
     }
     else{
         for (let article of commande){/*Boucle dans le tableau "commande" en créant des éléments html qui vont contenir les informations de la commande */
-
-            products.push(article._id)
+            for(let i=0;i < article.quantite;i++){
+                products.push(article._id)
+            }
+            console.log(products)
             
             let multi = (article.prix*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
 
