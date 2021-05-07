@@ -17,6 +17,6 @@
 @mixin small-shadow($shadow:0.2rem,$color:grey){
     box-shadow: $shadow $shadow $shadow $color;
 }
-@mixin font($font:1rem){
+@mixin font($font:1.4rem){
     font-size:$font;
 }

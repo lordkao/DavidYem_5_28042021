@@ -115,6 +115,7 @@ modifier.innerText = "Modifier"
 
 /*Création du message de confirmation concernant les informations client. */
 let confirmSaveInfos = document.createElement("div")
+confirmSaveInfos.classList.add("infos-save")
 form.appendChild(confirmSaveInfos)
 confirmSaveInfos.innerText = "informations enregistrées"
 confirmSaveInfos.style.display = "none"
@@ -166,9 +167,10 @@ form.addEventListener("submit",function(e){
         confirmSaveInfos.style.display = "block"
         submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
         modifier.style.display = "block"
-
+        confirmation.disabled = false /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
         modifier.addEventListener("click",(e)=>{
             e.preventDefault()
+            confirmation.disabled = true /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
             confirmSaveInfos.style.display = "none"
             firstName.disabled = false
             lastName.disabled = false

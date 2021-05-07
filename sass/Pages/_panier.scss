@@ -21,7 +21,7 @@
 }
 .liste-panier{
     @include auto;
-    @include font($font:0.7rem);
+    @include font;
     margin-bottom: 1rem;
 }
 
@@ -44,20 +44,22 @@
         padding: 1rem 1rem 0 1rem;
         margin: 0 1rem 0rem 1rem;
         background-color: white;
-        line-height: 1.5;
     }
     &__prix-total-article{
         @include auto($width:100%);
-        @include flex($content:center);
         margin-top: 0.5rem;
         &--total-article{
-            @include auto($height:20px,$width:35%);
-            @include flex;
+            @include auto($height:30px);
+            @include flex($content:left);
+            margin: 1rem;
+            padding: 0.2rem;
             border: 1px $color-secondary solid;
         }
         &--prix-total{
-            @include auto($height:20px,$width:35%);
-            @include flex;
+            @include auto($height:30px);
+            @include flex($content:left);
+            margin: 1rem;
+            padding: 0.2rem;
             border: 1px $color-secondary solid;
         }
     }
@@ -71,29 +73,41 @@
 }
 
 .boutons{
-    @include flex($content:space-around);
-    @include auto($width:80%);
+    @include flex($content:space-between);
+    @include auto;
     padding: 0.5rem;
     margin-bottom: 1rem;
     &__retour{
-        @include btn;
+        width: 15%;
+        & button{
+            @include btn;
+        }
     }
     &__accueil{
-        @include btn;
+        width: 15%;
+        & button{
+            @include btn;
+        }
     }
     &__confirmation{
-        @include btn;
-        margin-left: 2rem;
+        width: 40%;
+        & button{
+            @include btn;
+        }
     }
 }
 .total-panier{
-    @include auto($height:80px,$width:70%);
+    @include auto;
     @include flex($direction:column);
-    @include font($font:0.8rem);
     border: 1px black solid;
     align-self: center;
     margin: 1rem 0;
+    & p{
+        @include font;
+        padding: 0.5rem;
+    }
     & div{
+        @include font;
         margin-bottom: 1rem;
     }
 }
@@ -108,14 +122,17 @@
     @include border-radius($radius:1rem);
     margin: 1rem;
     padding: 1rem 0;
-    & p{
+    & div{
         @include flex;
+        margin-bottom: 0.7rem;
+        @include font;
         width: 100%;
         & label{
             display: inline-block;
-            @include auto($width:12%);
-            text-align: right;
+            @include auto($width:30%);
+            text-align: center;
             margin-right:0.5rem ;
+            @include font;
         }
         & input{
             @include auto($width:60%);
@@ -123,11 +140,14 @@
     }
     &__titre-formulaire{
         text-decoration: none;
-        font-size: 0.8rem;
+        @include font;
     }
 }
 .submit{
     @include btn;
     margin: 1rem;
     
+}
+.infos-save{
+    text-align: center;
 }

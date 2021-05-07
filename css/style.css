@@ -57,7 +57,7 @@ footer ul li a {
 }
 
 .text {
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin: 0;
   padding: 1rem;
   font-weight: bold;
@@ -107,7 +107,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.4rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 .cadre-produit__prix {
@@ -117,7 +117,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.4rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 
@@ -163,7 +163,7 @@ section h2 {
 .produit-description {
   height: 60%;
   width: auto;
-  font-size: 1rem;
+  font-size: 1.4rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -215,8 +215,10 @@ section h2 {
   order: 4;
 }
 .produit-description__retour:nth-child(5) button {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
 }
 .produit-description__ajouter:nth-child(6) {
   height: 20%;
@@ -224,8 +226,10 @@ section h2 {
   order: 5;
 }
 .produit-description__ajouter:nth-child(6) button {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
 }
 .produit-description__panier:nth-child(7) {
   height: 20%;
@@ -233,8 +237,10 @@ section h2 {
   order: 6;
 }
 .produit-description__panier:nth-child(7) button {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
 }
 .produit-description__selection--quantite {
   width: 2rem;
@@ -259,7 +265,7 @@ section h2 {
 .ton-panier {
   height: auto;
   width: auto;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-align: center;
   margin: 1rem;
   border: 2px #f2f2f2 solid;
@@ -275,7 +281,7 @@ section h2 {
 .liste-panier {
   height: auto;
   width: auto;
-  font-size: 0.7rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
@@ -303,33 +309,32 @@ section h2 {
   padding: 1rem 1rem 0 1rem;
   margin: 0 1rem 0rem 1rem;
   background-color: white;
-  line-height: 1.5;
 }
 .detail__prix-total-article {
   height: auto;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin-top: 0.5rem;
 }
 .detail__prix-total-article--total-article {
-  height: 20px;
-  width: 35%;
+  height: 30px;
+  width: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  margin: 1rem;
+  padding: 0.2rem;
   border: 1px #b9b9b9 solid;
 }
 .detail__prix-total-article--prix-total {
-  height: 20px;
-  width: 35%;
+  height: 30px;
+  width: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  margin: 1rem;
+  padding: 0.2rem;
   border: 1px #b9b9b9 solid;
 }
 .detail::after {
@@ -343,40 +348,58 @@ section h2 {
 .boutons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: auto;
-  width: 80%;
+  width: auto;
   padding: 0.5rem;
   margin-bottom: 1rem;
 }
 .boutons__retour {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  width: 15%;
+}
+.boutons__retour button {
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
 }
 .boutons__accueil {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  width: 15%;
+}
+.boutons__accueil button {
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
 }
 .boutons__confirmation {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-  margin-left: 2rem;
+  width: 40%;
+}
+.boutons__confirmation button {
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
 }
 
 .total-panier {
-  height: 80px;
-  width: 70%;
+  height: auto;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
   border: 1px black solid;
   align-self: center;
   margin: 1rem 0;
 }
+.total-panier p {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
 .total-panier div {
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
@@ -400,33 +423,42 @@ section h2 {
   margin: 1rem;
   padding: 1rem 0;
 }
-.form p {
+.form div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0.7rem;
+  font-size: 1.4rem;
   width: 100%;
 }
-.form p label {
+.form div label {
   display: inline-block;
   height: auto;
-  width: 12%;
-  text-align: right;
+  width: 30%;
+  text-align: center;
   margin-right: 0.5rem;
+  font-size: 1.4rem;
 }
-.form p input {
+.form div input {
   height: auto;
   width: 60%;
 }
 .form__titre-formulaire {
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1.4rem;
 }
 
 .submit {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: auto;
+  width: auto;
+  padding: 0.3rem;
+  font-size: 1.4rem;
   margin: 1rem;
+}
+
+.infos-save {
+  text-align: center;
 }
 
 .bloc-confirmation {
@@ -446,7 +478,7 @@ section h2 {
 .bloc-confirmation div p {
   height: auto;
   width: 80%;
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 2;
   padding: 5rem 0;
   text-align: center;

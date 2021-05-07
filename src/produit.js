@@ -103,6 +103,9 @@ ajouter.addEventListener("click",(e)=>{
         quantite.value = null
         alert("erreur de saisie")
     }
+    else if(quantite.value > 100){
+        alert("La quantité saisie est trop élevée.")
+    }
     else if(quantite.value != 0 && quantite.value >= 0){
        
         if(eltTrouve){

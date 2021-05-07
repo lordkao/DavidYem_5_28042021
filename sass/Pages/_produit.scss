@@ -11,7 +11,7 @@
 }
 .produit-description{
     @include auto($height:60%);
-    @include font($font:1rem);
+    @include font;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
