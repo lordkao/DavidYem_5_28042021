@@ -1,7 +1,8 @@
 .bloc-confirmation{
-    @include auto;
+    @include auto($height:500px);
+    @include flex;
     & div{
-        @include flex;
+        @include flex($direction:column);
         & p{
         @include auto($width: 80%);
         @include font;
