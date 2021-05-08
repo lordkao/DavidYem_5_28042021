@@ -1,5 +1,8 @@
-body {
+html {
   font-size: 62.5%;
+}
+
+body {
   margin: 0;
 }
 
@@ -38,7 +41,7 @@ footer ul {
 }
 footer ul li {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 footer ul li a {
   text-decoration: none;
@@ -57,7 +60,7 @@ footer ul li a {
 }
 
 .text {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 0;
   padding: 1rem;
   font-weight: bold;
@@ -107,7 +110,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 .cadre-produit__prix {
@@ -117,7 +120,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 
@@ -148,7 +151,7 @@ section h2 {
   height: 500px;
   width: auto;
   background-color: whitesmoke;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 }
 
 .produit-photo {
@@ -163,7 +166,7 @@ section h2 {
 .produit-description {
   height: 60%;
   width: auto;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -215,10 +218,9 @@ section h2 {
   order: 4;
 }
 .produit-description__retour:nth-child(5) button {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
 }
 .produit-description__ajouter:nth-child(6) {
   height: 20%;
@@ -226,10 +228,9 @@ section h2 {
   order: 5;
 }
 .produit-description__ajouter:nth-child(6) button {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
 }
 .produit-description__panier:nth-child(7) {
   height: 20%;
@@ -237,16 +238,17 @@ section h2 {
   order: 6;
 }
 .produit-description__panier:nth-child(7) button {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
 }
 .produit-description__selection--quantite {
-  width: 2rem;
+  width: 3rem;
+  font-size: 1.6rem;
 }
 .produit-description__selection--selection {
   margin-right: 1rem;
+  font-size: 1.6rem;
 }
 
 #nom {
@@ -265,7 +267,7 @@ section h2 {
 .ton-panier {
   height: auto;
   width: auto;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: center;
   margin: 1rem;
   border: 2px #f2f2f2 solid;
@@ -281,7 +283,7 @@ section h2 {
 .liste-panier {
   height: auto;
   width: auto;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
@@ -359,28 +361,25 @@ section h2 {
   width: 15%;
 }
 .boutons__retour button {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
 }
 .boutons__accueil {
   width: 15%;
 }
 .boutons__accueil button {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
 }
 .boutons__confirmation {
   width: 40%;
 }
 .boutons__confirmation button {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
 }
 
 .total-panier {
@@ -395,11 +394,11 @@ section h2 {
   margin: 1rem 0;
 }
 .total-panier p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding: 0.5rem;
 }
 .total-panier div {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
@@ -429,7 +428,7 @@ section h2 {
   justify-content: center;
   align-items: center;
   margin-bottom: 0.7rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 100%;
 }
 .form div label {
@@ -438,7 +437,7 @@ section h2 {
   width: 30%;
   text-align: center;
   margin-right: 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 .form div input {
   height: auto;
@@ -446,14 +445,13 @@ section h2 {
 }
 .form__titre-formulaire {
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .submit {
-  height: auto;
-  width: auto;
-  padding: 0.3rem;
-  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
   margin: 1rem;
 }
 
@@ -478,7 +476,7 @@ section h2 {
 .bloc-confirmation div p {
   height: auto;
   width: 80%;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 2;
   padding: 5rem 0;
   text-align: center;

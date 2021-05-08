@@ -1,7 +1,7 @@
 .presentation-produit{
     @include auto($height:500px);
     background-color: whitesmoke;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
 }
 .produit-photo{
     @include auto($height:40%);
@@ -74,10 +74,12 @@
     }
     &__selection{
         &--quantite{
-            width: 2rem;
+            width: 3rem;
+            @include font;
         }
         &--selection{
             margin-right: 1rem;
+            @include font;
         }
     }
 }
