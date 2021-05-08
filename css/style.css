@@ -12,12 +12,12 @@ section {
 }
 
 header {
+  position: relative;
   height: auto;
   width: auto;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 header h1 {
-  position: relative;
   margin: 0;
   padding: 1rem;
   text-align: center;
@@ -213,33 +213,36 @@ section h2 {
   order: 3;
 }
 .produit-description__retour:nth-child(5) {
-  height: 20%;
+  height: auto;
   width: 25%;
   order: 4;
 }
 .produit-description__retour:nth-child(5) button {
-  height: 100%;
+  height: 6rem;
   width: 100%;
+  padding: 1rem;
   font-size: 1.6rem;
 }
 .produit-description__ajouter:nth-child(6) {
-  height: 20%;
+  height: auto;
   width: 40%;
   order: 5;
 }
 .produit-description__ajouter:nth-child(6) button {
-  height: 100%;
+  height: 6rem;
   width: 100%;
+  padding: 1rem;
   font-size: 1.6rem;
 }
 .produit-description__panier:nth-child(7) {
-  height: 20%;
+  height: auto;
   width: 25%;
   order: 6;
 }
 .produit-description__panier:nth-child(7) button {
-  height: 100%;
+  height: 6rem;
   width: 100%;
+  padding: 1rem;
   font-size: 1.6rem;
 }
 .produit-description__selection--quantite {
@@ -256,12 +259,12 @@ section h2 {
 }
 
 .panier-remove {
-  position: absolute;
-  top: 0;
-  right: 0px;
+  align-self: flex-end;
+  margin: 1rem;
   height: 25px;
   width: auto;
-  background: linear-gradient(#e9d9ba, #a37979);
+  border-radius: 0.5rem;
+  background: #f3f37d;
 }
 
 .ton-panier {
@@ -274,7 +277,7 @@ section h2 {
   border-radius: 1rem;
   box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
 }
-.ton-panier > p {
+.ton-panier > h1 {
   margin: 0;
   padding: 1rem;
   text-decoration: underline;
@@ -285,6 +288,16 @@ section h2 {
   width: auto;
   font-size: 1.6rem;
   margin-bottom: 1rem;
+}
+
+.panier-vide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 160px;
+  width: auto;
 }
 
 .detail {
@@ -324,9 +337,10 @@ section h2 {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  border-radius: 0.5rem;
   margin: 1rem;
-  padding: 0.2rem;
-  border: 1px #b9b9b9 solid;
+  padding-left: 1rem;
+  border: 2px #b9b9b9 solid;
 }
 .detail__prix-total-article--prix-total {
   height: 30px;
@@ -335,9 +349,10 @@ section h2 {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  border-radius: 0.5rem;
   margin: 1rem;
-  padding: 0.2rem;
-  border: 1px #b9b9b9 solid;
+  padding-left: 1rem;
+  border: 2px #b9b9b9 solid;
 }
 .detail::after {
   content: "";
@@ -350,36 +365,47 @@ section h2 {
 .boutons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: auto;
-  width: auto;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-.boutons__retour {
-  width: 15%;
-}
-.boutons__retour button {
-  height: 100%;
   width: 100%;
-  font-size: 1.6rem;
+  flex-wrap: wrap;
+  margin: 1rem;
 }
-.boutons__accueil {
-  width: 15%;
+.boutons__retour:nth-child(1) {
+  width: 30%;
+  order: 2;
 }
-.boutons__accueil button {
-  height: 100%;
+.boutons__retour:nth-child(1) button {
+  height: 6rem;
   width: 100%;
+  padding: 1rem;
   font-size: 1.6rem;
+  height: auto;
 }
-.boutons__confirmation {
-  width: 40%;
+.boutons__accueil:nth-child(2) {
+  width: 30%;
+  order: 3;
 }
-.boutons__confirmation button {
-  height: 100%;
+.boutons__accueil:nth-child(2) button {
+  height: 6rem;
   width: 100%;
+  padding: 1rem;
   font-size: 1.6rem;
+  height: auto;
+}
+.boutons__confirmation:nth-child(3) {
+  width: 60%;
+  margin: 0 20%;
+  order: 1;
+}
+.boutons__confirmation:nth-child(3) button {
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: auto;
+  margin: 1rem 0;
 }
 
 .total-panier {
@@ -392,6 +418,8 @@ section h2 {
   border: 1px black solid;
   align-self: center;
   margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 .total-panier p {
   font-size: 1.6rem;
@@ -427,30 +455,43 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   font-size: 1.6rem;
   width: 100%;
 }
 .form div label {
   display: inline-block;
   height: auto;
-  width: 30%;
+  width: 20%;
   text-align: center;
   margin-right: 0.5rem;
   font-size: 1.6rem;
 }
 .form div input {
   height: auto;
-  width: 60%;
+  width: 70%;
+  margin-right: 1rem;
+  font-size: 1.6rem;
 }
 .form__titre-formulaire {
   text-decoration: none;
   font-size: 1.6rem;
+  height: auto;
+  width: auto;
+  padding: 0 2rem;
 }
 
 .submit {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
+  font-size: 1.6rem;
+  margin: 1rem;
+  margin-left: 4rem;
+}
+
+.modifier {
+  height: auto;
+  width: auto;
   font-size: 1.6rem;
   margin: 1rem;
 }
@@ -460,7 +501,7 @@ section h2 {
 }
 
 .bloc-confirmation {
-  height: 500px;
+  height: 530px;
   width: auto;
   display: flex;
   flex-direction: row;
@@ -476,10 +517,29 @@ section h2 {
 .bloc-confirmation div p {
   height: auto;
   width: 80%;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 2;
   padding: 5rem 0;
   text-align: center;
+}
+.bloc-confirmation div a {
+  height: auto;
+  width: auto;
+}
+.bloc-confirmation div a button {
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: auto;
+}
+
+#numeroDeCommande {
+  font-size: 2.2rem;
+}
+
+#montant {
+  font-size: 2.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

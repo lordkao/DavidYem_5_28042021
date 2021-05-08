@@ -24,7 +24,11 @@ let products = []
 
 function total(){
     if(localStorage.getItem("panier") === null){
-        panier.innerText = "Votre panier est vide"
+        
+        let panierVide = document.createElement("div")
+        panierVide.classList.add("panier-vide")
+        panier.appendChild(panierVide)
+        panierVide.innerText = "Votre panier est vide"
         let formulaire = document.getElementById("form")
         formulaire.style.display = "none"
     }
@@ -108,7 +112,7 @@ let submitBtn = document.getElementById("submit")
 
 /*Création du bouton "Modifier".*/
 let modifier = document.createElement("button")
-modifier.classList.add("submit")
+modifier.classList.add("modifier")
 modifier.style.display = "none"
 form.appendChild(modifier)
 modifier.innerText = "Modifier"

@@ -49,24 +49,21 @@
         order: 3;
     }
     &__retour:nth-child(5){
-        height: 20%;
-        width: 25%;
+        @include auto($width:25%);
         order: 4;
         & button{
             @include btn;
         }
     }
     &__ajouter:nth-child(6){
-        height: 20%;
-        width: 40%;
+        @include auto($width:40%);
         order: 5;
         & button{
            @include btn;
         }
     }
     &__panier:nth-child(7){
-        height: 20%;
-        width: 25%;
+        @include auto($width:25%);
         order: 6;
         & button{
             @include btn;

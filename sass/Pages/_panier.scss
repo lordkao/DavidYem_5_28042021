@@ -1,9 +1,9 @@
 .panier-remove{
-    position: absolute;
-    top: 0;
-    right: 0px;
+    align-self: flex-end;
+    margin: 1rem;
     @include auto($height:25px,$width:auto);
-    background: $color-tertiary;
+    @include border-radius;
+    background: $color-warning;
 }
 .ton-panier{
     @include auto;
@@ -13,7 +13,7 @@
     border: 2px #f2f2f2 solid;
     @include border-radius($radius:1rem);
     @include box-shadow($smoke:1rem);
-    & > p{
+    & > h1{
         margin: 0;
         padding: 1rem;
         text-decoration: underline;
@@ -24,7 +24,11 @@
     @include font;
     margin-bottom: 1rem;
 }
-
+.panier-vide{
+    @include flex;
+    @include font($font:2rem);
+    @include auto($height:160px);
+}
 .detail{
     @include flex($direction:column);
     width:auto ;
@@ -47,20 +51,22 @@
     }
     &__prix-total-article{
         @include auto($width:100%);
-        margin-top: 0.5rem;
+        margin-top: 0.5rem;        
         &--total-article{
             @include auto($height:30px);
             @include flex($content:left);
+            @include border-radius;
             margin: 1rem;
-            padding: 0.2rem;
-            border: 1px $color-secondary solid;
+            padding-left: 1rem;
+            border: 2px $color-secondary solid;
         }
         &--prix-total{
             @include auto($height:30px);
             @include flex($content:left);
+            @include border-radius;
             margin: 1rem;
-            padding: 0.2rem;
-            border: 1px $color-secondary solid;
+            padding-left: 1rem;
+            border: 2px $color-secondary solid;
         }
     }
     &::after{
@@ -73,26 +79,34 @@
 }
 
 .boutons{
-    @include flex($content:space-between);
-    @include auto;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    &__retour{
-        width: 15%;
+    @include flex;
+    @include auto($width:100%);
+    flex-wrap: wrap;
+    margin: 1rem;
+    &__retour:nth-child(1){
+        width: 30%;
+        order: 2;
         & button{
             @include btn;
+            height: auto;
         }
     }
-    &__accueil{
-        width: 15%;
+    &__accueil:nth-child(2){
+        width: 30%;
+        order: 3;
         & button{
             @include btn;
+            height: auto;
         }
     }
-    &__confirmation{
-        width: 40%;
+    &__confirmation:nth-child(3){
+        width: 60%;
+        margin: 0 20%;
+        order: 1;
         & button{
             @include btn;
+            height: auto;
+            margin: 1rem 0;
         }
     }
 }
@@ -102,6 +116,8 @@
     border: 1px black solid;
     align-self: center;
     margin: 1rem 0;
+    padding: 1rem;
+    @include border-radius;
     & p{
         @include font;
         padding: 0.5rem;
@@ -124,29 +140,39 @@
     padding: 1rem 0;
     & div{
         @include flex;
-        margin-bottom: 0.7rem;
+        margin-bottom: 1rem;
         @include font;
         width: 100%;
         & label{
             display: inline-block;
-            @include auto($width:30%);
+            @include auto($width:20%);
             text-align: center;
             margin-right:0.5rem ;
             @include font;
         }
         & input{
-            @include auto($width:60%);
+            @include auto($width:70%);
+            margin-right:1rem;
+            @include font;
         }
     }
     &__titre-formulaire{
         text-decoration: none;
         @include font;
+        @include auto;
+        padding: 0 2rem;
     }
 }
 .submit{
-    @include btn;
+    @include auto;
+    @include font;
     margin: 1rem;
-    
+    margin-left: 4rem;
+}
+.modifier{
+    @include auto;
+    @include font;
+    margin: 1rem;
 }
 .infos-save{
     text-align: center;

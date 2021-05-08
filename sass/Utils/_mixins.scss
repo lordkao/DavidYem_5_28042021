@@ -20,7 +20,7 @@
 @mixin font($font:1.6rem){
     font-size:$font;
 }
-@mixin full{
-    height: 100%;
-    width: 100%;
+@mixin full($height:100%,$width:100%){
+    height: $height;
+    width: $width;
 }
