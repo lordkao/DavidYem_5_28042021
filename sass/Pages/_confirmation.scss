@@ -1,15 +1,27 @@
 .bloc-confirmation{
-    @include auto($height:500px);
+    @include auto($height:530px);
     @include flex;
     & div{
         @include flex($direction:column);
         & p{
         @include auto($width: 80%);
-        @include font;
+        @include font($font:2rem);
         line-height: 2;
         padding: 5rem 0;
         text-align: center;
+        }
+        & a{
+            @include auto;
+            & button{
+                @include btn;
+                height: auto;
+            }
+        }
     }
-    }
-    
+}
+#numeroDeCommande{
+    @include font($font:2.2rem);
+}
+#montant{
+    @include font($font:2.2rem);
 }

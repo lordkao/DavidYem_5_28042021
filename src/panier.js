@@ -24,14 +24,20 @@ let products = []
 
 function total(){
     if(localStorage.getItem("panier") === null){
-        panier.innerText = "Votre panier est vide"
+        
+        let panierVide = document.createElement("div")
+        panierVide.classList.add("panier-vide")
+        panier.appendChild(panierVide)
+        panierVide.innerText = "Votre panier est vide"
         let formulaire = document.getElementById("form")
         formulaire.style.display = "none"
     }
     else{
         for (let article of commande){/*Boucle dans le tableau "commande" en créant des éléments html qui vont contenir les informations de la commande */
-
-            products.push(article._id)
+            for(let i=0;i < article.quantite;i++){
+                products.push(article._id)
+            }
+            console.log(products)
             
             let multi = (article.prix*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
 
@@ -106,13 +112,14 @@ let submitBtn = document.getElementById("submit")
 
 /*Création du bouton "Modifier".*/
 let modifier = document.createElement("button")
-modifier.classList.add("submit")
+modifier.classList.add("modifier")
 modifier.style.display = "none"
 form.appendChild(modifier)
 modifier.innerText = "Modifier"
 
 /*Création du message de confirmation concernant les informations client. */
 let confirmSaveInfos = document.createElement("div")
+confirmSaveInfos.classList.add("infos-save")
 form.appendChild(confirmSaveInfos)
 confirmSaveInfos.innerText = "informations enregistrées"
 confirmSaveInfos.style.display = "none"
@@ -164,9 +171,10 @@ form.addEventListener("submit",function(e){
         confirmSaveInfos.style.display = "block"
         submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
         modifier.style.display = "block"
-
+        confirmation.disabled = false /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
         modifier.addEventListener("click",(e)=>{
             e.preventDefault()
+            confirmation.disabled = true /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
             confirmSaveInfos.style.display = "none"
             firstName.disabled = false
             lastName.disabled = false

@@ -5,7 +5,7 @@
     background-size:100%;
 }
 .text{
-    @include font;
+    @include font($font:1.6rem);
     margin: 0;
     padding: 1rem;
     font-weight: bold;

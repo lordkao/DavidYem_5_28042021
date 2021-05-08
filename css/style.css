@@ -1,5 +1,8 @@
-body {
+html {
   font-size: 62.5%;
+}
+
+body {
   margin: 0;
 }
 
@@ -9,12 +12,12 @@ section {
 }
 
 header {
+  position: relative;
   height: auto;
   width: auto;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 header h1 {
-  position: relative;
   margin: 0;
   padding: 1rem;
   text-align: center;
@@ -38,7 +41,7 @@ footer ul {
 }
 footer ul li {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 footer ul li a {
   text-decoration: none;
@@ -57,7 +60,7 @@ footer ul li a {
 }
 
 .text {
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin: 0;
   padding: 1rem;
   font-weight: bold;
@@ -107,7 +110,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.6rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 .cadre-produit__prix {
@@ -117,7 +120,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.6rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 
@@ -148,7 +151,7 @@ section h2 {
   height: 500px;
   width: auto;
   background-color: whitesmoke;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 }
 
 .produit-photo {
@@ -163,7 +166,7 @@ section h2 {
 .produit-description {
   height: 60%;
   width: auto;
-  font-size: 1rem;
+  font-size: 1.6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -210,37 +213,45 @@ section h2 {
   order: 3;
 }
 .produit-description__retour:nth-child(5) {
-  height: 20%;
+  height: auto;
   width: 25%;
   order: 4;
 }
 .produit-description__retour:nth-child(5) button {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 .produit-description__ajouter:nth-child(6) {
-  height: 20%;
+  height: auto;
   width: 40%;
   order: 5;
 }
 .produit-description__ajouter:nth-child(6) button {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 .produit-description__panier:nth-child(7) {
-  height: 20%;
+  height: auto;
   width: 25%;
   order: 6;
 }
 .produit-description__panier:nth-child(7) button {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 .produit-description__selection--quantite {
-  width: 2rem;
+  width: 3rem;
+  font-size: 1.6rem;
 }
 .produit-description__selection--selection {
   margin-right: 1rem;
+  font-size: 1.6rem;
 }
 
 #nom {
@@ -248,25 +259,25 @@ section h2 {
 }
 
 .panier-remove {
-  position: absolute;
-  top: 0;
-  right: 0px;
+  align-self: flex-end;
+  margin: 1rem;
   height: 25px;
   width: auto;
-  background: linear-gradient(#e9d9ba, #a37979);
+  border-radius: 0.5rem;
+  background: #f3f37d;
 }
 
 .ton-panier {
   height: auto;
   width: auto;
-  font-size: 1rem;
+  font-size: 1.6rem;
   text-align: center;
   margin: 1rem;
   border: 2px #f2f2f2 solid;
   border-radius: 1rem;
   box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
 }
-.ton-panier > p {
+.ton-panier > h1 {
   margin: 0;
   padding: 1rem;
   text-decoration: underline;
@@ -275,8 +286,18 @@ section h2 {
 .liste-panier {
   height: auto;
   width: auto;
-  font-size: 0.7rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
+}
+
+.panier-vide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 160px;
+  width: auto;
 }
 
 .detail {
@@ -303,34 +324,35 @@ section h2 {
   padding: 1rem 1rem 0 1rem;
   margin: 0 1rem 0rem 1rem;
   background-color: white;
-  line-height: 1.5;
 }
 .detail__prix-total-article {
   height: auto;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin-top: 0.5rem;
 }
 .detail__prix-total-article--total-article {
-  height: 20px;
-  width: 35%;
+  height: 30px;
+  width: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  border: 1px #b9b9b9 solid;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding-left: 1rem;
+  border: 2px #b9b9b9 solid;
 }
 .detail__prix-total-article--prix-total {
-  height: 20px;
-  width: 35%;
+  height: 30px;
+  width: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  border: 1px #b9b9b9 solid;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding-left: 1rem;
+  border: 2px #b9b9b9 solid;
 }
 .detail::after {
   content: "";
@@ -343,40 +365,68 @@ section h2 {
 .boutons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: auto;
-  width: 80%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 1rem;
 }
-.boutons__retour {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+.boutons__retour:nth-child(1) {
+  width: 30%;
+  order: 2;
 }
-.boutons__accueil {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+.boutons__retour:nth-child(1) button {
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: auto;
 }
-.boutons__confirmation {
-  padding: 0.7rem;
-  font-size: 0.7rem;
-  margin-left: 2rem;
+.boutons__accueil:nth-child(2) {
+  width: 30%;
+  order: 3;
+}
+.boutons__accueil:nth-child(2) button {
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: auto;
+}
+.boutons__confirmation:nth-child(3) {
+  width: 60%;
+  margin: 0 20%;
+  order: 1;
+}
+.boutons__confirmation:nth-child(3) button {
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: auto;
+  margin: 1rem 0;
 }
 
 .total-panier {
-  height: 80px;
-  width: 70%;
+  height: auto;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
   border: 1px black solid;
   align-self: center;
   margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.total-panier p {
+  font-size: 1.6rem;
+  padding: 0.5rem;
 }
 .total-panier div {
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
@@ -400,37 +450,58 @@ section h2 {
   margin: 1rem;
   padding: 1rem 0;
 }
-.form p {
+.form div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
   width: 100%;
 }
-.form p label {
+.form div label {
   display: inline-block;
   height: auto;
-  width: 12%;
-  text-align: right;
+  width: 20%;
+  text-align: center;
   margin-right: 0.5rem;
+  font-size: 1.6rem;
 }
-.form p input {
+.form div input {
   height: auto;
-  width: 60%;
+  width: 70%;
+  margin-right: 1rem;
+  font-size: 1.6rem;
 }
 .form__titre-formulaire {
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1.6rem;
+  height: auto;
+  width: auto;
+  padding: 0 2rem;
 }
 
 .submit {
-  padding: 0.7rem;
-  font-size: 0.7rem;
+  height: auto;
+  width: auto;
+  font-size: 1.6rem;
+  margin: 1rem;
+  margin-left: 4rem;
+}
+
+.modifier {
+  height: auto;
+  width: auto;
+  font-size: 1.6rem;
   margin: 1rem;
 }
 
+.infos-save {
+  text-align: center;
+}
+
 .bloc-confirmation {
-  height: 500px;
+  height: 530px;
   width: auto;
   display: flex;
   flex-direction: row;
@@ -446,10 +517,29 @@ section h2 {
 .bloc-confirmation div p {
   height: auto;
   width: 80%;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 2;
   padding: 5rem 0;
   text-align: center;
+}
+.bloc-confirmation div a {
+  height: auto;
+  width: auto;
+}
+.bloc-confirmation div a button {
+  height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: auto;
+}
+
+#numeroDeCommande {
+  font-size: 2.2rem;
+}
+
+#montant {
+  font-size: 2.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
