@@ -1037,12 +1037,24 @@ section h2 {
 }
 
 .bloc-confirmation {
-  height: 530px;
+  height: 550px;
   width: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .bloc-confirmation {
+    height: 570px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .bloc-confirmation {
+    height: 730px;
+    width: auto;
+  }
 }
 .bloc-confirmation div {
   display: flex;
@@ -1058,6 +1070,11 @@ section h2 {
   padding: 5rem 0;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .bloc-confirmation div p {
+    font-size: 2.5rem;
+  }
+}
 .bloc-confirmation div a {
   height: auto;
   width: auto;
@@ -1068,7 +1085,6 @@ section h2 {
   margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
-  height: auto;
 }
 
 #numeroDeCommande {
