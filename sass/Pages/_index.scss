@@ -2,24 +2,74 @@
     @include flex($items:flex-start);
     @include auto($height: 300px);
     background:url("../ours-presentation.png") no-repeat;
-    background-size:100%;
+    background-size:100% 100%;
+    @media screen and(min-width:375px){
+        @include auto($height: 350px);
+    }
+    @media screen and(min-width:425px){
+        @include auto($height: 400px);
+    }
+    @media screen and(min-width:600px){
+        @include auto($height: 470px);
+    }
+    @media screen and(min-width:768px){
+        @include auto($height: 550px);
+    }
+    &__text{
+        @include font;
+        margin: 0;
+        padding: 1rem;
+        font-weight: bold;
+        @media screen and(min-width:375px){
+            @include font($font:map-get($font-size,medium));
+        }
+        @media screen and(min-width:600px){
+            @include font($font:map-get($font-size,large));
+        }
+        @media screen and(min-width:768px){
+            @include font($font:map-get($font-size,extra));
+        }
+    }
 }
-.text{
-    @include font($font:1.6rem);
-    margin: 0;
-    padding: 1rem;
-    font-weight: bold;
-}
+
 section h2{
     text-align: center;
     text-decoration: underline;
+    @include font;
+    @media screen and(min-width:425px){
+        @include font(map-get($font-size,medium));
+    }
+    @media screen and(min-width:600px){
+        @include font(map-get($font-size,large));
+    }
+    @media screen and(min-width:768px){
+        @include font(map-get($font-size,extra));
+    }
 }
 .cadre{
-    margin: 2rem 1rem;
+    margin: 2rem 2rem;
     @include auto($height:250px);
     @include box-shadow($smoke:0.5rem);
-    @include border-radius;
+    @include border-radius($radius:2rem);
     overflow: hidden;
+    @media screen and( min-width:375px){
+        @include auto($height:300px);
+    }
+    @media screen and(min-width:425px){
+        @include auto($height:350px);
+        @include border-radius($radius:4rem);
+        margin: 2rem 2.5rem;
+    }
+    @media screen and(min-width:600px){
+        @include auto($height:450px);
+        @include border-radius($radius:4rem);
+        margin: 2rem 3rem;
+    }
+    @media screen and(min-width:768px){
+        @include auto($height:550px);
+        @include border-radius($radius:4rem);
+        margin: 4rem 4rem;
+    }
 }
 .cadre-produit{
     @include auto($height:100%,$width:100%);
@@ -52,16 +102,10 @@ section h2{
     top: 0;
     right: 0;
     overflow: hidden;
-    @include auto($height:25px,$width:60px);
+    @include auto;
     & button{
-        @include auto($height:100%,$width:100%);
+        @include full;
+        @include font;
         background: $color-tertiary;
     }
-}
-.index-remove{
-    position: absolute;
-    top: 0;
-    right: 60px;
-    @include auto($height:25px,$width:auto);
-    background: $color-tertiary;
 }

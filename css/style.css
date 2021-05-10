@@ -56,28 +56,112 @@ footer ul li a {
   height: 300px;
   width: auto;
   background: url("../ours-presentation.png") no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
-
-.text {
+@media screen and (min-width: 375px) {
+  .index-presentation {
+    height: 350px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 425px) {
+  .index-presentation {
+    height: 400px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 600px) {
+  .index-presentation {
+    height: 470px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .index-presentation {
+    height: 550px;
+    width: auto;
+  }
+}
+.index-presentation__text {
   font-size: 1.6rem;
   margin: 0;
   padding: 1rem;
   font-weight: bold;
 }
+@media screen and (min-width: 375px) {
+  .index-presentation__text {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .index-presentation__text {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .index-presentation__text {
+    font-size: 2.5rem;
+  }
+}
 
 section h2 {
   text-align: center;
   text-decoration: underline;
+  font-size: 1.6rem;
+}
+@media screen and (min-width: 425px) {
+  section h2 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  section h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  section h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .cadre {
-  margin: 2rem 1rem;
+  margin: 2rem 2rem;
   height: 250px;
   width: auto;
   box-shadow: 0rem 0rem 0.5rem 0.3rem #b9b9b9;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   overflow: hidden;
+}
+@media screen and (min-width: 375px) {
+  .cadre {
+    height: 300px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 425px) {
+  .cadre {
+    height: 350px;
+    width: auto;
+    border-radius: 4rem;
+    margin: 2rem 2.5rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .cadre {
+    height: 450px;
+    width: auto;
+    border-radius: 4rem;
+    margin: 2rem 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cadre {
+    height: 550px;
+    width: auto;
+    border-radius: 4rem;
+    margin: 4rem 4rem;
+  }
 }
 
 .cadre-produit {
@@ -129,21 +213,13 @@ section h2 {
   top: 0;
   right: 0;
   overflow: hidden;
-  height: 25px;
-  width: 60px;
+  height: auto;
+  width: auto;
 }
 .index-panier button {
   height: 100%;
   width: 100%;
-  background: linear-gradient(#e9d9ba, #a37979);
-}
-
-.index-remove {
-  position: absolute;
-  top: 0;
-  right: 60px;
-  height: 25px;
-  width: auto;
+  font-size: 1.6rem;
   background: linear-gradient(#e9d9ba, #a37979);
 }
 
@@ -264,7 +340,6 @@ section h2 {
   height: 25px;
   width: auto;
   border-radius: 0.5rem;
-  background: #f3f37d;
 }
 
 .ton-panier {
