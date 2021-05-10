@@ -672,6 +672,33 @@ section h2 {
   width: auto;
   border-radius: 0.5rem;
 }
+@media screen and (min-width: 600px) {
+  .panier-remove {
+    height: 40px;
+    width: auto;
+    margin: 1rem 6rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .panier-remove {
+    margin: 2rem 9rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .panier-remove {
+    margin: 2rem 20rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .panier-remove {
+    margin: 2rem 30rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .panier-remove {
+    margin: 2rem 40rem;
+  }
+}
 
 .ton-panier {
   height: auto;
@@ -682,6 +709,32 @@ section h2 {
   border: 2px #f2f2f2 solid;
   border-radius: 1rem;
   box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
+}
+@media screen and (min-width: 600px) {
+  .ton-panier {
+    margin: 0 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ton-panier {
+    width: 600px;
+    margin: 0 10rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .ton-panier {
+    margin: 0 15rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .ton-panier {
+    margin: 0 20rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .ton-panier {
+    margin: 0 30rem;
+  }
 }
 .ton-panier > h1 {
   margin: 0;
@@ -694,6 +747,16 @@ section h2 {
   width: auto;
   font-size: 1.6rem;
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .liste-panier {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .liste-panier {
+    font-size: 2rem;
+  }
 }
 
 .panier-vide {
@@ -724,6 +787,30 @@ section h2 {
   height: 50px;
   width: 50px;
   box-shadow: 0.2rem 0.2rem 0.2rem grey;
+}
+@media screen and (min-width: 425px) {
+  .detail img {
+    height: 60px;
+    width: 60px;
+    top: 5px;
+    right: 30px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .detail img {
+    height: 80px;
+    width: 80px;
+    top: -5px;
+    right: 30px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .detail img {
+    height: 100px;
+    width: 100px;
+    top: -5px;
+    right: 30px;
+  }
 }
 .detail__produit {
   text-align: left;
@@ -776,11 +863,21 @@ section h2 {
   height: auto;
   width: 100%;
   flex-wrap: wrap;
-  margin: 1rem;
+  margin: 3rem;
+}
+@media screen and (min-width: 1000px) {
+  .boutons {
+    margin: 10rem;
+  }
 }
 .boutons__retour:nth-child(1) {
   width: 30%;
   order: 2;
+}
+@media screen and (min-width: 1200px) {
+  .boutons__retour:nth-child(1) {
+    width: 15%;
+  }
 }
 .boutons__retour:nth-child(1) button {
   height: 4rem;
@@ -788,11 +885,21 @@ section h2 {
   margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
-  height: auto;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .boutons__retour:nth-child(1) button {
+    height: 5rem;
+  }
 }
 .boutons__accueil:nth-child(2) {
   width: 30%;
   order: 3;
+}
+@media screen and (min-width: 1200px) {
+  .boutons__accueil:nth-child(2) {
+    width: 15%;
+  }
 }
 .boutons__accueil:nth-child(2) button {
   height: 4rem;
@@ -800,12 +907,23 @@ section h2 {
   margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
-  height: auto;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .boutons__accueil:nth-child(2) button {
+    height: 5rem;
+  }
 }
 .boutons__confirmation:nth-child(3) {
   width: 60%;
   margin: 0 20%;
   order: 1;
+}
+@media screen and (min-width: 1200px) {
+  .boutons__confirmation:nth-child(3) {
+    width: 30%;
+    margin: 0 35%;
+  }
 }
 .boutons__confirmation:nth-child(3) button {
   height: 4rem;
@@ -813,8 +931,12 @@ section h2 {
   margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
-  height: auto;
-  margin: 1rem 0;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .boutons__confirmation:nth-child(3) button {
+    height: 5rem;
+  }
 }
 
 .total-panier {
@@ -852,12 +974,17 @@ section h2 {
   justify-content: center;
   align-items: center;
   height: auto;
-  width: 90%;
+  width: auto;
   border: 2px #f2f2f2 solid;
   box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
   border-radius: 1rem;
   margin: 1rem;
   padding: 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .form {
+    width: 600px;
+  }
 }
 .form div {
   display: flex;

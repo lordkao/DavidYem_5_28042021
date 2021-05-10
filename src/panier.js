@@ -62,7 +62,7 @@ function total(){
             prixTotalArticle.appendChild(totalArticle)
             prixTotalArticle.appendChild(prixTotal)
             panier.appendChild(div)
-            produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+article.prix
+            produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+article.prix+" €"
     
             finalTotal += multi
 
