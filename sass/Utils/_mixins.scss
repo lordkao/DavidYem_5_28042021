@@ -17,7 +17,7 @@
 @mixin small-shadow($shadow:0.2rem,$color:grey){
     box-shadow: $shadow $shadow $shadow $color;
 }
-@mixin font($font:1.6rem){
+@mixin font($font:map-get($font-size ,small)){
     font-size:$font;
 }
 @mixin full($height:100%,$width:100%){
