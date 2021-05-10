@@ -2,16 +2,36 @@ footer{
     @include auto($height:150px);
     @include flex($content:flex-start);
     background: $color-tertiary;
+    @media screen and(min-width:768px){
+        @include flex($content:center);
+     }
     & ul{
         list-style: none;
         margin: 0;
+        @media screen and(min-width:768px){
+            @include flex($direction:row);
+            padding: 0;
+         }
         & li{
             padding: 0.5rem;
             @include font;
             & a{
                 text-decoration: none;
                 color: black;
+                @media screen and(min-width:600px){
+                    @include font($font:large);
+                    font-weight: bold;
+                 }
             }
         }
     }
+}
+.middot{
+    display: none;
+    @include font($font:map-get($font-size,extra));
+    font-weight: bold;
+    margin: 0 1rem;
+    @media screen and(min-width:768px){
+        display: block;
+     }
 }

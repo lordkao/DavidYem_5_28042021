@@ -5,24 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/e5b08f2689.js" crossorigin="anonymous"></script>
 
-    <title>Oriteddie</title>
+    <title>Orinoco</title>
 </head>
 <body>
     <header>
-        <h1>Oriteddie</h1>
-        <a href="./panier.html" class="index-panier"><button id="panier" >Panier</button></a>
+        <h1>Orinoco</h1>
+        <a href="./panier.html" class="index-panier">
+            <button id="panier" >
+                <span id="quantite-panier" class="quantite-panier"></span>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </a>
 
     </header>
     <section id="section">
         <div class="index-presentation">
+            <img src="./2.jpeg" alt="ours en peluche">
         <p class="index-presentation__text">Retrouvez notre meilleur selection d'ours en peluche fabriqué à la main.<br>Il ne vous reste plus qu'à choisir parmis eux la cible de vos futurs calins.</p></div>
         <h2>Liste des produits disponibles:</h2>
+        <div class="bloc-produits" id="bloc-produits"></div>
     </section>
     <footer>
         <ul>
             <li><a href="">Politique de confidentialité</a></li>
+            <li class="middot">&middot;</li>
             <li><a href="">Devenir partenaire</a></li>
+            <li class="middot">&middot;</li>
             <li><a href="">Contactez nous</a></li>
         </ul>
     </footer>

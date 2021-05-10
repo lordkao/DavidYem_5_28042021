@@ -9,7 +9,10 @@
     align-items: $items;
 }
 @mixin border-radius($radius:0.5rem){
-    border-radius: $radius;
+    border-radius: $radius ;
+}
+@mixin border-radius-bottom($radius:2rem){
+    border-radius: 0 0 $radius $radius;
 }
 @mixin box-shadow($bottom:0rem,$right:0rem,$smoke:0rem,$contour:0.3rem,$color:$color-secondary){
     box-shadow: $right $bottom $smoke $contour $color;
