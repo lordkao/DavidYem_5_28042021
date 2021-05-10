@@ -4,6 +4,9 @@ let panier = []
 let produit /*Ici produit aura pour valeur la réponse à la requête passée dans la fonction getProduit ligne 62. */
 let ajouter = document.getElementById("ajouter")
 let quantite = document.getElementById("quantite")
+let articlesPanier = 0 /*Variable qui va contenir le total d'article.*/
+
+
 
 getProduit(TeddieUrl+id)
 getPanier("panier")
@@ -101,20 +104,15 @@ ajouter.addEventListener("click",(e)=>{
             panier.splice(index,1)/*Suppression de eltTrouve dans le tableau panier.*/
             localStorage.setItem("panier",JSON.stringify(panier))
         }
-        quantite.value = null
         alert("erreur de saisie")
     }
     else if(quantite.value > 100){
         alert("La quantité saisie est trop élevée.")
     }
     else if(quantite.value != 0 && quantite.value >= 0){
-       
         if(eltTrouve){
-            /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description,produit._id)
-            panier.splice(index,1,produitCommande)*/
             eltTrouve.quantite = quantite.value
             localStorage.setItem("panier",JSON.stringify(panier))/*Mise à jour du panier avec la nouvelle quantité renseignée.*/
-
             console.log(eltTrouve)
             console.log(panier)
             console.log("Le tableau contient cet élément")
@@ -126,7 +124,6 @@ ajouter.addEventListener("click",(e)=>{
             console.log(panier)
             console.log(quantite.value)
         }
-        
     }
     else if(quantite.value <= 0 || quantite.value == 0){
         if(eltTrouve){
@@ -140,7 +137,6 @@ ajouter.addEventListener("click",(e)=>{
         alert("veuillez renseigner une quantité valide")
     }
 })
-
 
 /*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)*/
 

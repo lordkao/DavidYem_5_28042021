@@ -10,17 +10,18 @@
     @media screen and(min-width:375px){
         height: 350px;
     }
-    @media screen and(min-width:425px){
-        height: 400px;
-    }
-    @media screen and(min-width:600px){
-        height: 470px;
-    }
     @media screen and(min-width:768px){
-        height: 600px;
+        margin:0 10rem;
+    }
+    @media screen and(min-width:1000px){
+        margin:0 15rem;
     }
     @media screen and(min-width:1200px){
-        height: 700px;
+        height: 400px;
+    }
+    @media screen and(min-width:1400px){
+        height: 500px;
+        margin:0 20rem;
     }
     &__text{
         @include auto;
@@ -152,6 +153,9 @@ section{
         @include full;
         @include font($font:2.5rem);
         background: $color-tertiary;
+        &:hover{
+            cursor:pointer;
+        }
         @media screen and(min-width:768px){
             @include font($font:4rem);
         }
