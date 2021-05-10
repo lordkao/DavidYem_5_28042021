@@ -65,25 +65,17 @@ header h1 {
 }
 
 footer {
-  height: 150px;
+  height: 200px;
   width: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(#e9d9ba, #a37979);
 }
-@media screen and (min-width: 768px) {
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-}
 footer ul {
   list-style: none;
-  margin: 0;
+  padding: 0;
 }
 @media screen and (min-width: 768px) {
   footer ul {
@@ -119,6 +111,23 @@ footer ul li a {
   .middot {
     display: block;
   }
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .logos div a {
+    margin: 0 2rem;
+  }
+}
+.logos div a i {
+  font-size: 3rem;
+  margin: 0 1rem 1rem 1rem;
+  color: #114592;
 }
 
 .index-presentation {
