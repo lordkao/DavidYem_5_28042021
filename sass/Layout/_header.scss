@@ -1,14 +1,29 @@
 header{
     position: relative;
-    @include auto;
+    @include flex;
+    @include auto($height:60px);
     background: $color-tertiary;
+    font-family: "Shrikhand","Arial Black",Arial,Verdana,"Trebuchet MS",Georgia,"Courier New";
+    @media screen and(min-width:425px){
+        @include auto($height:80px);
+     }
+     @media screen and(min-width:600px){
+        @include auto($height:100px);
+     }
     & h1{
         margin: 0;
         padding:1rem;
         text-align: center;
         text-shadow: 0.2rem 0.1rem 0.1rem grey;
-        font-size: 3rem;
+        letter-spacing:3px;
+        @include font($font:3rem);
         color: black;
+        @media screen and(min-width:425px){
+            @include font($font:4rem);
+         }
+         @media screen and(min-width:600px){
+            @include font($font:5rem);
+         }
     }
 }
 

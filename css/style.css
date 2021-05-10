@@ -2,8 +2,18 @@ html {
   font-size: 62.5%;
 }
 
+@font-face {
+  font-family: "Shrikhand";
+  src: url("Shrikhand-Regular.otf");
+}
+@font-face {
+  font-family: "Itim";
+  src: url("Itim-Regular.ttf");
+}
 body {
   margin: 0;
+  box-sizing: border-box;
+  font-family: "Itim", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
 }
 
 section {
@@ -13,17 +23,45 @@ section {
 
 header {
   position: relative;
-  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
   width: auto;
   background: linear-gradient(#e9d9ba, #a37979);
+  font-family: "Shrikhand", "Arial Black", Arial, Verdana, "Trebuchet MS", Georgia, "Courier New";
+}
+@media screen and (min-width: 425px) {
+  header {
+    height: 80px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 600px) {
+  header {
+    height: 100px;
+    width: auto;
+  }
 }
 header h1 {
   margin: 0;
   padding: 1rem;
   text-align: center;
   text-shadow: 0.2rem 0.1rem 0.1rem grey;
+  letter-spacing: 3px;
   font-size: 3rem;
   color: black;
+}
+@media screen and (min-width: 425px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  header h1 {
+    font-size: 5rem;
+  }
 }
 
 footer {
@@ -35,9 +73,26 @@ footer {
   align-items: center;
   background: linear-gradient(#e9d9ba, #a37979);
 }
+@media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
 footer ul {
   list-style: none;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
 }
 footer ul li {
   padding: 0.5rem;
@@ -47,45 +102,74 @@ footer ul li a {
   text-decoration: none;
   color: black;
 }
+@media screen and (min-width: 600px) {
+  footer ul li a {
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+.middot {
+  display: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .middot {
+    display: block;
+  }
+}
 
 .index-presentation {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   height: 300px;
   width: auto;
-  background: url("../ours-presentation.png") no-repeat;
-  background-size: 100% 100%;
+}
+.index-presentation img {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 @media screen and (min-width: 375px) {
   .index-presentation {
     height: 350px;
-    width: auto;
   }
 }
 @media screen and (min-width: 425px) {
   .index-presentation {
     height: 400px;
-    width: auto;
   }
 }
 @media screen and (min-width: 600px) {
   .index-presentation {
     height: 470px;
-    width: auto;
   }
 }
 @media screen and (min-width: 768px) {
   .index-presentation {
-    height: 550px;
-    width: auto;
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .index-presentation {
+    height: 700px;
   }
 }
 .index-presentation__text {
+  height: auto;
+  width: auto;
+  position: absolute;
+  z-index: 2;
+  opacity: 1;
   font-size: 1.6rem;
   margin: 0;
-  padding: 1rem;
+  padding: 2rem;
   font-weight: bold;
 }
 @media screen and (min-width: 375px) {
@@ -104,7 +188,13 @@ footer ul li a {
   }
 }
 
+section {
+  height: auto;
+  width: auto;
+}
 section h2 {
+  height: auto;
+  width: auto;
   text-align: center;
   text-decoration: underline;
   font-size: 1.6rem;
@@ -125,7 +215,21 @@ section h2 {
   }
 }
 
-.cadre {
+.bloc-produits {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .bloc-produits {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.bloc-produits__cadre {
   margin: 2rem 2rem;
   height: 250px;
   width: auto;
@@ -134,13 +238,13 @@ section h2 {
   overflow: hidden;
 }
 @media screen and (min-width: 375px) {
-  .cadre {
+  .bloc-produits__cadre {
     height: 300px;
     width: auto;
   }
 }
 @media screen and (min-width: 425px) {
-  .cadre {
+  .bloc-produits__cadre {
     height: 350px;
     width: auto;
     border-radius: 4rem;
@@ -148,19 +252,33 @@ section h2 {
   }
 }
 @media screen and (min-width: 600px) {
-  .cadre {
+  .bloc-produits__cadre {
     height: 450px;
     width: auto;
     border-radius: 4rem;
-    margin: 2rem 3rem;
+    margin: 3rem 3rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .cadre {
+  .bloc-produits__cadre {
+    height: 350px;
+    width: 45%;
+    border-radius: 2rem;
+    margin: 2rem 1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .bloc-produits__cadre {
+    height: 400px;
+    width: 45%;
+    margin: 2rem 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bloc-produits__cadre {
     height: 550px;
-    width: auto;
-    border-radius: 4rem;
-    margin: 4rem 4rem;
+    width: 45%;
+    margin: 2rem 3rem;
   }
 }
 
@@ -195,7 +313,19 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
+  font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
+  letter-spacing: 1px;
   background: linear-gradient(#e9d9ba, #a37979);
+}
+@media screen and (min-width: 600px) {
+  .cadre-produit__nom {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cadre-produit__nom {
+    font-size: 2rem;
+  }
 }
 .cadre-produit__prix {
   height: 15%;
@@ -205,7 +335,14 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
+  font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
+  letter-spacing: 1px;
   background: linear-gradient(#e9d9ba, #a37979);
+}
+@media screen and (min-width: 600px) {
+  .cadre-produit__prix {
+    font-size: 2rem;
+  }
 }
 
 .index-panier {
@@ -219,8 +356,18 @@ section h2 {
 .index-panier button {
   height: 100%;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   background: linear-gradient(#e9d9ba, #a37979);
+}
+@media screen and (min-width: 768px) {
+  .index-panier button {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .index-panier button {
+    font-size: 4rem;
+  }
 }
 
 .presentation-produit {

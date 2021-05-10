@@ -4,6 +4,7 @@ let panier = []
 let produit /*Ici produit aura pour valeur la réponse à la requête passée dans la fonction getProduit ligne 62. */
 let ajouter = document.getElementById("ajouter")
 let quantite = document.getElementById("quantite")
+
 getProduit(TeddieUrl+id)
 getPanier("panier")
 
@@ -123,6 +124,7 @@ ajouter.addEventListener("click",(e)=>{
             panier.push(produitCommande)
             localStorage.setItem("panier",JSON.stringify(panier))
             console.log(panier)
+            console.log(quantite.value)
         }
         
     }
