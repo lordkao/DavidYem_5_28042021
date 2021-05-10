@@ -1,11 +1,20 @@
 .bloc-confirmation{
-    @include auto($height:530px);
+    @include auto($height:550px);
     @include flex;
+    @media screen and(min-width:768px){
+        @include auto($height:570px);
+    }
+    @media screen and(min-width:1000px){
+        @include auto($height:730px);
+    }
     & div{
         @include flex($direction:column);
         & p{
         @include auto($width: 80%);
-        @include font($font:2rem);
+        @include font($font:map-get($font-size,large));
+        @media screen and(min-width:768px){
+            @include font($font:map-get($font-size,extra));
+        }
         line-height: 2;
         padding: 5rem 0;
         text-align: center;
@@ -14,7 +23,6 @@
             @include auto;
             & button{
                 @include btn;
-                height: auto;
             }
         }
     }
