@@ -18,7 +18,7 @@ remove.addEventListener("click",()=>{
 
 
 let finalTotal = 0
-let panier = document.getElementById("panier")
+let panier = document.getElementById("panierListe")
 let commande = JSON.parse(localStorage.getItem("panier"))
 let products = []
 

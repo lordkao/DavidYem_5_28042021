@@ -13,12 +13,19 @@
 <body>
     <header>
         <h1>Orinoco</h1>
+        <a href="./panier.html" class="index-panier">
+            <button id="panier" >
+                <span id="quantite-panier" class="quantite-panier"></span>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </a>
+
     </header>
     <section id="panier-section">
         <button id="remove" class="panier-remove">vider le panier</button>
         <div class="ton-panier">
             <h1>Voici votre panier:</h1>
-            <div id="panier" class="liste-panier"></div>
+            <div id="panierListe" class="liste-panier"></div>
         </div>
         <div class="total-panier">
             <p>Montant total de la commande :</p>
