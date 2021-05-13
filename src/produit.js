@@ -30,7 +30,7 @@ function getInfosproduit(article){
     photo.classList.add("produit-photo__image")
     document.getElementById("photo").appendChild(photo)
     photo.src = article.imageUrl
-    let nom = document.getElementById("nom")
+    let nom = document.getElementById("nomDuProduit")
     nom.innerText = article.name
     let description = document.getElementById("description")
     description.innerHTML = `Description du produit:<br> ${article.description}`

@@ -26,14 +26,14 @@
             <div id="photo" class="produit-photo"></div>
 
             <div class="produit-description">
-                <div class="produit-description__nom"><span class="produit-description__nom--titre">Nom:</span><span  id="nom" > nom du produit</span></div>
+                <div class="produit-description__nom"><span class="produit-description__nom--titre">Nom:</span><span  id="nomDuProduit" > nom du produit</span></div>
                 <div id="description" class="produit-description__description">description</div>
                 <div id="prix" class="produit-description__prix">prix</div>
                 <div id="selection" class="produit-description__selection">
                     <select id="select" class="produit-description__selection--selection">
                     </select>
                     <label for="quantite">quantité:</label>
-                    <input type="number" id="quantite" name="quantite" class="produit-description__selection--quantite" placeholder="0">
+                    <input type="number" id="quantite" name="quantite" class="produit-description__selection--quantite" placeholder="0" min="0" max="100">
                 </div>
                 <div class="produit-description__boutons">
                     <a href="./index.html" class="produit-description__boutons--retour"><button id="retour"  >Retour</button></a>
