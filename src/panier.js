@@ -14,6 +14,7 @@ else{
 let remove = document.getElementById("remove")
 remove.addEventListener("click",()=>{
     localStorage.removeItem("panier")
+    document.location.reload()
 })
 
 
@@ -125,32 +126,61 @@ confirmSaveInfos.innerText = "informations enregistrées"
 confirmSaveInfos.style.display = "none"
 
 
+function help(id,nomDuChamp){/*Fonction qui créé un message d'aide pour indiquer à l'utilisateur le champ incomplet.*/
+    let help = document.createElement("div")
+    help.classList.add("help-message")
+    let champ = document.getElementById(id) 
+    champ.appendChild(help)
+    help.innerText = "Veuillez renseigner votre "+nomDuChamp
+    help.style.display = "none"
+    return help
+}
+
+let helpPrenom = help("prenom","prénom")
+let helpNom = help("nom","nom")
+let helpAdresse = help("adresse","adresse")
+let helpVille = help("ville","ville")
+let helpMail = help("mail","e-mail")
+
+let displayNone = () =>{/*Désactive les blocs help.*/
+    helpPrenom.style.display = "none"
+    helpNom.style.display = "none"
+    helpAdresse.style.display = "none"
+    helpVille.style.display = "none"
+    helpMail.style.display ="none"
+}
+
 /*Attente de la soumission du formulaire.*/
 form.addEventListener("submit",function(e){
     e.preventDefault()
     if(document.forms["form"]["firstName"].value === ""){
         confirmSaveInfos.style.display = "none"
-        alert("Veuillez renseigner votre prénom.")
+        displayNone()
+        helpPrenom.style.display = "block"
         return 0
     }
     else if(document.forms["form"]["lastName"].value === ""){
         confirmSaveInfos.style.display = "none"
-        alert("Veuillez renseigner votre nom.")
+        displayNone()
+        helpNom.style.display = "block"
         return 0
     }
     else if(document.forms["form"]["address"].value === ""){
         confirmSaveInfos.style.display = "none"
-        alert("Veuillez renseigner votre adresse.")
+        displayNone()
+        helpAdresse.style.display = "block"
         return 0
     }
     else if(document.forms["form"]["city"].value === ""){
         confirmSaveInfos.style.display = "none"
-        alert("Veuillez renseigner votre ville.")
+        displayNone()
+        helpVille.style.display = "block"
         return 0
     }
     else if(document.forms["form"]["email"].value === ""){
         confirmSaveInfos.style.display = "none"
-        alert("Veuillez renseigner votre email.")
+        displayNone()
+        helpMail.style.display = "block"
         return 0
     }
     /*Création de l'objet Contact en enregistrant les informations du client dans la variable contact.*/
@@ -162,6 +192,10 @@ form.addEventListener("submit",function(e){
         city : city.value,
         email: email.value
         }
+        helpPrenom.style.display = "none"
+        helpNom.style.display = "none"
+        helpAdresse.style.display = "none"
+
         firstName.setAttribute("disabled",true)
         lastName.setAttribute("disabled",true)
         address.setAttribute("disabled",true)
