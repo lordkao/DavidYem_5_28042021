@@ -3,14 +3,18 @@ let listePanier = document.getElementById("panier")
 const id = localStorage.getItem("id")
 let retour = document.getElementById("retour")
 let btnRetour = document.querySelector("div #retour button.boutons__retour")
+
+
 /*Si aucun id n'est en mémoire sur le localStorage alors le bouton retour est désactivé.*/
 if(localStorage.getItem("id") === null){
-    btnRetour.style.disabled = "true"
-    btnRetour.style.opacity = "0.4"
+    btnRetour.setAttribute("disabled","true")
 }
 else{
     retour.href = "./produit.html?id="+id
 }
+
+
+/*Vide le panier et recharge la page.*/
 let remove = document.getElementById("remove")
 remove.addEventListener("click",()=>{
     localStorage.removeItem("panier")
@@ -21,9 +25,10 @@ remove.addEventListener("click",()=>{
 let finalTotal = 0
 let panier = document.getElementById("panierListe")
 let commande = JSON.parse(localStorage.getItem("panier"))
-let products = []
+let products = []/*Création du array products vide pour nous permettre d'implémenter par la suite les "id" des produits.*/
 
-function total(){
+
+function total(){/*Fonction qui va venir boucler dans le panier en créant des blocs reprenants les informations des produits sélectionnés.*/
     if(localStorage.getItem("panier") === null){
         
         let panierVide = document.createElement("div")
@@ -38,7 +43,6 @@ function total(){
             for(let i=0;i < article.quantite;i++){
                 products.push(article._id)
             }
-            console.log(products)
             
             let multi = (article.prix*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
 
@@ -73,6 +77,8 @@ function total(){
     localStorage.setItem("montant",JSON.stringify(finalTotal))
     }
 }
+
+
 total()/*Appel de la fonction total qui va venir matérialiser le panier.*/
 console.log(products)
 
@@ -99,6 +105,7 @@ function send(url,formulaire,id){
     })
 }
 
+
 /*Formulaire*/
 let firstName = document.getElementById("firstName")
 let lastName = document.getElementById("lastName")
@@ -108,8 +115,10 @@ let email = document.getElementById("email")
 let form = document.getElementById("form")
 let confirmation = document.getElementById("confirmation")
 
+
 let contact /*Déclaration de la variable contact vide.*/
 let submitBtn = document.getElementById("submit")
+
 
 /*Création du bouton "Modifier".*/
 let modifier = document.createElement("button")
@@ -117,6 +126,7 @@ modifier.classList.add("modifier")
 modifier.style.display = "none"
 form.appendChild(modifier)
 modifier.innerText = "Modifier"
+
 
 /*Création du message de confirmation concernant les informations client. */
 let confirmSaveInfos = document.createElement("div")
@@ -136,93 +146,159 @@ function help(id,nomDuChamp){/*Fonction qui créé un message d'aide pour indiqu
     return help
 }
 
+
+function invalidInputText(id,message){/*Fonction qui créé un message d'aide pour indiquer à l'utilisateur le champ invalid.*/
+    let invalid = document.createElement("div")
+    invalid.classList.add("help-message")
+    let champ = document.getElementById(id) 
+    champ.appendChild(invalid)
+    invalid.innerText = message
+    invalid.style.display = "none"
+    return invalid
+}
+
+
+/*Création des messages d'erreur quand un champ est vide en appelant la fonction help.*/
 let helpPrenom = help("prenom","prénom")
 let helpNom = help("nom","nom")
 let helpAdresse = help("adresse","adresse")
 let helpVille = help("ville","ville")
 let helpMail = help("mail","e-mail")
 
-let displayNone = () =>{/*Désactive les blocs help.*/
+
+/*Création des variables contenants les messages d'erreurs pour une mauvaise saisie.*/
+let erreurPrenom = "Veuillez renseigner votre prénom seulement avec des lettres.(ex: David)"
+let erreurNom = "Veuillez renseigner votre nom seulement avec des lettres.(ex: Legrand)"
+let erreurVille = "Veuillez saisir une ville valide.(ex: Toulouse)"
+let erreurAdresse = "Veuillez saisir une adresse valide.(ex: 14 rue de Jean de la Fontaine)"
+let erreurMail = "Veuillez saisir une adresse mail valide.(ex:jean-dufrene@outlook.fr)"
+
+
+/*Création des messages d'erreurs lors d'une mauvaise saisie.*/
+let invalidPrenom = invalidInputText("prenom",erreurPrenom)
+let invalidNom = invalidInputText("nom",erreurNom)   
+let invalidAdresse = invalidInputText("adresse",erreurAdresse)
+let invalidVille = invalidInputText("ville",erreurVille)
+let invalidMail = invalidInputText("mail",erreurMail)
+
+
+/*Fonction qui désactive tous les messages d'erreurs.*/
+let displayNone = () =>{
     helpPrenom.style.display = "none"
     helpNom.style.display = "none"
     helpAdresse.style.display = "none"
     helpVille.style.display = "none"
     helpMail.style.display ="none"
+    confirmSaveInfos.style.display = "none"
+    invalidPrenom.style.display = "none"
+    invalidNom.style.display = "none"
+    invalidAdresse.style.display = "none"
+    invalidVille.style.display = "none"
+    invalidMail.style.display = "none"
 }
 
 /*Attente de la soumission du formulaire.*/
 form.addEventListener("submit",function(e){
     e.preventDefault()
     if(document.forms["form"]["firstName"].value === ""){
-        confirmSaveInfos.style.display = "none"
         displayNone()
         helpPrenom.style.display = "block"
+        return 0 
+    }
+    else if((/[a-zA-Zéèçà][-]{1,}$/.test(firstName.value))||(/[^a-zA-Zéèçà-]/.test(firstName.value))){
+        displayNone()
+        invalidPrenom.style.display = "block"
         return 0
     }
     else if(document.forms["form"]["lastName"].value === ""){
         confirmSaveInfos.style.display = "none"
+        invalidPrenom.style.display = "none"
+        invalidNom.style.display = "none"
+
         displayNone()
         helpNom.style.display = "block"
         return 0
     }
+    else if((/[a-zA-Zéèçà][-]{1,}$/.test(lastName.value))||(/[^a-zA-Zéèçà-]/.test(lastName.value))){
+        displayNone()
+        invalidNom.style.display = "block"
+        return 0
+    }
     else if(document.forms["form"]["address"].value === ""){
-        confirmSaveInfos.style.display = "none"
         displayNone()
         helpAdresse.style.display = "block"
         return 0
     }
+    else if(/^[0-9]{1,}$/.test(address.value)){
+        displayNone()
+        invalidAdresse.style.display = "block"
+        return 0
+    }
     else if(document.forms["form"]["city"].value === ""){
-        confirmSaveInfos.style.display = "none"
         displayNone()
         helpVille.style.display = "block"
         return 0
     }
+    else if((/[a-zA-Zéèçà][-]{1,}$/.test(city.value))||(/[^a-zA-Zéèçà-]/.test(city.value))){
+        displayNone()
+        invalidVille.style.display = "block"
+        return 0
+    }
     else if(document.forms["form"]["email"].value === ""){
-        confirmSaveInfos.style.display = "none"
         displayNone()
         helpMail.style.display = "block"
         return 0
     }
+    else if((/^([\w.-]+)[@]{1}([\w]+)[.]{1}([a-z]){2,5}/.test(email.value))===false){
+        displayNone()
+        invalidMail.style.display = "block"
+        return 0
+    }
     /*Création de l'objet Contact en enregistrant les informations du client dans la variable contact.*/
     else{
-        contact = {
-        firstName : firstName.value,
-        lastName : lastName.value,
-        address : address.value,
-        city : city.value,
-        email: email.value
-        }
-        helpPrenom.style.display = "none"
-        helpNom.style.display = "none"
-        helpAdresse.style.display = "none"
 
-        firstName.setAttribute("disabled",true)
-        lastName.setAttribute("disabled",true)
-        address.setAttribute("disabled",true)
-        city.setAttribute("disabled",true)
-        email.setAttribute("disabled",true)
+            displayNone()
 
-        confirmSaveInfos.style.display = "block"
-        submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
-        modifier.style.display = "block"
-        confirmation.disabled = false /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
-        modifier.addEventListener("click",(e)=>{
-            e.preventDefault()
-            confirmation.disabled = true /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
-            confirmSaveInfos.style.display = "none"
-            firstName.disabled = false
-            lastName.disabled = false
-            address.disabled = false
-            city.disabled = false
-            email.disabled = false
-            modifier.style.display = "none"
-            submitBtn.style.display = "block"
-           
-            })
+            contact = {
+            firstName : firstName.value,
+            lastName : lastName.value,
+            address : address.value,
+            city : city.value,
+            email: email.value
+            }
+            helpPrenom.style.display = "none"
+            helpNom.style.display = "none"
+            helpAdresse.style.display = "none"
+
+            firstName.setAttribute("disabled",true)
+            lastName.setAttribute("disabled",true)
+            address.setAttribute("disabled",true)
+            city.setAttribute("disabled",true)
+            email.setAttribute("disabled",true)
+
+            confirmSaveInfos.style.display = "block"
+            submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
+            modifier.style.display = "block"
+            confirmation.disabled = false /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
+            modifier.addEventListener("click",(e)=>{
+                e.preventDefault()
+                confirmation.disabled = true /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
+                confirmSaveInfos.style.display = "none"
+                firstName.disabled = false
+                lastName.disabled = false
+                address.disabled = false
+                city.disabled = false
+                email.disabled = false
+                modifier.style.display = "none"
+                submitBtn.style.display = "block"
+            
+        })
+        
     }
     console.log(contact)/*Affiche dans la console les informations enregistrées. */
     console.log("informations enregistrées")/*Confirmation dans la console que les informations sont bien enregistrées. */
 })
+
 
 /*  Conditions pour verification avant envoi requête POST contenant l'objet contact et tableau products:
     Si l'un des 2 objets ou même les 2 ne sont pas renseigner correctement,
@@ -246,5 +322,3 @@ confirmation.addEventListener("click",function(e){
     send(TeddieUrl,contact,products)/*envoir de la requête POST vers l'API*/
     }
 })
-
-console.log(products)
