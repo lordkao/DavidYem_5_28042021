@@ -18,14 +18,14 @@ function getPanier(value){
 
     if(localStorage.getItem(value)!=null){
         panier = JSON.parse(localStorage.getItem("panier"))
-        console.log('il y déjà un panier!!')
+        console.log('Il y a déjà un panier!!')
         console.log(panier)
     }
     else{
-        console.log('il faut créer un panier')
+        console.log('Il faut créer un panier.')
     }
 }
-function getInfosproduit(article){
+function getInfosProduit(article){
     let photo = document.createElement("img")
     photo.classList.add("produit-photo__image")
     document.getElementById("photo").appendChild(photo)
@@ -42,7 +42,7 @@ function createSelect(responseRequest){
     let selectDefault = document.createElement("option")
     selectDefault.innerText = "couleur"
     select.appendChild(selectDefault)
-
+    console.log("couleurs disponible :"+responseRequest.colors)
     /*Création de l'élément de selection de couleur,boucle dans le array colors et ajoute la couleur de l'itération dans un nouvel élément <option> de <select>*/
     for(let color of responseRequest.colors){
         let couleur = document.createElement("option")
@@ -55,8 +55,8 @@ function getQuantityPanier(responseRequest){
     let notreProduit = panier.find(elt => elt.nom === responseRequest.name)
         if(notreProduit){
             quantite.value = notreProduit.quantite  
-            console.log(notreProduit)
-            console.log(quantite.value)
+            console.log(notreProduit)/*Affiche l'objet contenu dans le tableau panier.*/
+            console.log(quantite.value)/*Affiche la nouvelle quantité qui doit être égale à celle de notreProduit.*/
         }
 }
 async function getProduit(url){
@@ -71,7 +71,7 @@ async function getProduit(url){
 
             console.log(response)/*affiche dans la console les informations contenues dans un objet*/
             
-            getInfosproduit(response)/*Récupération des informations concernant le produit selectionné */
+            getInfosProduit(response)/*Récupération des informations concernant le produit selectionné */
 
             createSelect(response)/*Création de l'élément de selection de couleur par défaut "couleur"*/
 
@@ -95,6 +95,31 @@ class Produit{
         return this.quantite = value
     }
 }
+let erreurInf = "La quantité saisie est inférieure ou égale à 0."
+let erreurBegin = "La quantité saisie ne doit pas commencer par 0."
+let erreurToMuch = "La quantité saisie ne doit pas dépasser 100."
+
+function erreurQuantite(message){
+    let blocQuantite = document.getElementById("bloc-quantite")
+    let erreurSaisie = document.createElement("div")
+    erreurSaisie.classList.add("erreur-quantite")
+    erreurSaisie.innerText = message
+    blocQuantite.appendChild(erreurSaisie)
+    erreurSaisie.style.display = "none" 
+    return erreurSaisie
+}
+
+let messageInferieur = erreurQuantite(erreurInf)
+let messageCommence = erreurQuantite(erreurBegin)
+let messageTrop = erreurQuantite(erreurToMuch)
+
+let displayNone = () =>{
+    messageInferieur.style.display ="none"
+    messageCommence.style.display = "none"
+    messageTrop.style.display = "none"
+}
+
+
 ajouter.addEventListener("click",(e)=>{
     e.preventDefault()
     let eltTrouve = panier.find(elt => elt._id === produit._id)/*Recherche dans le panier si l'élément existe */
@@ -104,10 +129,12 @@ ajouter.addEventListener("click",(e)=>{
             panier.splice(index,1)/*Suppression de eltTrouve dans le tableau panier.*/
             localStorage.setItem("panier",JSON.stringify(panier))
         }
-        alert("erreur de saisie")
+        displayNone()
+        messageCommence.style.display = "block"
     }
     else if(quantite.value > 100){
-        alert("La quantité saisie est trop élevée.")
+        displayNone()
+        messageTrop.style.display = "block"
     }
     else if(quantite.value != 0 && quantite.value >= 0){
         if(eltTrouve){
@@ -124,6 +151,7 @@ ajouter.addEventListener("click",(e)=>{
             console.log(panier)
             console.log(quantite.value)
         }
+        displayNone()
     }
     else if(quantite.value <= 0 || quantite.value == 0){
         if(eltTrouve){
@@ -131,10 +159,8 @@ ajouter.addEventListener("click",(e)=>{
             localStorage.setItem("panier",JSON.stringify(panier))
             console.log(panier)
         }
-        alert("quantité inférieure ou égale à 0")
-    }
-    else{
-        alert("veuillez renseigner une quantité valide")
+        displayNone()
+        messageInferieur.style.display ="block"
     }
 })
 
