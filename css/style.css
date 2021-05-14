@@ -168,7 +168,13 @@ footer ul li a {
 @media screen and (min-width: 1400px) {
   .index-presentation {
     height: 500px;
-    margin: 0 20rem;
+    margin: 0 26rem;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .index-presentation {
+    height: 500px;
+    margin: 0 32rem;
   }
 }
 .index-presentation__text {
@@ -271,24 +277,22 @@ section h2 {
 }
 @media screen and (min-width: 768px) {
   .bloc-produits__cadre {
-    height: 350px;
-    width: 45%;
+    height: 330px;
+    width: 40%;
     border-radius: 2rem;
     margin: 2rem 1rem;
   }
 }
 @media screen and (min-width: 1000px) {
   .bloc-produits__cadre {
-    height: 400px;
-    width: 45%;
-    margin: 2rem 1rem;
+    height: 350px;
+    width: 30%;
+    margin: 2rem 3rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .bloc-produits__cadre {
-    height: 550px;
-    width: 45%;
-    margin: 2rem 3rem;
+    margin: 5rem 5rem;
   }
 }
 

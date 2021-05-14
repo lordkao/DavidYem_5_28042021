@@ -200,7 +200,7 @@ let displayNone = () =>{
 /*Attente de la soumission du formulaire.*/
 form.addEventListener("submit",function(e){
     e.preventDefault()
-    if(document.forms["form"]["firstName"].value === ""){
+    if(document.forms["form"]["firstName"].value === "")/*Champ prénom*/{
         displayNone()
         helpPrenom.style.display = "block"
         return 0 
@@ -210,7 +210,9 @@ form.addEventListener("submit",function(e){
         invalidPrenom.style.display = "block"
         return 0
     }
-    else if(document.forms["form"]["lastName"].value === ""){
+
+
+    else if(document.forms["form"]["lastName"].value === "")/*Champ nom*/{
         confirmSaveInfos.style.display = "none"
         invalidPrenom.style.display = "none"
         invalidNom.style.display = "none"
@@ -224,7 +226,9 @@ form.addEventListener("submit",function(e){
         invalidNom.style.display = "block"
         return 0
     }
-    else if(document.forms["form"]["address"].value === ""){
+
+
+    else if(document.forms["form"]["address"].value === "")/*Champ adresse*/{
         displayNone()
         helpAdresse.style.display = "block"
         return 0
@@ -234,7 +238,9 @@ form.addEventListener("submit",function(e){
         invalidAdresse.style.display = "block"
         return 0
     }
-    else if(document.forms["form"]["city"].value === ""){
+
+
+    else if(document.forms["form"]["city"].value === "")/*Champ ville*/{
         displayNone()
         helpVille.style.display = "block"
         return 0
@@ -244,7 +250,9 @@ form.addEventListener("submit",function(e){
         invalidVille.style.display = "block"
         return 0
     }
-    else if(document.forms["form"]["email"].value === ""){
+
+
+    else if(document.forms["form"]["email"].value === "")/*Champ email*/{
         displayNone()
         helpMail.style.display = "block"
         return 0
@@ -254,6 +262,8 @@ form.addEventListener("submit",function(e){
         invalidMail.style.display = "block"
         return 0
     }
+
+    
     /*Création de l'objet Contact en enregistrant les informations du client dans la variable contact.*/
     else{
 
