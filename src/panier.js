@@ -6,18 +6,22 @@ let btnRetour = document.querySelector("div #retour button.boutons__retour")
 
 
 /*Si aucun id n'est en mémoire sur le localStorage alors le bouton retour est désactivé.*/
-if(localStorage.getItem("id") === null){
-    btnRetour.setAttribute("disabled","true")
-}
-else{
-    retour.href = "./produit.html?id="+id
+function idSave(){
+    if(localStorage.getItem("id") === null){
+        btnRetour.setAttribute("disabled","true")
+    }
+    else{
+        retour.href = "./produit.html?id="+id
+    }
 }
 
+idSave()
 
 /*Vide le panier et recharge la page.*/
 let remove = document.getElementById("remove")
 remove.addEventListener("click",()=>{
     localStorage.removeItem("panier")
+    localStorage.removeItem("montant")
     document.location.reload()
 })
 
@@ -30,7 +34,6 @@ let products = []/*Création du array products vide pour nous permettre d'implé
 
 function total(){/*Fonction qui va venir boucler dans le panier en créant des blocs reprenants les informations des produits sélectionnés.*/
     if(localStorage.getItem("panier") === null){
-        
         let panierVide = document.createElement("div")
         panierVide.classList.add("panier-vide")
         panier.appendChild(panierVide)
@@ -81,29 +84,6 @@ function total(){/*Fonction qui va venir boucler dans le panier en créant des b
 
 total()/*Appel de la fonction total qui va venir matérialiser le panier.*/
 console.log(products)
-
-function send(url,formulaire,id){
-    fetch(url,{
-        method:"POST",
-        headers:{
-            "Accept":"application/json",
-            "Content-type":"application/json"
-        },
-        body: JSON.stringify({contact:formulaire,products:id})
-    })
-    .then(function(res){
-        if(res.ok){
-            return res.json()
-        }
-    })
-    .then(function(response){
-        localStorage.setItem("confirmation",JSON.stringify(response))
-        console.log(response)
-    })
-    .catch(function(err){
-        alert(err)
-    })
-}
 
 
 /*Formulaire*/
@@ -314,6 +294,30 @@ form.addEventListener("submit",function(e){
     Si l'un des 2 objets ou même les 2 ne sont pas renseigner correctement,
     alors une alert sera exécuter.
 */
+
+function send(url,formulaire,id){/*Envoi de la requête POST avec l'objet contact et products.*/
+    fetch(url,{
+        method:"POST",
+        headers:{
+            "Accept":"application/json",
+            "Content-type":"application/json"
+        },
+        body: JSON.stringify({contact:formulaire,products:id})
+    })
+    .then(function(res){
+        if(res.ok){
+            return res.json()
+        }
+    })
+    .then(function(response){
+        localStorage.setItem("confirmation",JSON.stringify(response))
+        console.log(response)
+    })
+    .catch(function(err){
+        alert(err)
+    })
+}
+
 confirmation.addEventListener("click",function(e){
     
     if(contact === undefined && products.length === 0){

@@ -22,9 +22,9 @@ function getIndex(){
 
                     let lien = document.createElement("a")
                     lien.classList.add("cadre-produit")
-                    lien.onclick=(e)=>{
+                    lien.addEventListener("click",()=>{
                         localStorage.setItem("id",response._id)
-                    }
+                    })
                     lien.href = "./produit.html?id=" + response._id
 
                         let photo = document.createElement("div")
