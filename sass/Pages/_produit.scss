@@ -137,7 +137,6 @@
     &__boutons{
         @include flex($content:space-between);
         @include full($height:80%);
-
         &--retour:nth-child(1){
             @include auto($width:25%);
             text-decoration: none;
@@ -152,6 +151,9 @@
                 cursor: pointer;
                 margin: 0;
                 border: 1px black solid;
+                &:hover{
+                    background-color: $color-warning;
+                }
             }
         }
         &--ajouter:nth-child(2){
@@ -168,6 +170,9 @@
                 cursor: pointer;
                 margin: 0;
                 border: 1px black solid;
+                &:hover{
+                    background-color: $color-warning;
+                }
             }
         }
         &--panier:nth-child(3){
@@ -184,6 +189,9 @@
                 cursor: pointer;
                 margin: 0;
                 border: 1px black solid;
+                &:hover{
+                    background-color: $color-warning;
+                }
             }   
         }
     }

@@ -389,6 +389,9 @@ section h2 {
 .index-panier div span {
   color: black;
 }
+.index-panier div span i:hover {
+  color: #6e6e6e;
+}
 @media screen and (min-width: 768px) {
   .index-panier div {
     font-size: 4rem;
@@ -652,6 +655,9 @@ section h2 {
   margin: 0;
   border: 1px black solid;
 }
+.produit-description__boutons--retour:nth-child(1) div:hover {
+  background-color: #fcfcc5;
+}
 .produit-description__boutons--ajouter:nth-child(2) {
   height: auto;
   width: 40%;
@@ -680,6 +686,9 @@ section h2 {
   margin: 0;
   border: 1px black solid;
 }
+.produit-description__boutons--ajouter:nth-child(2) div:hover {
+  background-color: #fcfcc5;
+}
 .produit-description__boutons--panier:nth-child(3) {
   height: auto;
   width: 25%;
@@ -707,6 +716,9 @@ section h2 {
   cursor: pointer;
   margin: 0;
   border: 1px black solid;
+}
+.produit-description__boutons--panier:nth-child(3) div:hover {
+  background-color: #fcfcc5;
 }
 .produit-description__selection--quantite {
   display: flex;

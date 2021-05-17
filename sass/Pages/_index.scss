@@ -166,6 +166,11 @@ section{
         }
         & span{
             color: black;
+            & i {
+                &:hover{
+                    color:$color-panier;
+                }
+            }
         }
         @media screen and(min-width:768px){
             @include font($font:4rem);
