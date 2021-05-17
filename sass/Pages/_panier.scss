@@ -142,45 +142,37 @@
     &__retour:nth-child(1){
         width: 30%;
         order: 2;
+        @include btn-panier;        
+        @media screen and(min-width:768px){
+            height: 5rem;
+        }
         @media screen and(min-width:1200px){
             width: 15%;
         }
-        & button{
-            @include btn;
-            margin: 0;
-            @media screen and(min-width:768px){
-                height: 5rem;
-            }
-        }
+        
     }
     &__accueil:nth-child(2){
         width: 30%;
         order: 3;
+        @include btn-panier;
+        @media screen and(min-width:768px){
+            height: 5rem;
+        }
         @media screen and(min-width:1200px){
             width: 15%;
-        }
-        & button{
-            @include btn;
-            margin: 0;
-            @media screen and(min-width:768px){
-                height: 5rem;
-            }
         }
     }
     &__confirmation:nth-child(3){
         width: 60%;
         margin: 0 20%;
         order: 1;
+        @include btn-panier;
+        @media screen and(min-width:768px){
+                height: 5rem;
+            }
         @media screen and(min-width:1200px){
             width: 30%;
             margin: 0 35%;
-        }
-        & button{
-            @include btn;
-            margin: 0;
-            @media screen and(min-width:768px){
-                height: 5rem;
-            }
         }
     }
 }

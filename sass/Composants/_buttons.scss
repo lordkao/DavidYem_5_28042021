@@ -5,3 +5,8 @@
     color: black;
     background-color: white;
 }
+@mixin btn-panier{
+    height: 4rem;
+    @include font;
+    @include border-radius($radius:1rem);
+}

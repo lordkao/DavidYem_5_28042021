@@ -998,72 +998,54 @@ section h2 {
 .boutons__retour:nth-child(1) {
   width: 30%;
   order: 2;
+  height: 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .boutons__retour:nth-child(1) {
+    height: 5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .boutons__retour:nth-child(1) {
     width: 15%;
   }
 }
-.boutons__retour:nth-child(1) button {
-  height: 4rem;
-  width: 100%;
-  font-size: 1.6rem;
-  border-radius: 1rem;
-  color: black;
-  background-color: white;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .boutons__retour:nth-child(1) button {
-    height: 5rem;
-  }
-}
 .boutons__accueil:nth-child(2) {
   width: 30%;
   order: 3;
+  height: 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .boutons__accueil:nth-child(2) {
+    height: 5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .boutons__accueil:nth-child(2) {
     width: 15%;
   }
 }
-.boutons__accueil:nth-child(2) button {
-  height: 4rem;
-  width: 100%;
-  font-size: 1.6rem;
-  border-radius: 1rem;
-  color: black;
-  background-color: white;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .boutons__accueil:nth-child(2) button {
-    height: 5rem;
-  }
-}
 .boutons__confirmation:nth-child(3) {
   width: 60%;
   margin: 0 20%;
   order: 1;
+  height: 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .boutons__confirmation:nth-child(3) {
+    height: 5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .boutons__confirmation:nth-child(3) {
     width: 30%;
     margin: 0 35%;
-  }
-}
-.boutons__confirmation:nth-child(3) button {
-  height: 4rem;
-  width: 100%;
-  font-size: 1.6rem;
-  border-radius: 1rem;
-  color: black;
-  background-color: white;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .boutons__confirmation:nth-child(3) button {
-    height: 5rem;
   }
 }
 
