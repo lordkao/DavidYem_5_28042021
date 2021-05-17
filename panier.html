@@ -14,12 +14,12 @@
     <header>
         <h1>Orinoco</h1>
         <a href="./panier.html" class="index-panier">
-            <button id="panier" >
-                <span id="quantite-panier" class="quantite-panier"></span>
-                <i class="fas fa-shopping-cart"></i>
-            </button>
+            <div>
+                <span id="quantite-panier" class="quantite-panier">
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+            </div>
         </a>
-
     </header>
     <section id="panier-section">
         <button id="remove" class="panier-remove">vider le panier</button>
@@ -31,7 +31,7 @@
             <p>Montant total de la commande :</p>
             <div id="totalPanier" ></div>
         </div> 
-        <form id="form" action="" method="post" class="form">
+        <form id="form" action="#" method="post" class="form">
             <h2 class="form__titre-formulaire">Veuillez renseigner vos coordonnées afin valider votre commande:</h2>
             <div id="prenom">
                 <div>
@@ -66,10 +66,9 @@
             <input id="submit" type="submit" value="Valider mes informations" class="submit">
         </form>
         <div class="boutons">
-        <a id="retour" class="boutons__retour" href=""><button  class="boutons__retour" >Retour</button></a>
-        <a class="boutons__accueil" href="./index.html"><button >Accueil</button></a>
-        <a class="boutons__confirmation" href="./confirmation.html"><button id="confirmation" type="submit"  disabled>confirmation</button></a>
-
+            <button type="button" id="retour" class="boutons__retour" >Retour</button>
+            <button type="button" id="accueil" class="boutons__accueil">Accueil</button>
+            <button type="submit" id="confirmation" class="boutons__confirmation"  disabled>confirmation</button>
         </div>
     </section>
     <footer>

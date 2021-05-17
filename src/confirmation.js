@@ -3,6 +3,7 @@ accueil.addEventListener("click",()=>{
     localStorage.removeItem("panier")
     localStorage.removeItem("confirmation")
     localStorage.removeItem("montant")
+    document.location.href="/index.html"
 })
 
 let idCommande = document.getElementById("numeroDeCommande")

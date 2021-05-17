@@ -164,20 +164,3 @@ ajouter.addEventListener("click",(e)=>{
     }
 })
 
-/*let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)*/
-
-/*let eltTrouve = panier.find(elt => elt.nom == produit.name)
-        if(eltTrouve){
-            eltTrouve.quantite = quantite.value
-            localStorage.setItem("panier",JSON.stringify(panier))
-
-            console.log(eltTrouve)
-            console.log(panier)
-            console.log("Le tableau contient cet élément")
-        }
-        else{
-            let produitCommande = new Produit(produit.name,quantite.value,produit.price,produit.imageUrl,produit.description)
-            panier.push(produitCommande)
-            localStorage.setItem("panier",JSON.stringify(panier))
-            console.log(panier)
-        }*/

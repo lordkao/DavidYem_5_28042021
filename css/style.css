@@ -366,23 +366,39 @@ section h2 {
   overflow: hidden;
   height: auto;
   width: auto;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
-.index-panier button {
+.index-panier div {
   height: 100%;
   width: 100%;
   font-size: 2.5rem;
-  background: linear-gradient(#e9d9ba, #a37979);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.index-panier button:hover {
+.index-panier div:hover {
   cursor: pointer;
 }
+.index-panier div span {
+  color: black;
+}
+.index-panier div span i:hover {
+  color: #6e6e6e;
+}
 @media screen and (min-width: 768px) {
-  .index-panier button {
+  .index-panier div {
     font-size: 4rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  .index-panier button {
+  .index-panier div {
     font-size: 4rem;
   }
 }
@@ -606,7 +622,7 @@ section h2 {
 .produit-description__boutons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 80%;
   width: 100%;
@@ -614,6 +630,8 @@ section h2 {
 .produit-description__boutons--retour:nth-child(1) {
   height: auto;
   width: 25%;
+  text-decoration: none;
+  margin-left: 1rem;
 }
 @media screen and (min-width: 1200px) {
   .produit-description__boutons--retour:nth-child(1) {
@@ -622,18 +640,28 @@ section h2 {
     order: 2;
   }
 }
-.produit-description__boutons--retour:nth-child(1) button {
+.produit-description__boutons--retour:nth-child(1) div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 4rem;
   width: 100%;
-  margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
+  color: black;
+  background-color: white;
   cursor: pointer;
   margin: 0;
+  border: 1px black solid;
+}
+.produit-description__boutons--retour:nth-child(1) div:hover {
+  background-color: #fcfcc5;
 }
 .produit-description__boutons--ajouter:nth-child(2) {
   height: auto;
   width: 40%;
+  text-decoration: none;
 }
 @media screen and (min-width: 1200px) {
   .produit-description__boutons--ajouter:nth-child(2) {
@@ -643,18 +671,29 @@ section h2 {
     margin: 0 5rem;
   }
 }
-.produit-description__boutons--ajouter:nth-child(2) button {
+.produit-description__boutons--ajouter:nth-child(2) div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 4rem;
   width: 100%;
-  margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
+  color: black;
+  background-color: white;
   cursor: pointer;
   margin: 0;
+  border: 1px black solid;
+}
+.produit-description__boutons--ajouter:nth-child(2) div:hover {
+  background-color: #fcfcc5;
 }
 .produit-description__boutons--panier:nth-child(3) {
   height: auto;
   width: 25%;
+  text-decoration: none;
+  margin-right: 1rem;
 }
 @media screen and (min-width: 1200px) {
   .produit-description__boutons--panier:nth-child(3) {
@@ -663,14 +702,23 @@ section h2 {
     order: 3;
   }
 }
-.produit-description__boutons--panier:nth-child(3) button {
+.produit-description__boutons--panier:nth-child(3) div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 4rem;
   width: 100%;
-  margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
+  color: black;
+  background-color: white;
   cursor: pointer;
   margin: 0;
+  border: 1px black solid;
+}
+.produit-description__boutons--panier:nth-child(3) div:hover {
+  background-color: #fcfcc5;
 }
 .produit-description__selection--quantite {
   display: flex;
@@ -950,69 +998,54 @@ section h2 {
 .boutons__retour:nth-child(1) {
   width: 30%;
   order: 2;
+  height: 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .boutons__retour:nth-child(1) {
+    height: 5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .boutons__retour:nth-child(1) {
     width: 15%;
   }
 }
-.boutons__retour:nth-child(1) button {
-  height: 4rem;
-  width: 100%;
-  margin: 0 1rem;
-  font-size: 1.6rem;
-  border-radius: 1rem;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .boutons__retour:nth-child(1) button {
-    height: 5rem;
-  }
-}
 .boutons__accueil:nth-child(2) {
   width: 30%;
   order: 3;
+  height: 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .boutons__accueil:nth-child(2) {
+    height: 5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .boutons__accueil:nth-child(2) {
     width: 15%;
   }
 }
-.boutons__accueil:nth-child(2) button {
-  height: 4rem;
-  width: 100%;
-  margin: 0 1rem;
-  font-size: 1.6rem;
-  border-radius: 1rem;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .boutons__accueil:nth-child(2) button {
-    height: 5rem;
-  }
-}
 .boutons__confirmation:nth-child(3) {
   width: 60%;
   margin: 0 20%;
   order: 1;
+  height: 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .boutons__confirmation:nth-child(3) {
+    height: 5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .boutons__confirmation:nth-child(3) {
     width: 30%;
     margin: 0 35%;
-  }
-}
-.boutons__confirmation:nth-child(3) button {
-  height: 4rem;
-  width: 100%;
-  margin: 0 1rem;
-  font-size: 1.6rem;
-  border-radius: 1rem;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .boutons__confirmation:nth-child(3) button {
-    height: 5rem;
   }
 }
 
@@ -1173,9 +1206,10 @@ section h2 {
 .bloc-confirmation div a button {
   height: 4rem;
   width: 100%;
-  margin: 0 1rem;
   font-size: 1.6rem;
   border-radius: 1rem;
+  color: black;
+  background-color: white;
 }
 
 #numeroDeCommande {

@@ -2,16 +2,21 @@ const TeddieUrl = "http://localhost:3000/api/teddies/order"
 let listePanier = document.getElementById("panier")
 const id = localStorage.getItem("id")
 let retour = document.getElementById("retour")
-let btnRetour = document.querySelector("div #retour button.boutons__retour")
+let accueil = document.getElementById("accueil")
 
+accueil.addEventListener("click",()=>{
+    document.location.href = "/index.html"
+})
 
 /*Si aucun id n'est en mémoire sur le localStorage alors le bouton retour est désactivé.*/
 function idSave(){
     if(localStorage.getItem("id") === null){
-        btnRetour.setAttribute("disabled","true")
+        retour.setAttribute("disabled","true")
     }
     else{
-        retour.href = "./produit.html?id="+id
+        retour.addEventListener("click",()=>{
+            document.location.href= "./produit.html?id="+id
+        })
     }
 }
 
@@ -334,5 +339,6 @@ confirmation.addEventListener("click",function(e){
     }
     else if(contact !== undefined && products.length !== 0){
     send(TeddieUrl,contact,products)/*envoir de la requête POST vers l'API*/
+    document.location.href="/confirmation.html"
     }
 })

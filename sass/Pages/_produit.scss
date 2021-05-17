@@ -135,43 +135,63 @@
         }
     }
     &__boutons{
-        @include flex;
+        @include flex($content:space-between);
         @include full($height:80%);
         &--retour:nth-child(1){
             @include auto($width:25%);
+            text-decoration: none;
+            margin-left: 1rem;
             @media screen and(min-width:1200px){
                 @include auto($width:10rem);
                 order: 2;
             }
-            & button{
-            @include btn;
-            cursor: pointer;
-            margin: 0;
+            & div{
+                @include flex;
+                @include btn;
+                cursor: pointer;
+                margin: 0;
+                border: 1px black solid;
+                &:hover{
+                    background-color: $color-warning;
+                }
             }
         }
         &--ajouter:nth-child(2){
             @include auto($width:40%);
+            text-decoration: none;
             @media screen and(min-width:1200px){
                 @include auto($width:20rem);
                 order: 1;
                 margin: 0 5rem;
             }
-            & button{
-            @include btn;
-            cursor: pointer;
-            margin: 0;
+            & div{
+                @include flex;
+                @include btn;
+                cursor: pointer;
+                margin: 0;
+                border: 1px black solid;
+                &:hover{
+                    background-color: $color-warning;
+                }
             }
         }
         &--panier:nth-child(3){
              @include auto($width:25%);
+             text-decoration: none;
+             margin-right: 1rem;
              @media screen and(min-width:1200px){
                 @include auto($width:10rem);
                 order: 3;
             }
-            & button{
-            @include btn;
-            cursor: pointer;
-            margin: 0;
+            & div{
+                @include flex;
+                @include btn;
+                cursor: pointer;
+                margin: 0;
+                border: 1px black solid;
+                &:hover{
+                    background-color: $color-warning;
+                }
             }   
         }
     }

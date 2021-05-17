@@ -151,13 +151,26 @@ section{
     top: 0;
     right: 0;
     overflow: hidden;
-    @include auto;
-    & button{
+    @include auto;    
+    padding: 0.2rem;    
+    margin: 0.2rem;
+    @include flex;
+    text-decoration: none;
+    & div{
         @include full;
-        @include font($font:2.5rem);
-        background: $color-tertiary;
+        @include font($font:map-get($font-size,extra));
+        @include flex($direction:column);
+
         &:hover{
             cursor:pointer;
+        }
+        & span{
+            color: black;
+            & i {
+                &:hover{
+                    color:$color-panier;
+                }
+            }
         }
         @media screen and(min-width:768px){
             @include font($font:4rem);
