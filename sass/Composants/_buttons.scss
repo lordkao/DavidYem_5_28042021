@@ -1,6 +1,7 @@
 @mixin btn{
     @include full($height:4rem);
-    margin: 0 1rem;
     @include font;
     @include border-radius($radius:1rem);
+    color: black;
+    background-color: white;
 }
