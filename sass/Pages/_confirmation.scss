@@ -1,8 +1,14 @@
 .bloc-confirmation{
     @include auto($height:550px);
     @include flex;
+    @media screen and(min-height:800px){
+        height: 800px;
+    }
     @media screen and(min-width:768px){
         @include auto($height:570px);
+        @media screen and(min-height:800px){
+            height: 800px;
+        }
     }
     @media screen and(min-width:1000px){
         @include auto($height:730px);
