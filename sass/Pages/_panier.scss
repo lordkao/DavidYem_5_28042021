@@ -21,7 +21,7 @@
     }
 }
 .ton-panier{
-    @include auto;
+    @include auto($width:70%);
     @include font;
     text-align: center;
     margin: 1rem ;
@@ -65,7 +65,7 @@
 .panier-vide{
     @include flex;
     @include font($font:2rem);
-    @include auto($height:160px);
+    @include auto($height:400px);
 }
 .detail{
     @include flex($direction:column);
@@ -195,6 +195,7 @@
 }
 #panier-section{
     @include flex($direction:column);
+    
 }
 .form{
     @include flex($direction:column);
