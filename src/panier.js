@@ -182,6 +182,19 @@ let displayNone = () =>{
     invalidMail.style.display = "none"
 }
 
+function validation(value,helper,regex,invalid){
+    if(value === "")/*Champ prénom*/{
+        displayNone()
+        helper.style.display = "block"
+        return 0 
+    }
+    else if((regex.test(firstName.value))){
+        displayNone()
+        invalid.style.display = "block"
+        return 0
+    }
+}
+
 /*Attente de la soumission du formulaire.*/
 form.addEventListener("submit",function(e){
     e.preventDefault()
