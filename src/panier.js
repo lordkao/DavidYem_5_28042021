@@ -198,10 +198,6 @@ form.addEventListener("submit",function(e){
 
 
     else if(document.forms["form"]["lastName"].value === "")/*Champ nom*/{
-        confirmSaveInfos.style.display = "none"
-        invalidPrenom.style.display = "none"
-        invalidNom.style.display = "none"
-
         displayNone()
         helpNom.style.display = "block"
         return 0
@@ -242,7 +238,7 @@ form.addEventListener("submit",function(e){
         helpMail.style.display = "block"
         return 0
     }
-    else if((/^([\w.-]+)[@]{1}([\w]+)[.]{1}([a-z]){2,5}/.test(email.value))===false){
+    else if((/^([\w.-]+)[@]{1}([\w]+)[.]{1}([a-z]){2,5}$/.test(email.value))===false){
         displayNone()
         invalidMail.style.display = "block"
         return 0
@@ -274,10 +270,10 @@ form.addEventListener("submit",function(e){
             confirmSaveInfos.style.display = "block"
             submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
             modifier.style.display = "block"
-            confirmation.disabled = false /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
+            confirmation.disabled = false /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
             modifier.addEventListener("click",(e)=>{
                 e.preventDefault()
-                confirmation.disabled = true /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
+                confirmation.disabled = true /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
                 confirmSaveInfos.style.display = "none"
                 firstName.disabled = false
                 lastName.disabled = false
