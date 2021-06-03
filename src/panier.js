@@ -251,7 +251,7 @@ form.addEventListener("submit",function(e){
         helpMail.style.display = "block"
         return 0
     }
-    else if((/^([\w.-]+)[@]{1}([\w]+)[.]{1}([a-z]){2,5}/.test(email.value))===false){
+    else if((/^([\w.-]+)[@]{1}([\w]+)[.]{1}([a-z]){2,5}$/.test(email.value))===false){
         displayNone()
         invalidMail.style.display = "block"
         return 0
