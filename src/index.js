@@ -39,7 +39,7 @@ function getIndex(){
                         
                         let prix = document.createElement("div")
                         prix.classList.add("cadre-produit__prix")
-                        prix.innerText = `Prix : ${response.price} €`
+                        prix.innerText = `Prix : ${(response.price/100)} €`
 
                         blocProduits.appendChild(cadre)
                         cadre.appendChild(lien)

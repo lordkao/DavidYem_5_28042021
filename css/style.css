@@ -374,6 +374,11 @@ section h2 {
   align-items: center;
   text-decoration: none;
 }
+@media screen and (min-width: 425px) {
+  .index-panier {
+    right: 10px;
+  }
+}
 .index-panier div {
   height: 100%;
   width: 100%;
@@ -905,8 +910,8 @@ section h2 {
 .detail img {
   position: absolute;
   display: inline-block;
-  top: 15px;
-  right: 14px;
+  top: 0px;
+  right: 5px;
   border: 1px #f2f2f2 solid;
   height: 50px;
   width: 50px;

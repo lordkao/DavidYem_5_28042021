@@ -156,6 +156,9 @@ section{
     margin: 0.2rem;
     @include flex;
     text-decoration: none;
+    @media screen and(min-width:425px) {
+        right: 10px;
+    }
     & div{
         @include full;
         @include font($font:map-get($font-size,extra));

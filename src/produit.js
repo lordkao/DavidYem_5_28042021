@@ -35,7 +35,7 @@ function getInfosProduit(article){
     let description = document.getElementById("description")
     description.innerHTML = `Description du produit:<br> ${article.description}`
     let prix = document.getElementById("prix")
-    prix.innerHTML = `Prix:<br>${article.price} €`
+    prix.innerHTML = `Prix:<br>${(article.price/100)} €`
 }
 function createSelect(responseRequest){
     let select = document.getElementById("select")
