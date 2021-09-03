@@ -52,7 +52,7 @@ function total(){/*Fonction qui va venir boucler dans le panier en créant des b
                 products.push(article._id)
             }
             
-            let multi = (article.prix*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
+            let multi = ((article.prix/100)*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
 
             let div = document.createElement("div")
                 div.classList.add("detail")
@@ -75,7 +75,7 @@ function total(){/*Fonction qui va venir boucler dans le panier en créant des b
             prixTotalArticle.appendChild(totalArticle)
             prixTotalArticle.appendChild(prixTotal)
             panier.appendChild(div)
-            produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+article.prix+" €"
+            produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+(article.prix/100)+" €"
     
             finalTotal += multi
 
@@ -347,7 +347,7 @@ confirmation.addEventListener("click",function(e){
         alert("Veillez à bien renseigner le formulaire et le valider,merci.")
     }
     else if(contact !== undefined && products.length !== 0){
-    send(TeddieUrl,contact,products)/*envoir de la requête POST vers l'API*/
+    send(TeddieUrl,contact,products)/*envoi de la requête POST vers l'API*/
     document.location.href="/confirmation.html"
     }
 })
