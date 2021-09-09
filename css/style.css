@@ -11,9 +11,15 @@ html {
   src: url("Itim-Regular.ttf");
 }
 body {
+  font-size: 1.4rem;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Itim", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
+  font-family: "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
+}
+
+h1, ul {
+  margin: 0;
+  padding: 0;
 }
 
 section {
@@ -29,8 +35,8 @@ header {
   align-items: center;
   height: 60px;
   width: auto;
-  background: linear-gradient(#e9d9ba, #a37979);
-  font-family: "Shrikhand", "Arial Black", Arial, Verdana, "Trebuchet MS", Georgia, "Courier New";
+  background: #f3e9f1;
+  border: 5px #d3befd solid;
 }
 @media screen and (min-width: 425px) {
   header {
@@ -44,14 +50,20 @@ header {
     width: auto;
   }
 }
+@media screen and (min-width: 968px) {
+  header {
+    height: 170px;
+    width: auto;
+  }
+}
 header h1 {
-  margin: 0;
-  padding: 1rem;
+  height: 100%;
+  width: 100%;
   text-align: center;
-  text-shadow: 0.2rem 0.1rem 0.1rem grey;
-  letter-spacing: 3px;
-  font-size: 3rem;
-  color: black;
+}
+header h1 img {
+  height: 100%;
+  width: auto;
 }
 @media screen and (min-width: 425px) {
   header h1 {
@@ -63,6 +75,29 @@ header h1 {
     font-size: 5rem;
   }
 }
+header .navigation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  list-style: none;
+  background-color: #905cf9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+header .navigation li {
+  margin: 5px 0;
+}
+header .navigation li a {
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
 
 footer {
   height: 200px;
@@ -71,7 +106,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#e9d9ba, #a37979);
+  background: #f3e9f1;
 }
 footer ul {
   list-style: none;
@@ -329,7 +364,7 @@ section h2 {
   font-size: 1.6rem;
   font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 1px;
-  background: linear-gradient(#e9d9ba, #a37979);
+  background: #f3e9f1;
 }
 @media screen and (min-width: 600px) {
   .cadre-produit__nom {
@@ -351,7 +386,7 @@ section h2 {
   font-size: 1.6rem;
   font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 1px;
-  background: linear-gradient(#e9d9ba, #a37979);
+  background: #f3e9f1;
 }
 @media screen and (min-width: 600px) {
   .cadre-produit__prix {
