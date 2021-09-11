@@ -359,15 +359,16 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 40px;
   width: 10%;
   padding: 0 1rem;
   border-radius: 0.5rem 0 0 0.5rem;
   background-color: #616161;
   color: white;
+  font-size: 1.8rem;
 }
 .search-bar__frame--input {
-  height: 30px;
+  height: 40px;
   width: 30%;
   padding-left: 1rem;
   border: none;
@@ -380,7 +381,7 @@ section h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 40px;
   width: 5%;
   cursor: pointer;
   border-radius: 0 0.5rem 0.5rem 0;
@@ -428,13 +429,12 @@ section h2 {
   .bloc-produits__cadre {
     margin: 2rem 1rem;
     height: 330px;
-    width: 40%;
+    width: 25%;
   }
 }
 @media screen and (min-width: 1000px) {
   .bloc-produits__cadre {
     height: 350px;
-    width: 30%;
   }
 }
 

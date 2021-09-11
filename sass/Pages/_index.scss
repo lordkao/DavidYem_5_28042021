@@ -66,15 +66,16 @@ section{
         background-color: lighten($color-tertiary,15%);
         &--label{
             @include flex;
-            height: 30px;
+            height: 40px;
             width: 10%;
             padding: 0 1rem;
             border-radius:0.5rem 0 0 0.5rem;
             background-color: $color-panier;
             color: white;
+            font-size: map-get($font-size, medium) ;
         }
         &--input{
-            height: 30px;
+            height: 40px;
             width: 30%;
             padding-left: 1rem;
             border: none;
@@ -84,7 +85,7 @@ section{
         }
         &--icon{
             @include flex;
-            height: 30px;
+            height: 40px;
             width: 5%;
             cursor: pointer;
             border-radius:0 0.5rem 0.5rem 0;
@@ -117,11 +118,10 @@ section{
         @media screen and(min-width:768px){
             margin: 2rem 1rem;
             height: 330px;
-            width: 40%;
+            width: 25%;
         }
         @media screen and(min-width:1000px){
             height: 350px;
-            width: 30%;
         }
     }  
 }
