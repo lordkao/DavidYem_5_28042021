@@ -53,6 +53,4 @@ function getIndex(){
         
 }
 getIndex()
-if(localStorage.getItem('panier')){
-   getGlobalBasket() 
-}
+getGlobalBasket()

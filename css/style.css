@@ -127,9 +127,27 @@ header .basket__logo {
   align-items: center;
   flex: 1;
 }
-header .basket__logo i {
+header .basket__logo div {
+  position: relative;
+}
+header .basket__logo div i {
   font-size: 4rem;
   color: #b1b1b1;
+}
+header .basket__logo div .number {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 20px;
+  min-width: 20px;
+  bottom: -5px;
+  right: -5px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  display: none;
 }
 header .basket__logo::after {
   content: "";
@@ -891,6 +909,7 @@ section h2 {
   height: 25px;
   width: auto;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 @media screen and (min-width: 600px) {
   .panier-remove {
@@ -1093,6 +1112,7 @@ section h2 {
 .boutons__retour:nth-child(1) {
   width: 30%;
   order: 2;
+  cursor: pointer;
   height: 4rem;
   font-size: 1.6rem;
   border-radius: 1rem;
@@ -1110,6 +1130,7 @@ section h2 {
 .boutons__accueil:nth-child(2) {
   width: 30%;
   order: 3;
+  cursor: pointer;
   height: 4rem;
   font-size: 1.6rem;
   border-radius: 1rem;
@@ -1234,6 +1255,7 @@ section h2 {
   font-size: 1.6rem;
   margin: 1rem;
   margin-left: 4rem;
+  cursor: pointer;
 }
 
 .modifier {

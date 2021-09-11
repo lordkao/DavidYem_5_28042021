@@ -60,9 +60,24 @@ header{
       &__logo{
          @include flex;
          flex: 1;
-         & i{
-            font-size: 4rem;
-            color: $color-secondary;
+            & div{
+               position: relative;
+               & i{
+               font-size: 4rem;
+               color: $color-secondary;
+               }
+               & .number{
+                  position: absolute;
+                  @include flex;
+                  min-height: 20px;
+                  min-width: 20px;
+                  bottom: -5px;
+                  right: -5px;
+                  @include border-radius($radius:10px);
+                  background-color: red;
+                  color: white;
+                  display:none;
+               }
          }
          &::after{
             content:"";

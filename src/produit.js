@@ -1,8 +1,6 @@
 import { getGlobalBasket } from "./function.js"
 
-if(localStorage.getItem('panier')){
-    getGlobalBasket() 
-}
+getGlobalBasket()
 
 const TeddieUrl = "http://localhost:3000/api/teddies/"
 const id = localStorage.getItem("id")
@@ -156,6 +154,7 @@ ajouter.addEventListener("click",(e)=>{
             console.log(quantite.value)
         }
         displayNone()
+        getGlobalBasket()
     }
     else if(quantite.value <= 0 || quantite.value == 0){
         if(eltTrouve){
