@@ -1,16 +1,13 @@
 header{
    position: relative;
-    @include flex;
-    @include auto($height:60px);
-    background: $color-tertiary;
-    @media screen and(min-width:425px){
+   @include flex;
+   @include auto($height:60px);
+   background: $color-tertiary;
+   @media screen and(min-width:425px){
         @include auto($height:80px);
-     }
-     @media screen and(min-width:600px){
-        @include auto($height:100px);
-     }
-     @media screen and(min-width:968px){
-      @include auto($height:170px);
+   }
+   @media screen and(min-width:600px){
+      @include auto($height:130px);
    }
    & h1{
       @include full;
@@ -36,9 +33,8 @@ header{
          @include flex;
          flex: 1;
          & i{
-            font-size: 5rem;
+            font-size: 4rem;
             color: $color-secondary;
-            margin-top: 20px;
          }
          &::after{
             content:"";
@@ -65,9 +61,8 @@ header{
          @include flex;
          flex: 1;
          & i{
-            font-size: 5rem;
+            font-size: 4rem;
             color: $color-secondary;
-            margin-top: 20px;
          }
          &::after{
             content:"";

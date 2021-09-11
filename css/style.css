@@ -50,13 +50,7 @@ header {
 }
 @media screen and (min-width: 600px) {
   header {
-    height: 100px;
-    width: auto;
-  }
-}
-@media screen and (min-width: 968px) {
-  header {
-    height: 170px;
+    height: 130px;
     width: auto;
   }
 }
@@ -95,9 +89,8 @@ header .account__logo {
   flex: 1;
 }
 header .account__logo i {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #b1b1b1;
-  margin-top: 20px;
 }
 header .account__logo::after {
   content: "";
@@ -135,9 +128,8 @@ header .basket__logo {
   flex: 1;
 }
 header .basket__logo i {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #b1b1b1;
-  margin-top: 20px;
 }
 header .basket__logo::after {
   content: "";
