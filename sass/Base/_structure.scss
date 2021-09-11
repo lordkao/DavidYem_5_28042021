@@ -10,9 +10,18 @@ html{
     src: url("Itim-Regular.ttf");
 }     
 body{
+    font-size: 1.4rem;
     margin: 0;
     box-sizing: border-box;
-    font-family:"Itim","Trebuchet MS",Arial,"Courier New",Verdana,Georgia,"Arial Black";
+    font-family:"Trebuchet MS",Arial,"Courier New",Verdana,Georgia,"Arial Black";
+}
+h1,h2,ul,p{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 section{
     @include auto;
