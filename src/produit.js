@@ -86,7 +86,7 @@ class Produit{
     constructor(nom,quantite,prix,image,description,_id){
         this.nom = nom,
         this.quantite = quantite,
-        this.prix = prix,
+        this.prix = (prix / 100),
         this.image = image,
         this.description = description,
         this._id = _id  

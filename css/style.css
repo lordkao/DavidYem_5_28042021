@@ -17,9 +17,14 @@ body {
   font-family: "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
 }
 
-h1, ul {
+h1, h2, ul, p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 section {
@@ -36,7 +41,6 @@ header {
   height: 60px;
   width: auto;
   background: #f3e9f1;
-  border: 5px #d3befd solid;
 }
 @media screen and (min-width: 425px) {
   header {
@@ -60,43 +64,103 @@ header h1 {
   height: 100%;
   width: 100%;
   text-align: center;
+  flex: 2;
 }
-header h1 img {
+header h1 a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header h1 a img {
   height: 100%;
   width: auto;
 }
-@media screen and (min-width: 425px) {
-  header h1 {
-    font-size: 4rem;
-  }
-}
-@media screen and (min-width: 600px) {
-  header h1 {
-    font-size: 5rem;
-  }
-}
-header .navigation {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
-  list-style: none;
-  background-color: #905cf9;
+header .account {
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex: 1;
 }
-header .navigation li {
-  margin: 5px 0;
+header .account__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
-header .navigation li a {
-  color: white;
-  letter-spacing: 1px;
-  text-decoration: none;
+header .account__logo i {
+  font-size: 5rem;
+  color: #b1b1b1;
+  margin-top: 20px;
+}
+header .account__logo::after {
+  content: "";
+  height: 80px;
+  border: 1px #b1b1b1 solid;
+  margin: 0 15px;
+}
+header .account__setting {
+  height: 100%;
+  width: 100%;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+header .account__setting h2 {
+  margin: 10px 0;
   font-size: 1.6rem;
+}
+header .basket {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+header .basket__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+header .basket__logo i {
+  font-size: 5rem;
+  color: #b1b1b1;
+  margin-top: 20px;
+}
+header .basket__logo::after {
+  content: "";
+  height: 80px;
+  border: 1px #b1b1b1 solid;
+  margin: 0 15px;
+}
+header .basket__value {
+  height: 100%;
+  width: 100%;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+header .basket__value h2 {
+  margin: 10px 0;
+  font-size: 1.6rem;
+}
+header .basket__value--link {
+  text-decoration: underline;
+  font-weight: normal;
 }
 
 footer {
@@ -284,7 +348,7 @@ section h2 {
   margin: 2rem 2rem;
   height: 250px;
   width: auto;
-  box-shadow: 0rem 0rem 0.5rem 0.3rem #b9b9b9;
+  box-shadow: 0rem 0rem 0.5rem 0.3rem #b1b1b1;
   border-radius: 2rem;
   overflow: hidden;
 }
@@ -872,7 +936,7 @@ section h2 {
   margin: 1rem;
   border: 2px #f2f2f2 solid;
   border-radius: 1rem;
-  box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
+  box-shadow: 0rem 0rem 1rem 0.3rem #b1b1b1;
 }
 @media screen and (min-width: 600px) {
   .ton-panier {
@@ -997,7 +1061,7 @@ section h2 {
   border-radius: 0.5rem;
   margin: 1rem;
   padding-left: 1rem;
-  border: 2px #b9b9b9 solid;
+  border: 2px #b1b1b1 solid;
 }
 .detail__prix-total-article--prix-total {
   height: 30px;
@@ -1009,7 +1073,7 @@ section h2 {
   border-radius: 0.5rem;
   margin: 1rem;
   padding-left: 1rem;
-  border: 2px #b9b9b9 solid;
+  border: 2px #b1b1b1 solid;
 }
 .detail::after {
   content: "";
@@ -1125,7 +1189,7 @@ section h2 {
   height: auto;
   width: auto;
   border: 2px #f2f2f2 solid;
-  box-shadow: 0rem 0rem 1rem 0.3rem #b9b9b9;
+  box-shadow: 0rem 0rem 1rem 0.3rem #b1b1b1;
   border-radius: 1rem;
   margin: 1rem;
   padding: 1rem 0;

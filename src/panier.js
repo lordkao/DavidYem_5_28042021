@@ -31,7 +31,7 @@ remove.addEventListener("click",()=>{
 })
 
 
-let finalTotal = 0
+let finalTotal = 0 /*Variable qui va contenir le prix total de la commande*/
 let panier = document.getElementById("panierListe")
 let commande = JSON.parse(localStorage.getItem("panier"))
 let products = []/*Création du array products vide pour nous permettre d'implémenter par la suite les "id" des produits.*/
@@ -52,7 +52,7 @@ function total(){/*Fonction qui va venir boucler dans le panier en créant des b
                 products.push(article._id)
             }
             
-            let multi = ((article.prix/100)*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
+            let multi = ((article.prix)*article.quantite)/*Prix total pour une selection de produit en fonction de la quantité */
 
             let div = document.createElement("div")
                 div.classList.add("detail")
@@ -75,7 +75,7 @@ function total(){/*Fonction qui va venir boucler dans le panier en créant des b
             prixTotalArticle.appendChild(totalArticle)
             prixTotalArticle.appendChild(prixTotal)
             panier.appendChild(div)
-            produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+(article.prix/100)+" €"
+            produit.innerHTML = "Nom: "+article.nom+"<br><br>description:<br><br> "+article.description+"<br><br>Prix: "+(article.prix)+" €"
     
             finalTotal += multi
 

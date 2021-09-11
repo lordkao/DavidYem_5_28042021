@@ -1,9 +1,21 @@
 const TeddieUrl = "http://localhost:3000/api/teddies"
-let quantiteDuPanier = document.getElementById("quantite-panier")
+let prixDuPanier = document.getElementById('prixDuPanier')
+let quantitéArticles = document.getElementById('quantitéArticles')
+let totalPriceBasket = 0
+let totalArticles = 0
 
-
-getIndex()
-
+function getGlobalBasket(){
+    let panier = JSON.parse(localStorage.getItem('panier'))
+    console.log(panier)
+    for(article of panier){
+        totalArticles += JSON.parse(article.quantite)
+        totalPriceBasket += (JSON.parse(article.prix)*article.quantite)
+        console.log(totalPriceBasket)
+    }
+    console.log(totalPriceBasket)
+    quantitéArticles.innerText = totalArticles
+    prixDuPanier.innerText = totalPriceBasket
+}
 /*Création des cadres produits en fonctions des produits présent dans les données de l'API */
 function getIndex(){
     fetch(TeddieUrl)
@@ -53,4 +65,8 @@ function getIndex(){
             alert(err)
         })
         
+}
+getIndex()
+if(localStorage.getItem('panier')){
+   getGlobalBasket() 
 }

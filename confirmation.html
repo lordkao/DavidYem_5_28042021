@@ -12,14 +12,37 @@
 </head>
 <body>
     <header>
-        <h1><img src="./logo.png" alt="logo Orinoco"></h1>
-        <a href="./panier.html" class="index-panier">
-            <div>
-                <span id="quantite-panier" class="quantite-panier">
-                    <i class="fas fa-shopping-basket"></i>
-                </span>
+        <h1>
+            <a class="logo-link" href="index.html" alt="lien vers la page d'accueil">
+                <img src="./logo.png" alt="logo Orinoco">
+            </a>
+        </h1>
+        <div class="account">
+            <div class="account__logo"><!--Logo user-->
+                    <i class="far fa-user"></i>
             </div>
-        </a>
+            <div class="account__setting"><!--User inscription/connexion-->
+                    <h2>COMPTE</h2>
+                    <p>
+                        <a href="">Inscription</a>
+                        <span> / </span>
+                        <a href="">Connexion</a>
+                    </p>
+            </div>
+        </div>
+        <div class="basket">
+            <div class="basket__logo"><!--Logo panier-->
+                <i class="fas fa-shopping-basket"></i>
+            </div>
+            <div class="basket__value"><!--Panier-->
+                <div>
+                    <h2>PANIER<a class="basket__value--link" href="panier.html">(voir)</a></h2>
+                    <div>
+                        <span id="quantitéArticles">0</span> produit(s) &middot; <span id="prixDuPanier">0</span> €
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <section class="bloc-confirmation">
         <div>
@@ -43,7 +66,7 @@
             <li class="middot">&middot;</li>
             <li><a href="">Devenir partenaire</a></li>
             <li class="middot">&middot;</li>
-            <li><a href="">Contactez nous</a></li>
+            <li><a href="">Nous contacter</a></li>
         </ul>
     </footer>
     <script async src="./src/confirmation.js"></script>

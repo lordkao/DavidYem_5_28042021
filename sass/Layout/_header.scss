@@ -3,7 +3,6 @@ header{
     @include flex;
     @include auto($height:60px);
     background: $color-tertiary;
-    border: 5px lighten($color-primary,20%) solid;
     @media screen and(min-width:425px){
         @include auto($height:80px);
      }
@@ -16,34 +15,79 @@ header{
    & h1{
       @include full;
       text-align: center;
-      & img{
-         @include full($width:auto);
-      }
-      @media screen and(min-width:425px){
-         @include font($font:4rem);
-      }
-      @media screen and(min-width:600px){
-         @include font($font:5rem);
+      flex: 2;
+      & a{
+         @include full;
+         @include flex;
+         & img{
+            @include full($width:auto);
+         }
+         @media screen and(min-width:425px){
+         }
+         @media screen and(min-width:600px){
+         }
       }
    }
-   .navigation{
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      padding: 10px;
-      list-style: none;
-      background-color: $color-primary;
-      @include flex($direction:column);
+   & .account{
+      @include full;
+      @include flex;
       flex: 1;
-      & li{
-          margin: 5px 0;
-          & a{
-             color: white;
-             letter-spacing:1px;
-             text-decoration: none;
-             font-size: 1.6rem;
-          }
+      &__logo{
+         @include flex;
+         flex: 1;
+         & i{
+            font-size: 5rem;
+            color: $color-secondary;
+            margin-top: 20px;
+         }
+         &::after{
+            content:"";
+            height: 80px;
+            border: 1px $color-secondary solid;
+            margin: 0 15px;
+         }
+      }
+      &__setting{
+         @include full;
+         flex: 3;
+         @include flex($direction:column,$items:flex-start);
+         & h2{
+            margin: 10px 0;
+            font-size: 1.6rem;
+         }
+      }
+   }
+   & .basket{
+      @include full;
+      @include flex;
+      flex: 1;
+      &__logo{
+         @include flex;
+         flex: 1;
+         & i{
+            font-size: 5rem;
+            color: $color-secondary;
+            margin-top: 20px;
+         }
+         &::after{
+            content:"";
+            height: 80px;
+            border: 1px $color-secondary solid;
+            margin: 0 15px;
+         }
+      }
+      &__value{
+         @include full;
+         flex: 3;
+         @include flex($direction:column,$items:flex-start);
+         & h2{
+            margin: 10px 0;
+            font-size: 1.6rem;
+         }
+         &--link{
+            text-decoration: underline;
+            font-weight: normal;
+         }
       }
    }
 }
