@@ -362,7 +362,6 @@ section h2 {
   align-items: center;
   height: 30px;
   width: 10%;
-  cursor: pointer;
   padding: 0 1rem;
   border-radius: 0.5rem 0 0 0.5rem;
   background-color: #616161;
@@ -371,12 +370,23 @@ section h2 {
 .search-bar__frame--input {
   height: 30px;
   width: 30%;
-  border-radius: 0 0.5rem 0.5rem 0;
   padding-left: 1rem;
   border: none;
 }
 .search-bar__frame--input:focus {
   border: 1px #989898 solid;
+}
+.search-bar__frame--icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 5%;
+  cursor: pointer;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: #905cf9;
+  color: white;
 }
 
 .bloc-produits {

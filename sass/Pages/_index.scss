@@ -76,7 +76,6 @@ section{
             @include flex;
             height: 30px;
             width: 10%;
-            cursor: pointer;
             padding: 0 1rem;
             border-radius:0.5rem 0 0 0.5rem;
             background-color: $color-panier;
@@ -85,12 +84,20 @@ section{
         &--input{
             height: 30px;
             width: 30%;
-            border-radius:0 0.5rem 0.5rem 0;
             padding-left: 1rem;
             border: none;
             &:focus{
                 border: 1px darken($color-tertiary,10%) solid;
             }
+        }
+        &--icon{
+            @include flex;
+            height: 30px;
+            width: 5%;
+            cursor: pointer;
+            border-radius:0 0.5rem 0.5rem 0;
+            background-color: $color-primary;
+            color: white;
         }
     }
 }
