@@ -78,6 +78,7 @@ section{
             height: 40px;
             width: 30%;
             padding-left: 1rem;
+            font-size: map-get($font-size, small);
             border: none;
             &:focus{
                 border: 1px darken($color-tertiary,10%) solid;
@@ -87,7 +88,6 @@ section{
             @include flex;
             height: 40px;
             width: 5%;
-            cursor: pointer;
             border-radius:0 0.5rem 0.5rem 0;
             background-color: $color-primary;
             color: white;
