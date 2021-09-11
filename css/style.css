@@ -106,6 +106,7 @@ header .account__logo::after {
   content: "";
   height: 80px;
   border: 1px #b1b1b1 solid;
+  background-color: #b1b1b1;
   margin: 0 15px;
 }
 header .account__setting {
@@ -163,6 +164,7 @@ header .basket__logo::after {
   content: "";
   height: 80px;
   border: 1px #b1b1b1 solid;
+  background-color: #b1b1b1;
   margin: 0 15px;
 }
 header .basket__value {
@@ -253,7 +255,7 @@ footer ul li a {
 .logos div a i {
   font-size: 3rem;
   margin: 0 1rem 1rem 1rem;
-  color: #114592;
+  color: #5e12f6;
 }
 
 .index-presentation {
@@ -472,16 +474,6 @@ section h2 {
   font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 1px;
   background: linear-gradient(#c2a6fc, #e4d7fe);
-}
-@media screen and (min-width: 600px) {
-  .cadre-produit__nom {
-    font-size: 2.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .cadre-produit__nom {
-    font-size: 2rem;
-  }
 }
 .cadre-produit__prix {
   height: 15%;

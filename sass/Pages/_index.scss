@@ -145,12 +145,6 @@ section{
         font-family:"Shrikhand","Trebuchet MS",Arial,"Courier New",Verdana,Georgia,"Arial Black";
         letter-spacing: 1px;
         background: linear-gradient(darken($background,10%),$background);
-        @media screen and(min-width:600px){
-            @include font($font:map-get($font-size,extra));
-        }
-        @media screen and(min-width:768px){
-            @include font($font:map-get($font-size,large));
-        }
     }
     &__prix{
         @include auto($height:15%,$width:100%);
