@@ -1,5 +1,8 @@
+import { getGlobalBasket } from "./function.js"
+
+getGlobalBasket()
+
 const TeddieUrl = "http://localhost:3000/api/teddies/order"
-let listePanier = document.getElementById("panier")
 const id = localStorage.getItem("id")
 let retour = document.getElementById("retour")
 let accueil = document.getElementById("accueil")
@@ -22,15 +25,6 @@ function idSave(){
 
 idSave()
 
-/*Vide le panier et recharge la page.*/
-let remove = document.getElementById("remove")
-remove.addEventListener("click",()=>{
-    localStorage.removeItem("panier")
-    localStorage.removeItem("montant")
-    document.location.reload()
-})
-
-
 let finalTotal = 0 /*Variable qui va contenir le prix total de la commande*/
 let panier = document.getElementById("panierListe")
 let commande = JSON.parse(localStorage.getItem("panier"))
@@ -39,10 +33,8 @@ let products = []/*Création du array products vide pour nous permettre d'implé
 
 function total(){/*Fonction qui va venir boucler dans le panier en créant des blocs reprenants les informations des produits sélectionnés.*/
     if(localStorage.getItem("panier") === null){
-        let panierVide = document.createElement("div")
-        panierVide.classList.add("panier-vide")
-        panier.appendChild(panierVide)
-        panierVide.innerText = "Votre panier est vide"
+        panier.classList.add("panier-vide")
+        panier.innerText = "Votre panier est vide"
         let formulaire = document.getElementById("form")
         formulaire.style.display = "none"
     }
@@ -86,10 +78,17 @@ function total(){/*Fonction qui va venir boucler dans le panier en créant des b
     }
 }
 
-
 total()/*Appel de la fonction total qui va venir matérialiser le panier.*/
 console.log(products)
 
+/*Vide le panier et recharge la page.*/
+let remove = document.getElementById("remove")
+remove.addEventListener("click",()=>{
+    localStorage.removeItem("panier")
+    localStorage.removeItem("montant")
+    total()
+    getGlobalBasket()
+})
 
 /*Formulaire*/
 let firstName = document.getElementById("firstName")
@@ -182,8 +181,8 @@ let displayNone = () =>{
     invalidMail.style.display = "none"
 }
 
-function validation(value,helper,regex,invalid){
-    if(value === "")/*Champ prénom*/{
+/*function validation(value,helper,regex,invalid){
+    if(value === "")/*Champ prénom{
         displayNone()
         helper.style.display = "block"
         return 0 
@@ -193,7 +192,7 @@ function validation(value,helper,regex,invalid){
         invalid.style.display = "block"
         return 0
     }
-}
+}*/
 
 /*Attente de la soumission du formulaire.*/
 form.addEventListener("submit",function(e){
@@ -270,9 +269,9 @@ form.addEventListener("submit",function(e){
             city : city.value,
             email: email.value
             }
-            helpPrenom.style.display = "none"
+            /*helpPrenom.style.display = "none"
             helpNom.style.display = "none"
-            helpAdresse.style.display = "none"
+            helpAdresse.style.display = "none"*/
 
             firstName.setAttribute("disabled",true)
             lastName.setAttribute("disabled",true)
@@ -284,9 +283,12 @@ form.addEventListener("submit",function(e){
             submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
             modifier.style.display = "block"
             confirmation.disabled = false /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
+            confirmation.style.cursor = 'pointer'
+
             modifier.addEventListener("click",(e)=>{
                 e.preventDefault()
                 confirmation.disabled = true /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
+                confirmation.style.cursor = 'default'
                 confirmSaveInfos.style.display = "none"
                 firstName.disabled = false
                 lastName.disabled = false

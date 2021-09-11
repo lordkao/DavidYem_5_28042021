@@ -1,16 +1,13 @@
 header{
    position: relative;
-    @include flex;
-    @include auto($height:60px);
-    background: $color-tertiary;
-    @media screen and(min-width:425px){
+   @include flex;
+   @include auto($height:60px);
+   background: $color-secondary;
+   @media screen and(min-width:425px){
         @include auto($height:80px);
-     }
-     @media screen and(min-width:600px){
-        @include auto($height:100px);
-     }
-     @media screen and(min-width:968px){
-      @include auto($height:170px);
+   }
+   @media screen and(min-width:600px){
+      @include auto($height:130px);
    }
    & h1{
       @include full;
@@ -36,14 +33,13 @@ header{
          @include flex;
          flex: 1;
          & i{
-            font-size: 5rem;
-            color: $color-secondary;
-            margin-top: 20px;
+            font-size: 4rem;
+            color: $color-tertiary;
          }
          &::after{
             content:"";
             height: 80px;
-            border: 1px $color-secondary solid;
+            border: 1px $color-tertiary solid;
             margin: 0 15px;
          }
       }
@@ -64,15 +60,29 @@ header{
       &__logo{
          @include flex;
          flex: 1;
-         & i{
-            font-size: 5rem;
-            color: $color-secondary;
-            margin-top: 20px;
+            & div{
+               position: relative;
+               & i{
+               font-size: 4rem;
+               color: $color-tertiary;
+               }
+               & .number{
+                  position: absolute;
+                  @include flex;
+                  min-height: 20px;
+                  min-width: 20px;
+                  bottom: -5px;
+                  right: -5px;
+                  @include border-radius($radius:10px);
+                  background-color: red;
+                  color: white;
+                  display:none;
+               }
          }
          &::after{
             content:"";
             height: 80px;
-            border: 1px $color-secondary solid;
+            border: 1px $color-tertiary solid;
             margin: 0 15px;
          }
       }

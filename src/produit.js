@@ -1,3 +1,7 @@
+import { getGlobalBasket } from "./function.js"
+
+getGlobalBasket()
+
 const TeddieUrl = "http://localhost:3000/api/teddies/"
 const id = localStorage.getItem("id")
 let panier = []
@@ -5,8 +9,6 @@ let produit /*Ici produit aura pour valeur la réponse à la requête passée da
 let ajouter = document.getElementById("ajouter")
 let quantite = document.getElementById("quantite")
 let articlesPanier = 0 /*Variable qui va contenir le total d'article.*/
-
-
 
 getProduit(TeddieUrl+id)
 getPanier("panier")
@@ -152,6 +154,7 @@ ajouter.addEventListener("click",(e)=>{
             console.log(quantite.value)
         }
         displayNone()
+        getGlobalBasket()
     }
     else if(quantite.value <= 0 || quantite.value == 0){
         if(eltTrouve){

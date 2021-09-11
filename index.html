@@ -31,19 +31,28 @@
         </div>
         <div class="basket">
             <div class="basket__logo"><!--Logo panier-->
-                <i class="fas fa-shopping-basket"></i>
+                <div>
+                    <i class="fas fa-shopping-basket"></i>
+                    <div id="basketNumber" class="number"></div>
+                </div>
             </div>
             <div class="basket__value"><!--Panier-->
                 <div>
                     <h2>PANIER<a class="basket__value--link" href="panier.html">(voir)</a></h2>
                     <div>
-                        <span id="quantitéArticles">0</span> produit(s) &middot; <span id="prixDuPanier">0</span> €
+                        <span id="quantitéArticles">0</span> produit(s) &middot; total: <span id="prixDuPanier">0</span> €
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <section id="section">
+        <div class="search-bar">
+            <div class="search-bar__frame">
+                <label for="search" class="search-bar__frame--label">recherche</label>
+                <input id="search" class="search-bar__frame--input" type="search" placeholder="Taper votre recherche" name="search">
+            </div>
+        </div>
         <div class="index-presentation">
             <img src="./2.jpeg" alt="ours en peluche">
         <p class="index-presentation__text">Retrouvez notre meilleur selection d'ours en peluche fabriqué à la main.<br>Il ne vous reste plus qu'à choisir parmis eux la cible de vos futurs calins.</p></div>
@@ -66,6 +75,6 @@
             <li><a href="">Nous contacter</a></li>
         </ul>
     </footer>
-    <script async src="/src/index.js" ></script>
+    <script async src="/src/index.js" type="module"></script>
 </body>
 </html>

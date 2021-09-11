@@ -50,13 +50,7 @@ header {
 }
 @media screen and (min-width: 600px) {
   header {
-    height: 100px;
-    width: auto;
-  }
-}
-@media screen and (min-width: 968px) {
-  header {
-    height: 170px;
+    height: 130px;
     width: auto;
   }
 }
@@ -95,9 +89,8 @@ header .account__logo {
   flex: 1;
 }
 header .account__logo i {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #b1b1b1;
-  margin-top: 20px;
 }
 header .account__logo::after {
   content: "";
@@ -134,10 +127,27 @@ header .basket__logo {
   align-items: center;
   flex: 1;
 }
-header .basket__logo i {
-  font-size: 5rem;
+header .basket__logo div {
+  position: relative;
+}
+header .basket__logo div i {
+  font-size: 4rem;
   color: #b1b1b1;
-  margin-top: 20px;
+}
+header .basket__logo div .number {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 20px;
+  min-width: 20px;
+  bottom: -5px;
+  right: -5px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  display: none;
 }
 header .basket__logo::after {
   content: "";
@@ -330,6 +340,45 @@ section h2 {
   }
 }
 
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar__frame {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #d7d7d7;
+}
+.search-bar__frame--label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 10%;
+  cursor: pointer;
+  padding: 0 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: #616161;
+  color: white;
+}
+.search-bar__frame--input {
+  height: 30px;
+  width: 30%;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding-left: 1rem;
+  border: none;
+}
+.search-bar__frame--input:focus {
+  border: 1px #989898 solid;
+}
+
 .bloc-produits {
   height: auto;
   width: auto;
@@ -345,53 +394,38 @@ section h2 {
   }
 }
 .bloc-produits__cadre {
-  margin: 2rem 2rem;
+  margin: 2rem 0;
   height: 250px;
-  width: auto;
-  box-shadow: 0rem 0rem 0.5rem 0.3rem #b1b1b1;
-  border-radius: 2rem;
+  width: 80%;
+  box-shadow: 0rem 0rem 1rem 0.3rem #e4e4e4;
   overflow: hidden;
 }
 @media screen and (min-width: 375px) {
   .bloc-produits__cadre {
     height: 300px;
-    width: auto;
   }
 }
 @media screen and (min-width: 425px) {
   .bloc-produits__cadre {
     height: 350px;
-    width: auto;
-    border-radius: 4rem;
-    margin: 2rem 2.5rem;
   }
 }
 @media screen and (min-width: 600px) {
   .bloc-produits__cadre {
     height: 450px;
-    width: auto;
-    border-radius: 4rem;
-    margin: 3rem 3rem;
   }
 }
 @media screen and (min-width: 768px) {
   .bloc-produits__cadre {
+    margin: 2rem 1rem;
     height: 330px;
     width: 40%;
-    border-radius: 2rem;
-    margin: 2rem 1rem;
   }
 }
 @media screen and (min-width: 1000px) {
   .bloc-produits__cadre {
     height: 350px;
     width: 30%;
-    margin: 2rem 3rem;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .bloc-produits__cadre {
-    margin: 5rem 5rem;
   }
 }
 
@@ -428,7 +462,7 @@ section h2 {
   font-size: 1.6rem;
   font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 1px;
-  background: #f3e9f1;
+  background: linear-gradient(#c2a6fc, #e4d7fe);
 }
 @media screen and (min-width: 600px) {
   .cadre-produit__nom {
@@ -449,8 +483,8 @@ section h2 {
   align-items: center;
   font-size: 1.6rem;
   font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
-  letter-spacing: 1px;
-  background: #f3e9f1;
+  letter-spacing: 2px;
+  background: linear-gradient(#c2a6fc, #e4d7fe);
 }
 @media screen and (min-width: 600px) {
   .cadre-produit__prix {
@@ -494,7 +528,7 @@ section h2 {
   color: black;
 }
 .index-panier div span i:hover {
-  color: #6e6e6e;
+  color: #616161;
 }
 @media screen and (min-width: 768px) {
   .index-panier div {
@@ -899,6 +933,7 @@ section h2 {
   height: 25px;
   width: auto;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 @media screen and (min-width: 600px) {
   .panier-remove {
@@ -936,7 +971,7 @@ section h2 {
   margin: 1rem;
   border: 2px #f2f2f2 solid;
   border-radius: 1rem;
-  box-shadow: 0rem 0rem 1rem 0.3rem #b1b1b1;
+  box-shadow: 0rem 0rem 1rem 0.3rem #e4e4e4;
 }
 @media screen and (min-width: 600px) {
   .ton-panier {
@@ -1014,7 +1049,7 @@ section h2 {
   border: 1px #f2f2f2 solid;
   height: 50px;
   width: 50px;
-  box-shadow: 0.2rem 0.2rem 0.2rem grey;
+  box-shadow: 0.2rem 0.2rem 0.2rem #b1b1b1;
 }
 @media screen and (min-width: 425px) {
   .detail img {
@@ -1061,7 +1096,7 @@ section h2 {
   border-radius: 0.5rem;
   margin: 1rem;
   padding-left: 1rem;
-  border: 2px #b1b1b1 solid;
+  border: 2px #f3e9f1 solid;
 }
 .detail__prix-total-article--prix-total {
   height: 30px;
@@ -1073,7 +1108,7 @@ section h2 {
   border-radius: 0.5rem;
   margin: 1rem;
   padding-left: 1rem;
-  border: 2px #b1b1b1 solid;
+  border: 2px #f3e9f1 solid;
 }
 .detail::after {
   content: "";
@@ -1101,6 +1136,7 @@ section h2 {
 .boutons__retour:nth-child(1) {
   width: 30%;
   order: 2;
+  cursor: pointer;
   height: 4rem;
   font-size: 1.6rem;
   border-radius: 1rem;
@@ -1118,6 +1154,7 @@ section h2 {
 .boutons__accueil:nth-child(2) {
   width: 30%;
   order: 3;
+  cursor: pointer;
   height: 4rem;
   font-size: 1.6rem;
   border-radius: 1rem;
@@ -1189,7 +1226,7 @@ section h2 {
   height: auto;
   width: auto;
   border: 2px #f2f2f2 solid;
-  box-shadow: 0rem 0rem 1rem 0.3rem #b1b1b1;
+  box-shadow: 0rem 0rem 1rem 0.3rem #e4e4e4;
   border-radius: 1rem;
   margin: 1rem;
   padding: 1rem 0;
@@ -1242,6 +1279,7 @@ section h2 {
   font-size: 1.6rem;
   margin: 1rem;
   margin-left: 4rem;
+  cursor: pointer;
 }
 
 .modifier {
