@@ -2,7 +2,7 @@ header{
    position: relative;
    @include flex;
    @include auto($height:60px);
-   background: $color-tertiary;
+   background: $color-secondary;
    @media screen and(min-width:425px){
         @include auto($height:80px);
    }
@@ -34,12 +34,12 @@ header{
          flex: 1;
          & i{
             font-size: 4rem;
-            color: $color-secondary;
+            color: $color-tertiary;
          }
          &::after{
             content:"";
             height: 80px;
-            border: 1px $color-secondary solid;
+            border: 1px $color-tertiary solid;
             margin: 0 15px;
          }
       }
@@ -64,7 +64,7 @@ header{
                position: relative;
                & i{
                font-size: 4rem;
-               color: $color-secondary;
+               color: $color-tertiary;
                }
                & .number{
                   position: absolute;
@@ -82,7 +82,7 @@ header{
          &::after{
             content:"";
             height: 80px;
-            border: 1px $color-secondary solid;
+            border: 1px $color-tertiary solid;
             margin: 0 15px;
          }
       }

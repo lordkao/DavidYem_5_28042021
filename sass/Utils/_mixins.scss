@@ -14,10 +14,10 @@
 @mixin border-radius-bottom($radius:2rem){
     border-radius: 0 0 $radius $radius;
 }
-@mixin box-shadow($bottom:0rem,$right:0rem,$smoke:0rem,$contour:0.3rem,$color:$color-secondary){
+@mixin box-shadow($bottom:0rem,$right:0rem,$smoke:0rem,$contour:0.3rem,$color:lighten($color-tertiary,20%)){
     box-shadow: $right $bottom $smoke $contour $color;
 }
-@mixin small-shadow($shadow:0.2rem,$color:grey){
+@mixin small-shadow($shadow:0.2rem,$color:$color-tertiary){
     box-shadow: $shadow $shadow $shadow $color;
 }
 @mixin font($font:map-get($font-size ,small)){
