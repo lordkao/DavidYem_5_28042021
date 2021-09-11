@@ -3,6 +3,8 @@ header{
    @include flex;
    @include auto($height:60px);
    background: $color-secondary;
+   opacity: 0;
+   animation: appear 0.5s ease-in-out both;
    @media screen and(min-width:425px){
         @include auto($height:80px);
    }

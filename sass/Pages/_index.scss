@@ -39,20 +39,14 @@
         @media screen and(min-width:375px){
             @include font($font:map-get($font-size,medium));
         }
-        @media screen and(min-width:600px){
-            @include font($font:map-get($font-size,large));
-        }
-        @media screen and(min-width:768px){
-            @include font($font:map-get($font-size,extra));
-        }
     }
 }
 section{ 
-    @include auto;
     & h2{
         @include auto;
         text-align: center;
         text-decoration: underline;
+        margin: 1rem 0;
         @include font;
         @media screen and(min-width:425px){
             @include font(map-get($font-size,medium));
@@ -60,11 +54,9 @@ section{
         @media screen and(min-width:600px){
             @include font(map-get($font-size,large));
         }
-        @media screen and(min-width:768px){
-            @include font(map-get($font-size,extra));
-        }
     }
 }
+
 .search-bar{
     @include flex;
     &__frame{

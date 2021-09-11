@@ -32,6 +32,14 @@ section {
   width: auto;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 header {
   position: relative;
   display: flex;
@@ -41,6 +49,8 @@ header {
   height: 60px;
   width: auto;
   background: #f3e9f1;
+  opacity: 0;
+  animation: appear 0.5s ease-in-out both;
 }
 @media screen and (min-width: 425px) {
   header {
@@ -173,6 +183,13 @@ header .basket__value--link {
   font-weight: normal;
 }
 
+section {
+  height: auto;
+  width: auto;
+  opacity: 0;
+  animation: appear 0.5s ease-in-out both;
+}
+
 footer {
   height: 200px;
   width: auto;
@@ -302,26 +319,13 @@ footer ul li a {
     font-size: 1.8rem;
   }
 }
-@media screen and (min-width: 600px) {
-  .index-presentation__text {
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .index-presentation__text {
-    font-size: 2.5rem;
-  }
-}
 
-section {
-  height: auto;
-  width: auto;
-}
 section h2 {
   height: auto;
   width: auto;
   text-align: center;
   text-decoration: underline;
+  margin: 1rem 0;
   font-size: 1.6rem;
 }
 @media screen and (min-width: 425px) {
@@ -332,11 +336,6 @@ section h2 {
 @media screen and (min-width: 600px) {
   section h2 {
     font-size: 2rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  section h2 {
-    font-size: 2.5rem;
   }
 }
 
