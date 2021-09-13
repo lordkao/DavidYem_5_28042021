@@ -31,6 +31,10 @@ header{
       @include full;
       @include flex;
       flex: 1;
+      display: none;
+      @media screen and(min-width:768px) {
+         display:flex;
+      }
       &__logo{
          @include flex;
          flex: 1;
@@ -60,6 +64,10 @@ header{
       @include full;
       @include flex;
       flex: 1;
+      display: none;
+      @media screen and(min-width:768px) {
+         display:flex;
+      }
       &__logo{
          @include flex;
          flex: 1;

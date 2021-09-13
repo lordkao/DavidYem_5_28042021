@@ -1,7 +1,7 @@
 .index-presentation{
     position: relative;
     @include flex($items:flex-start);
-    @include auto($height: 300px);
+    @include full($height: 300px);
     & img{
         z-index: 1;
         @include full;        
@@ -58,21 +58,29 @@ section{
         &--label{
             @include flex;
             height: 40px;
-            width: 10%;
+            width: 20%;
             padding: 0 1rem;
             border-radius:0.5rem 0 0 0.5rem;
             background-color: $color-panier;
             color: white;
-            font-size: map-get($font-size, medium) ;
+            @include font;
+            @media screen and(min-width:768px) {
+                width: 10%;
+                font-size: map-get($font-size, medium);
+            }
         }
         &--input{
             height: 40px;
-            width: 30%;
+            width: 60%;
             padding-left: 1rem;
-            font-size: map-get($font-size, small);
+            font-size: 1.4rem;
             border: none;
             &:focus{
                 border: 1px darken($color-tertiary,10%) solid;
+            }
+            @media screen and(min-width:768px) {
+                width: 40%;
+                font-size: map-get($font-size, medium);
             }
         }
         &--icon{
@@ -80,7 +88,7 @@ section{
             @include flex;
             z-index: 1;
             height: 40px;
-            width: 5%;
+            width: 15%;
             cursor: pointer;
             border-radius:0 0.5rem 0.5rem 0;
             background: $btn-search;
@@ -101,11 +109,14 @@ section{
             &:hover::before{
                 opacity: 1;
             }
+            @media screen and(min-width:768px) {
+                width: 5%;
+            }
         }
     }
 }
 .bloc-produits{
-    @include auto;
+    @include auto($width:100%);
     @include flex($direction:column);
     @media screen and(min-width:768px){
         flex-direction: row;
@@ -128,10 +139,15 @@ section{
         @media screen and(min-width:768px){
             margin: 2rem 1rem;
             height: 330px;
+            width: 40%;
+        }
+        @media screen and(min-width:1024px){
+            height: 350px;
             width: 25%;
         }
-        @media screen and(min-width:1000px){
+        @media screen and(min-width:1400px){
             height: 350px;
+            width: 20%;
         }
     }  
 }
