@@ -82,6 +82,10 @@ section{
                 width: 40%;
                 font-size: map-get($font-size, medium);
             }
+            @media screen and(min-width:1200px) {
+                width: 30%;
+                font-size: map-get($font-size, medium);
+            }
         }
         &--icon{
             position: relative;

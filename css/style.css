@@ -393,6 +393,12 @@ section h2 {
     font-size: 1.8rem;
   }
 }
+@media screen and (min-width: 1200px) {
+  .search-bar__frame--input {
+    width: 30%;
+    font-size: 1.8rem;
+  }
+}
 .search-bar__frame--icon {
   position: relative;
   display: flex;
