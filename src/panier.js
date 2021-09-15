@@ -279,6 +279,8 @@ form.addEventListener("submit",function(e){
             city.setAttribute("disabled",true)
             email.setAttribute("disabled",true)
 
+
+            disabledCheck()
             confirmSaveInfos.style.display = "block"
             submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
             modifier.style.display = "block"
@@ -293,6 +295,7 @@ form.addEventListener("submit",function(e){
 
             modifier.addEventListener("click",function (e){
                 e.preventDefault()
+                enabledCheck()
                 confirmation.disabled = true /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
                 confirmation.style.cursor = 'default'
                 confirmSaveInfos.style.display = "none"
@@ -310,6 +313,71 @@ form.addEventListener("submit",function(e){
     console.log(contact)/*Affiche dans la console les informations enregistrées. */
     console.log("informations enregistrées")/*Confirmation dans la console que les informations sont bien enregistrées. */
 })
+
+let checkboxArray = ['checkboxPaypal','checkboxVisa','checkboxMasterCard']
+let labelArray = ['labelPaypal','labelVisa','labelMasterCard']
+
+checkboxArray.map( check =>{
+    check = document.getElementById(check)
+
+})
+labelArray.map( label => label = document.getElementById(label))
+console.log(checkboxPaypal)
+console.log(labelVisa)
+
+function removeCheck(){/*Supprime les attributs checked des inputs checkbox.*/
+    checkboxArray.map( check => {
+        check = document.getElementById(check)
+        check.removeAttribute('checked')
+    })
+}
+function enabledCheck(){
+    checkboxArray.map( check => {
+        check = document.getElementById(check)
+        check.removeAttribute('disabled')
+    })
+}
+function disabledCheck(){
+    checkboxArray.map( check => {
+        check = document.getElementById(check)
+        check.setAttribute('disabled','')
+    })
+}
+labelPaypal.addEventListener('click',function(e){
+    e.preventDefault()
+    if(checkboxPaypal.checked){
+        removeCheck()
+    }
+    else{
+        removeCheck()
+        checkboxPaypal.setAttribute('checked','')
+        console.log('checkboxPaypal : ajouté')
+    }
+})
+labelMasterCard.addEventListener('click',function(e){
+    e.preventDefault()
+    if(checkboxMasterCard.checked){
+        removeCheck()
+    }
+    else{
+        removeCheck()
+        checkboxMasterCard.setAttribute('checked','')
+        console.log('checkboxMasterCard : ajouté')
+    }
+})
+labelVisa.addEventListener('click',function(e){
+    e.preventDefault()
+    if(checkboxVisa.checked){
+        removeCheck()
+    }
+    else{
+        removeCheck()
+        checkboxVisa.setAttribute('checked','')
+        console.log('checkboxVisa : ajouté')
+    }
+})
+
+
 
 
 /*  Conditions pour verification avant envoi requête POST contenant l'objet contact et tableau products:
@@ -340,7 +408,7 @@ function send(url,formulaire,id){/*Envoi de la requête POST avec l'objet contac
     })
 }
 
-confirmation.addEventListener("click",function(e){
+confirmation.addEventListener("click",function(e){/*Confirmation de la commande et envoi de la requête.*/
     
     if(contact === undefined && products.length === 0){
         e.preventDefault()

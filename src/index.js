@@ -10,7 +10,7 @@ let noArticleFrame = document.createElement('div')/*Création du message indiqua
     noArticleFrame.classList.add('no-articles')
 let quote = document.createElement('p')
     quote.classList.add('no-articles__quote')
-    quote.innerText = 'Aucun article(s) ne correspond à votre recherche !'
+    quote.innerText = 'Aucun article ne correspond à votre recherche !'
 noArticleFrame.appendChild(quote)
 
 /*Création des cadres produits en fonctions des produits présent dans les données de l'API */
@@ -78,7 +78,7 @@ function getIndex(){
                     console.log(newName)
                 })
                 if(articleToHide.length === allArticles.length){/*Affiche un message s'il n'y a aucun résultats pour la recherche saisie*/
-                    console.log('Aucun article(s) ne correspond à votre recherche !')
+                    console.log('Aucun article ne correspond à votre recherche !')
                     blocProduits.appendChild(noArticleFrame)
                 }
                 else if(blocProduits.appendChild(noArticleFrame)){
