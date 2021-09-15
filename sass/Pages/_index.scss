@@ -46,7 +46,6 @@ section{
         }
     }
 }
-
 .search-bar{
     @include flex;
     width: 100%;
@@ -223,5 +222,21 @@ section{
         @media screen and(min-width:1200px){
             @include font($font:4rem);
         }
+    }
+}
+.no-articles{
+    padding: 3rem;
+    @include flex;
+    width: auto;
+    min-height: 30vh;
+    background-color: #f2f2f2;
+    @media screen and(min-width:1024px) {
+        width: 100%;
+    }
+    &__quote{
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3rem;
     }
 }
