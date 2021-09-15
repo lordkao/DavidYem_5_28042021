@@ -29,4 +29,4 @@ function getGlobalBasket(){
     }
 }
 
-export {getGlobalBasket}
+export { getGlobalBasket }

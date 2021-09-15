@@ -284,8 +284,14 @@ form.addEventListener("submit",function(e){
             modifier.style.display = "block"
             confirmation.disabled = false /*Activation du bouton "confirmation" aprés la validation du formulaire.*/
             confirmation.style.cursor = 'pointer'
+            confirmation.addEventListener('mouseover',function(){/*Ajout de la classe confirmation-hover afin de changer le background au survol de l'élément*/
+                confirmation.classList.add('confirmation-hover')
+            })
+            confirmation.addEventListener('mouseleave',function(){/*Suppression de la classe confirmation-hover*/
+                confirmation.classList.remove('confirmation-hover')
+            })
 
-            modifier.addEventListener("click",(e)=>{
+            modifier.addEventListener("click",function (e){
                 e.preventDefault()
                 confirmation.disabled = true /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
                 confirmation.style.cursor = 'default'

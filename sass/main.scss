@@ -2,7 +2,9 @@
 @import "./Composants/buttons";
 @import "./Utils/mixins";
 @import "./Base/structure"; 
+@import "./Utils/keyframes.scss";
 @import "./Layout/header";
+@import "./Layout/section.scss";
 @import "./Layout/footer";
 @import "./Pages/index";
 @import "./Pages/produit";

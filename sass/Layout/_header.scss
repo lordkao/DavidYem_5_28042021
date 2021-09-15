@@ -3,6 +3,8 @@ header{
    @include flex;
    @include auto($height:60px);
    background: $color-secondary;
+   opacity: 0;
+   animation: appear 0.5s ease-in-out both;
    @media screen and(min-width:425px){
         @include auto($height:80px);
    }
@@ -29,6 +31,10 @@ header{
       @include full;
       @include flex;
       flex: 1;
+      display: none;
+      @media screen and(min-width:768px) {
+         display:flex;
+      }
       &__logo{
          @include flex;
          flex: 1;
@@ -40,6 +46,7 @@ header{
             content:"";
             height: 80px;
             border: 1px $color-tertiary solid;
+            background-color: $color-tertiary;
             margin: 0 15px;
          }
       }
@@ -57,6 +64,10 @@ header{
       @include full;
       @include flex;
       flex: 1;
+      display: none;
+      @media screen and(min-width:768px) {
+         display:flex;
+      }
       &__logo{
          @include flex;
          flex: 1;
@@ -83,6 +94,7 @@ header{
             content:"";
             height: 80px;
             border: 1px $color-tertiary solid;
+            background-color: $color-tertiary;
             margin: 0 15px;
          }
       }

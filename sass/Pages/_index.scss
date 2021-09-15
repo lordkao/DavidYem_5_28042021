@@ -1,31 +1,19 @@
 .index-presentation{
     position: relative;
     @include flex($items:flex-start);
-    @include auto($height: 300px);
+    @include full($height: 300px);
     & img{
-        position: absolute;
         z-index: 1;
         @include full;        
     }
     @media screen and(min-width:375px){
         height: 350px;
     }
-    @media screen and(min-width:768px){
-        margin:0 10rem;
-    }
-    @media screen and(min-width:1000px){
-        margin:0 15rem;
+    @media screen and(min-width:1024px){
+        width: 50%;
     }
     @media screen and(min-width:1200px){
-        height: 400px;
-    }
-    @media screen and(min-width:1400px){
-        height: 500px;
-        margin:0 26rem;
-    }
-    @media screen and(min-width:1700px){
-        height: 500px;
-        margin:0 32rem;
+        width: 40%;
     }
     &__text{
         @include auto;
@@ -33,26 +21,22 @@
         z-index: 2;
         opacity: 1;
         @include font;
+        top: 10px;
         margin: 0;
         padding: 2rem;
         font-weight: bold;
         @media screen and(min-width:375px){
             @include font($font:map-get($font-size,medium));
         }
-        @media screen and(min-width:600px){
-            @include font($font:map-get($font-size,large));
-        }
-        @media screen and(min-width:768px){
-            @include font($font:map-get($font-size,extra));
-        }
     }
 }
 section{ 
-    @include auto;
+    @include flex($direction:column);
     & h2{
         @include auto;
         text-align: center;
         text-decoration: underline;
+        margin: 1rem 0;
         @include font;
         @media screen and(min-width:425px){
             @include font(map-get($font-size,medium));
@@ -60,13 +44,11 @@ section{
         @media screen and(min-width:600px){
             @include font(map-get($font-size,large));
         }
-        @media screen and(min-width:768px){
-            @include font(map-get($font-size,extra));
-        }
     }
 }
 .search-bar{
     @include flex;
+    width: 100%;
     &__frame{
         @include flex;
         width: 100%;
@@ -74,28 +56,70 @@ section{
         background-color: lighten($color-tertiary,15%);
         &--label{
             @include flex;
-            height: 30px;
-            width: 10%;
-            cursor: pointer;
+            height: 40px;
+            width: 20%;
             padding: 0 1rem;
             border-radius:0.5rem 0 0 0.5rem;
             background-color: $color-panier;
             color: white;
+            @include font;
+            @media screen and(min-width:768px) {
+                width: 10%;
+                font-size: map-get($font-size, medium);
+            }
         }
         &--input{
-            height: 30px;
-            width: 30%;
-            border-radius:0 0.5rem 0.5rem 0;
+            height: 40px;
+            width: 60%;
             padding-left: 1rem;
+            font-size: 1.4rem;
             border: none;
             &:focus{
                 border: 1px darken($color-tertiary,10%) solid;
+            }
+            @media screen and(min-width:768px) {
+                width: 40%;
+                font-size: map-get($font-size, medium);
+            }
+            @media screen and(min-width:1200px) {
+                width: 30%;
+                font-size: map-get($font-size, medium);
+            }
+        }
+        &--icon{
+            position: relative;
+            @include flex;
+            z-index: 1;
+            height: 40px;
+            width: 15%;
+            cursor: pointer;
+            border-radius:0 0.5rem 0.5rem 0;
+            background: $btn-search;
+            color: white;
+            border: none;
+            overflow: hidden;
+            &::before{
+                content: "";
+                position: absolute;
+                background: $btn-search-hover;
+                z-index: -1;
+                opacity: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+            &:hover::before{
+                opacity: 1;
+            }
+            @media screen and(min-width:768px) {
+                width: 5%;
             }
         }
     }
 }
 .bloc-produits{
-    @include auto;
+    @include auto($width:100%);
     @include flex($direction:column);
     @media screen and(min-width:768px){
         flex-direction: row;
@@ -120,9 +144,13 @@ section{
             height: 330px;
             width: 40%;
         }
-        @media screen and(min-width:1000px){
+        @media screen and(min-width:1024px){
             height: 350px;
-            width: 30%;
+            width: 25%;
+        }
+        @media screen and(min-width:1400px){
+            height: 350px;
+            width: 20%;
         }
     }  
 }
@@ -145,13 +173,7 @@ section{
         @include font;
         font-family:"Shrikhand","Trebuchet MS",Arial,"Courier New",Verdana,Georgia,"Arial Black";
         letter-spacing: 1px;
-        background: linear-gradient(darken($background,10%),$background);
-        @media screen and(min-width:600px){
-            @include font($font:map-get($font-size,extra));
-        }
-        @media screen and(min-width:768px){
-            @include font($font:map-get($font-size,large));
-        }
+        background: linear-gradient($color-tertiary ,$color-grey);
     }
     &__prix{
         @include auto($height:15%,$width:100%);
@@ -159,7 +181,7 @@ section{
         @include font;
         font-family:"Shrikhand","Trebuchet MS",Arial,"Courier New",Verdana,Georgia,"Arial Black";
         letter-spacing: 2px;
-        background: linear-gradient(darken($background,10%),$background);
+        background: linear-gradient($color-tertiary ,$color-grey);
         @media screen and(min-width:600px){
         @include font($font:map-get($font-size,large));
         }
@@ -200,5 +222,21 @@ section{
         @media screen and(min-width:1200px){
             @include font($font:4rem);
         }
+    }
+}
+.no-articles{
+    padding: 3rem;
+    @include flex;
+    width: auto;
+    min-height: 30vh;
+    background-color: #f2f2f2;
+    @media screen and(min-width:1024px) {
+        width: 100%;
+    }
+    &__quote{
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3rem;
     }
 }
