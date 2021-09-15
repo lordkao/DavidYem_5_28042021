@@ -522,8 +522,8 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 1px;
+  font-weight: bold;
   background: linear-gradient(#b1b1b1, #dddddd);
 }
 .cadre-produit__prix {
@@ -534,8 +534,8 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 2px;
+  font-weight: bold;
   background: linear-gradient(#b1b1b1, #dddddd);
 }
 @media screen and (min-width: 600px) {
