@@ -318,25 +318,30 @@
     background: $btn-hover;
 }
 #payment{
-    @include flex;
-    & div{
+    @include flex($direction:column);
+    & #selectionPayment{
         @include flex;
-        position: relative;
-        & input{
-            width: auto;
-            position: absolute;
-            left: 30px;
-            z-index: -1;
-        }
-        & label{
-            width: 100%;
-            & i{
-                font-size: 6rem;
-                color: darken($color-primary,20%);
-                text-align: center;
+        flex-wrap: wrap;
+        & div{
+            @include flex;
+            position: relative;
+            width: 30%;
+            & input{
                 width: auto;
-                & span{
-                    display: none;
+                position: absolute;
+                left: 15px;
+                z-index: -1;
+            }
+            & label{
+                width: 100%;
+                & i{
+                    font-size: 6rem;
+                    color: #0a4dc9c4;
+                    text-align: center;
+                    width: auto;
+                    & span{
+                        display: none;
+                    }
                 }
             }
         }
