@@ -149,14 +149,13 @@ let helpAdresse = help("adresse","adresse")
 let helpVille = help("ville","ville")
 let helpMail = help("mail","e-mail")
 
-
 /*Création des variables contenants les messages d'erreurs pour une mauvaise saisie.*/
 let erreurPrenom = "Veuillez renseigner votre prénom seulement avec des lettres.(ex: David)"
 let erreurNom = "Veuillez renseigner votre nom seulement avec des lettres.(ex: Legrand)"
 let erreurVille = "Veuillez saisir une ville valide.(ex: Toulouse)"
 let erreurAdresse = "Veuillez saisir une adresse valide.(ex: 14 rue de Jean de la Fontaine)"
 let erreurMail = "Veuillez saisir une adresse mail valide.(ex:jean-dufrene@outlook.fr)"
-
+let erreurPayment = 'Veuillez choisir un moyen de paiement.'
 
 /*Création des messages d'erreurs lors d'une mauvaise saisie.*/
 let invalidPrenom = invalidInputText("prenom",erreurPrenom)
@@ -164,7 +163,7 @@ let invalidNom = invalidInputText("nom",erreurNom)
 let invalidAdresse = invalidInputText("adresse",erreurAdresse)
 let invalidVille = invalidInputText("ville",erreurVille)
 let invalidMail = invalidInputText("mail",erreurMail)
-
+let invalidPayment = invalidInputText("payment",erreurPayment)
 
 /*Fonction qui désactive tous les messages d'erreurs.*/
 let displayNone = () =>{
@@ -179,10 +178,11 @@ let displayNone = () =>{
     invalidAdresse.style.display = "none"
     invalidVille.style.display = "none"
     invalidMail.style.display = "none"
+    invalidPayment.style.display = "none"
 }
 
 /*function validation(value,helper,regex,invalid){
-    if(value === "")/*Champ prénom{
+    if(value == "")/*Champ prénom{
         displayNone()
         helper.style.display = "block"
         return 0 
@@ -256,6 +256,10 @@ form.addEventListener("submit",function(e){
         return 0
     }
 
+    else if(!checkboxPaypal.checked && !checkboxVisa.checked && !checkboxMasterCard.checked){
+        displayNone()
+        invalidPayment.style.display = "block"
+    }
     
     /*Création de l'objet Contact en enregistrant les informations du client dans la variable contact.*/
     else{
@@ -279,6 +283,8 @@ form.addEventListener("submit",function(e){
             city.setAttribute("disabled",true)
             email.setAttribute("disabled",true)
 
+            disabledCheck()
+            setIndex('-1')
             confirmSaveInfos.style.display = "block"
             submitBtn.style.display = "none"/*le bouton disparait pour faire place au bouton modifier*/
             modifier.style.display = "block"
@@ -293,6 +299,8 @@ form.addEventListener("submit",function(e){
 
             modifier.addEventListener("click",function (e){
                 e.preventDefault()
+                enabledCheck()
+                setIndex('1')
                 confirmation.disabled = true /*Désactivation du bouton "confirmation" tant que le formulaire n'est pas valider avec le bouton "valider".*/
                 confirmation.style.cursor = 'default'
                 confirmSaveInfos.style.display = "none"
@@ -311,6 +319,64 @@ form.addEventListener("submit",function(e){
     console.log("informations enregistrées")/*Confirmation dans la console que les informations sont bien enregistrées. */
 })
 
+let checkboxArray = ['checkboxPaypal','checkboxVisa','checkboxMasterCard']
+let labelArray = ['labelPaypal','labelVisa','labelMasterCard']
+
+checkboxArray.map( check =>{
+    check = document.getElementById(check)
+
+})
+labelArray.map( label => label = document.getElementById(label))
+console.log(checkboxPaypal)
+console.log(labelVisa)
+
+function removeCheck(){/*Supprime les attributs checked des inputs checkbox.*/
+    checkboxArray.map( check => {
+        check = document.getElementById(check)
+        check.removeAttribute('checked')
+    })
+}
+function enabledCheck(){
+    checkboxArray.map( check => {
+        check = document.getElementById(check)
+        check.removeAttribute('disabled')
+    })
+}
+function disabledCheck(){
+    checkboxArray.map( check => {
+        check = document.getElementById(check)
+        check.setAttribute('disabled','')
+    })
+}
+function listen(checkbox){
+    if(checkbox.checked){
+        removeCheck()
+    }
+    else{
+        removeCheck()
+        checkbox.setAttribute('checked','')
+        console.log(`${checkbox} : ajouté`)
+    }
+}
+function setIndex(value){
+    labelArray.map( label => {
+        label = document.getElementById(label)
+        label.style.zIndex = value
+    })
+}
+
+labelPaypal.addEventListener('click', function(e){
+    e.preventDefault()
+    listen(checkboxPaypal)
+})
+labelMasterCard.addEventListener('click',function(e){
+    e.preventDefault()
+    listen(checkboxMasterCard)
+})
+labelVisa.addEventListener('click',function(e){
+    e.preventDefault()
+    listen(checkboxVisa)
+})
 
 /*  Conditions pour verification avant envoi requête POST contenant l'objet contact et tableau products:
     Si l'un des 2 objets ou même les 2 ne sont pas renseigner correctement,
@@ -340,7 +406,7 @@ function send(url,formulaire,id){/*Envoi de la requête POST avec l'objet contac
     })
 }
 
-confirmation.addEventListener("click",function(e){
+confirmation.addEventListener("click",function(e){/*Confirmation de la commande et envoi de la requête.*/
     
     if(contact === undefined && products.length === 0){
         e.preventDefault()

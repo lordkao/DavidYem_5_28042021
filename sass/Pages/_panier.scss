@@ -317,3 +317,33 @@
 .confirmation-hover{
     background: $btn-hover;
 }
+#payment{
+    @include flex($direction:column);
+    & #selectionPayment{
+        @include flex;
+        flex-wrap: wrap;
+        & div{
+            @include flex;
+            position: relative;
+            width: 30%;
+            & input{
+                width: auto;
+                position: absolute;
+                left: 15px;
+                z-index: -1;
+            }
+            & label{
+                width: 100%;
+                & i{
+                    font-size: 6rem;
+                    color: #0a4dc9c4;
+                    text-align: center;
+                    width: auto;
+                    & span{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

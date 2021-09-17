@@ -522,8 +522,8 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 1px;
+  font-weight: bold;
   background: linear-gradient(#b1b1b1, #dddddd);
 }
 .cadre-produit__prix {
@@ -534,8 +534,8 @@ section h2 {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  font-family: "Shrikhand", "Trebuchet MS", Arial, "Courier New", Verdana, Georgia, "Arial Black";
   letter-spacing: 2px;
+  font-weight: bold;
   background: linear-gradient(#b1b1b1, #dddddd);
 }
 @media screen and (min-width: 600px) {
@@ -1477,6 +1477,46 @@ section h2 {
 
 .confirmation-hover {
   background: radial-gradient(white, #905cf9);
+}
+
+#payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#payment #selectionPayment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#payment #selectionPayment div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 30%;
+}
+#payment #selectionPayment div input {
+  width: auto;
+  position: absolute;
+  left: 15px;
+  z-index: -1;
+}
+#payment #selectionPayment div label {
+  width: 100%;
+}
+#payment #selectionPayment div label i {
+  font-size: 6rem;
+  color: #0a4dc9c4;
+  text-align: center;
+  width: auto;
+}
+#payment #selectionPayment div label i span {
+  display: none;
 }
 
 .bloc-confirmation {
