@@ -1,3 +1,4 @@
+/*Couleurs*/
 $color-primary:#905cf9;
 $color-secondary:#f3e9f1;
 $color-tertiary:#b1b1b1;
@@ -6,12 +7,19 @@ $color-warning:rgb(252, 252, 197);
 $color-grey: #dddddd;
 $color-panier: #616161;
 
+/*Couleur background*/
 $background:lighten($color-primary,25%);
 
+/*Couleurs barre de recherche*/
 $btn-search: linear-gradient(to top left, $color-primary 20%, $color-quaternary);
 $btn-search-hover:linear-gradient(to top left, lighten($color-primary,7%) 20%, lighten($color-quaternary,7%));
 
+/*Couleurs boutons*/
 $btn:white;
 $btn-hover: radial-gradient(white ,$color-primary);
 
+/*Taille de police*/
 $font-size:(small:1.6rem,medium:1.8rem,large:2rem,extra:2.5rem,extra-large:3rem);
+
+/*durée animations*/
+$menu-icon-duration : 0.3s;
