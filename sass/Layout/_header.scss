@@ -14,7 +14,10 @@ header{
    & h1{
       @include full;
       text-align: center;
-      flex: 2;
+      flex: 5;
+      @media screen and(min-width:426px){
+         flex: 2;
+      }
       & a{
          @include full;
          @include flex;
@@ -27,89 +30,148 @@ header{
          }
       }
    }
-   & .account{
-      @include full;
+}
+.account{
+   @include full;
+   @include flex;
+   flex: 1;
+   display: none;
+   @media screen and(min-width:768px) {
+      display:flex;
+   }
+   &__logo{
       @include flex;
       flex: 1;
-      display: none;
-      @media screen and(min-width:768px) {
-         display:flex;
+      & i{
+         font-size: 4rem;
+         color: $color-tertiary;
       }
-      &__logo{
-         @include flex;
-         flex: 1;
-         & i{
-            font-size: 4rem;
-            color: $color-tertiary;
-         }
-         &::after{
-            content:"";
-            height: 80px;
-            border: 1px $color-tertiary solid;
-            background-color: $color-tertiary;
-            margin: 0 15px;
-         }
-      }
-      &__setting{
-         @include full;
-         flex: 3;
-         @include flex($direction:column,$items:flex-start);
-         & h2{
-            margin: 10px 0;
-            font-size: 1.6rem;
-         }
+      &::after{
+         content:"";
+         height: 80px;
+         border: 1px $color-tertiary solid;
+         background-color: $color-tertiary;
+         margin: 0 15px;
       }
    }
-   & .basket{
+   &__setting{
       @include full;
+      flex: 3;
+      @include flex($direction:column,$items:flex-start);
+      & h2{
+         margin: 10px 0;
+         font-size: 1.6rem;
+      }
+   }
+}
+.basket{
+   @include full;
+   @include flex;
+   flex: 1;
+   display: none;
+   @media screen and(min-width:768px) {
+      display:flex;
+   }
+   &__logo{
       @include flex;
       flex: 1;
+         & div{
+            position: relative;
+            & i{
+            font-size: 4rem;
+            color: $color-tertiary;
+            }
+            & .number{
+               position: absolute;
+               @include flex;
+               min-height: 20px;
+               min-width: 20px;
+               bottom: -5px;
+               right: -5px;
+               @include border-radius($radius:10px);
+               background-color: red;
+               color: white;
+               display:none;
+            }
+      }
+      &::after{
+         content:"";
+         height: 80px;
+         border: 1px $color-tertiary solid;
+         background-color: $color-tertiary;
+         margin: 0 15px;
+      }
+   }
+   &__value{
+      @include full;
+      flex: 3;
+      @include flex($direction:column,$items:flex-start);
+      & h2{
+         margin: 10px 0;
+         font-size: 1.6rem;
+      }
+      &--link{
+         text-decoration: underline;
+         font-weight: normal;
+      }
+   }
+}
+.menu-icon{
+   cursor: pointer;
+   flex: 1;
+   @include flex($direction:column);
+   @include full;
+   & .first-bar{
+      position: unset;
+      background: black;
+      width: 50%;
+      height: 5px;
+      border-radius: 5px;
+      margin: 2px 0;
+      transform: rotateZ(0);
+      transition: transform $menu-icon-duration ease-in-out ;
+   }
+   & .second-bar{
+      background: lighten(black,50%);
+      width: 50%;
+      height: 5px;
+      border-radius: 5px;
+      margin: 2px 0;
+      opacity: 1;
+      transition: opacity $menu-icon-duration ease-in-out;
+   }
+   & .third-bar{
+      position: unset;
+      background: lighten(black,75%);
+      width: 50%;
+      height: 5px;
+      border-radius: 5px;
+      margin: 2px 0;
+      transform: rotateZ(0);
+      transition: transform $menu-icon-duration ease-in-out ;
+   }
+   &:hover{
+      position: relative;
+      & .first-bar{
+         position: absolute;
+         width: 40%;
+         z-index: -1;
+         transform: rotateZ(-35deg);
+         transition: transform $menu-icon-duration ease-in-out ;
+      }
+      & .second-bar{
+         opacity: 0;
+         transition:  opacity $menu-icon-duration ease-in-out;
+      }
+      & .third-bar{
+         position: absolute;
+         width: 40%;
+         z-index: -1;
+         transform: rotateZ(35deg);
+         transition: transform $menu-icon-duration ease-in-out ;
+      }
+   }
+   @media screen and(min-width:426px){
       display: none;
-      @media screen and(min-width:768px) {
-         display:flex;
-      }
-      &__logo{
-         @include flex;
-         flex: 1;
-            & div{
-               position: relative;
-               & i{
-               font-size: 4rem;
-               color: $color-tertiary;
-               }
-               & .number{
-                  position: absolute;
-                  @include flex;
-                  min-height: 20px;
-                  min-width: 20px;
-                  bottom: -5px;
-                  right: -5px;
-                  @include border-radius($radius:10px);
-                  background-color: red;
-                  color: white;
-                  display:none;
-               }
-         }
-         &::after{
-            content:"";
-            height: 80px;
-            border: 1px $color-tertiary solid;
-            background-color: $color-tertiary;
-            margin: 0 15px;
-         }
-      }
-      &__value{
-         @include full;
-         flex: 3;
-         @include flex($direction:column,$items:flex-start);
-         & h2{
-            margin: 10px 0;
-            font-size: 1.6rem;
-         }
-         &--link{
-            text-decoration: underline;
-            font-weight: normal;
-         }
-      }
    }
 }
