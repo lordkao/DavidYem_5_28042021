@@ -1,5 +1,19 @@
 section{
+    position: relative;
     @include auto;
     opacity: 0;
     animation: appear 0.5s ease-in-out both;
+}
+#background{
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.7;
+    @include full;
+    & img{
+        @include full;
+    }
 }
