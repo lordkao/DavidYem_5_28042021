@@ -1,3 +1,10 @@
+@charset "UTF-8";
+/*Couleurs*/
+/*Couleur background*/
+/*Couleurs barre de recherche*/
+/*Couleurs boutons*/
+/*Taille de police*/
+/*durée animations*/
 html {
   font-size: 62.5%;
 }
@@ -68,7 +75,12 @@ header h1 {
   height: 100%;
   width: 100%;
   text-align: center;
-  flex: 2;
+  flex: 5;
+}
+@media screen and (min-width: 426px) {
+  header h1 {
+    flex: 2;
+  }
 }
 header h1 a {
   height: 100%;
@@ -82,7 +94,7 @@ header h1 a img {
   height: 100%;
   width: auto;
 }
-header .account {
+.account {
   height: 100%;
   width: 100%;
   display: flex;
@@ -93,29 +105,29 @@ header .account {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  header .account {
+  .account {
     display: flex;
   }
 }
-header .account__logo {
+.account__logo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex: 1;
 }
-header .account__logo i {
+.account__logo i {
   font-size: 4rem;
   color: #b1b1b1;
 }
-header .account__logo::after {
+.account__logo::after {
   content: "";
   height: 80px;
   border: 1px #b1b1b1 solid;
   background-color: #b1b1b1;
   margin: 0 15px;
 }
-header .account__setting {
+.account__setting {
   height: 100%;
   width: 100%;
   flex: 3;
@@ -124,11 +136,12 @@ header .account__setting {
   justify-content: center;
   align-items: flex-start;
 }
-header .account__setting h2 {
+.account__setting h2 {
   margin: 10px 0;
   font-size: 1.6rem;
 }
-header .basket {
+
+.basket {
   height: 100%;
   width: 100%;
   display: flex;
@@ -139,25 +152,25 @@ header .basket {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  header .basket {
+  .basket {
     display: flex;
   }
 }
-header .basket__logo {
+.basket__logo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex: 1;
 }
-header .basket__logo div {
+.basket__logo div {
   position: relative;
 }
-header .basket__logo div i {
+.basket__logo div i {
   font-size: 4rem;
   color: #b1b1b1;
 }
-header .basket__logo div .number {
+.basket__logo div .number {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -172,14 +185,14 @@ header .basket__logo div .number {
   color: white;
   display: none;
 }
-header .basket__logo::after {
+.basket__logo::after {
   content: "";
   height: 80px;
   border: 1px #b1b1b1 solid;
   background-color: #b1b1b1;
   margin: 0 15px;
 }
-header .basket__value {
+.basket__value {
   height: 100%;
   width: 100%;
   flex: 3;
@@ -188,20 +201,103 @@ header .basket__value {
   justify-content: center;
   align-items: flex-start;
 }
-header .basket__value h2 {
+.basket__value h2 {
   margin: 10px 0;
   font-size: 1.6rem;
 }
-header .basket__value--link {
+.basket__value--link {
   text-decoration: underline;
   font-weight: normal;
 }
 
+.menu-icon {
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.menu-icon .first-bar {
+  position: unset;
+  background: black;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 2px 0;
+  transform: rotateZ(0);
+  transition: transform 0.3s ease-in-out;
+}
+.menu-icon .second-bar {
+  background: gray;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 2px 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.menu-icon .third-bar {
+  position: unset;
+  background: #bfbfbf;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 2px 0;
+  transform: rotateZ(0);
+  transition: transform 0.3s ease-in-out;
+}
+.menu-icon:hover {
+  position: relative;
+}
+.menu-icon:hover .first-bar {
+  position: absolute;
+  width: 40%;
+  z-index: -1;
+  transform: rotateZ(-35deg);
+  transition: transform 0.3s ease-in-out;
+}
+.menu-icon:hover .second-bar {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.menu-icon:hover .third-bar {
+  position: absolute;
+  width: 40%;
+  z-index: -1;
+  transform: rotateZ(35deg);
+  transition: transform 0.3s ease-in-out;
+}
+@media screen and (min-width: 426px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
 section {
+  position: relative;
   height: auto;
   width: auto;
   opacity: 0;
   animation: appear 0.5s ease-in-out both;
+}
+
+#background {
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+}
+#background img {
+  height: 100%;
+  width: 100%;
 }
 
 footer {
